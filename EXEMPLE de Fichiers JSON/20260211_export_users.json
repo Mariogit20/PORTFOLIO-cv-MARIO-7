@@ -1,0 +1,184 @@
+{
+  "export_type": "users",
+  "exported_at": "2026-02-11T19:31:58.711622",
+  "version": 2,
+  "notes": [
+    "User.password est exporté tel quel (hash).",
+    "Les ForeignKey sont exportées en identifiants (ex: role=1)."
+  ],
+  "data": {
+    "app_contact.Role": [
+      {
+        "__model__": "app_contact.Role",
+        "id": 1,
+        "nom_role": "Administrateur"
+      },
+      {
+        "__model__": "app_contact.Role",
+        "id": 2,
+        "nom_role": "Moderateur"
+      },
+      {
+        "__model__": "app_contact.Role",
+        "id": 3,
+        "nom_role": "Utilisateur"
+      },
+      {
+        "__model__": "app_contact.Role",
+        "id": 4,
+        "nom_role": "Responsable de Saisie"
+      }
+    ],
+    "app_contact.User": [
+      {
+        "__model__": "app_contact.User",
+        "id": 1,
+        "nom": "Administrateur Système",
+        "email": "admin@exemple.com",
+        "password": "pbkdf2_sha256$1000000$oP73ySW47PqHlXyoxhKxIS$oSz3g0kbWzJmjWWxYQ1cBwkwsnZXywr4WSvNVRRaNOY=",
+        "role": 1
+      }
+    ],
+    "app_contact.Contact": [],
+    "app_user.Menu": [
+      {
+        "__model__": "app_user.Menu",
+        "id": 1,
+        "nom": "Gestion des Utilisateurs",
+        "code_menu": "menu_ventes"
+      },
+      {
+        "__model__": "app_user.Menu",
+        "id": 2,
+        "nom": "Gestion d'Affichage du Site",
+        "code_menu": "menu_stocks"
+      },
+      {
+        "__model__": "app_user.Menu",
+        "id": 3,
+        "nom": "Factures",
+        "code_menu": "menu_factures"
+      },
+      {
+        "__model__": "app_user.Menu",
+        "id": 4,
+        "nom": "Rapports",
+        "code_menu": "menu_rapports"
+      }
+    ],
+    "app_user.RoleMenuAcces": [
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 1,
+        "role": 1,
+        "menu": 1,
+        "est_visible": true
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 2,
+        "role": 1,
+        "menu": 2,
+        "est_visible": true
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 3,
+        "role": 1,
+        "menu": 3,
+        "est_visible": true
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 4,
+        "role": 1,
+        "menu": 4,
+        "est_visible": false
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 5,
+        "role": 2,
+        "menu": 1,
+        "est_visible": false
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 6,
+        "role": 2,
+        "menu": 2,
+        "est_visible": true
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 7,
+        "role": 2,
+        "menu": 3,
+        "est_visible": false
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 8,
+        "role": 2,
+        "menu": 4,
+        "est_visible": false
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 9,
+        "role": 3,
+        "menu": 1,
+        "est_visible": false
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 10,
+        "role": 3,
+        "menu": 2,
+        "est_visible": false
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 11,
+        "role": 3,
+        "menu": 3,
+        "est_visible": false
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 12,
+        "role": 3,
+        "menu": 4,
+        "est_visible": true
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 13,
+        "role": 4,
+        "menu": 1,
+        "est_visible": false
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 14,
+        "role": 4,
+        "menu": 2,
+        "est_visible": false
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 15,
+        "role": 4,
+        "menu": 3,
+        "est_visible": true
+      },
+      {
+        "__model__": "app_user.RoleMenuAcces",
+        "id": 16,
+        "role": 4,
+        "menu": 4,
+        "est_visible": true
+      }
+    ]
+  }
+}

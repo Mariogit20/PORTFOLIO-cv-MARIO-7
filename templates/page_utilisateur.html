@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+{% load admin_extras %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Administration Centrale</title>
+    <style>
+        .mdp-field { border: none; background: transparent; width: 100px; }
+        .mdp-field:focus { outline: none; }
+        body { background-color: #f8f9fa; }
+        .main-container { margin-top: 2rem; margin-bottom: 2rem; }
+        .badge-role { font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary" href="#">AdminPanel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="\">Acceuil</a></li>           
+        <li class="nav-item"><a class="nav-link active" href="#">Tableau de bord</a></li>
+     
+        {% for acces in mes_menus_visibles %}
+            <li class="nav-item"><a class="nav-link" href="#">{{ acces.menu.nom }}</a></li>
+        {% endfor %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Configuration</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'dashboard_admin' %}">Paramètres site</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="{% url 'deconexion' %}">Déconnexion</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container main-container shadow bg-white p-4 rounded">
+    <h2 class="mb-4 text-primary border-bottom pb-2">Tableau de Bord Admin</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                {{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <ul class="nav nav-tabs mb-4" id="adminTabs">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-users">Utilisateurs</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-menus">Permissions Menus</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-contacts">Messages ({{ contacts.count }})</button></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="tab-users">
+            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">+ Nouvel Utilisateur</button>
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>Rôle</th> 
+                            <th>Mot de passe</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for u in users %}
+                        <tr>
+                            <td><strong>{{ u.nom }}</strong></td>
+                            <td>{{ u.email }}</td>
+                            <td>
+                                <span class="badge {% if u.role.nom_role == 'Administrateur' %}bg-danger{% elif u.role.nom_role == 'Moderateur' %}bg-warning text-dark{% else %}bg-info text-dark{% endif %} badge-role">
+                                    {{ u.role.nom_role }}
+                                </span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <input type="password" class="mdp-field mdp-toggle-target" value="{{ u.password }}" readonly>
+                                    <button class="btn btn-sm btn-link text-decoration-none btn-toggle-vis" type="button">👁️</button>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{u.id}}">Modifier</button>
+                                <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delModal{{u.id}}">X</button>
+                            </td>
+                        </tr>
+
+                        <div class="modal fade" id="editModal{{u.id}}" tabindex="-1">
+                            <div class="modal-dialog"><div class="modal-content">
+                                <form method="POST" action="{% url 'edit_user' u.id %}">{% csrf_token %}
+                                    <div class="modal-header"><h5>Modifier {{ u.nom }}</h5></div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label class="form-label small">Nom</label>
+                                            <input type="text" name="nom" class="form-control" value="{{ u.nom }}">
+                                            {% if erreurs_champsEDIT.nom %}<div class="text-danger small">{{ erreurs_champsEDIT.nom }}</div>{% endif %}
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small">Email</label>
+                                            <input type="email" name="email" class="form-control" value="{{ u.email }}">
+                                            {% if erreurs_champsEDIT.email %}<div class="text-danger small">{{ erreurs_champsEDIT.email }}</div>{% endif %}
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label small">Rôle</label>
+                                            <select name="role" class="form-select">
+                                                {% for r in roles %}
+<option value="{{ r.nom_role }}" 
+    {% if donnees_edit.role == r.nom_role or u.role.id == r.id %}selected{% endif %}>
+    {{ r.nom_role }}
+</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label small">Mot de passe (Laisser tel quel pour ne pas changer)</label>
+                                            <div class="input-group">
+                                                <input type="password" name="password" class="form-control mdp-toggle-target" value="{{ u.password }}">
+                                                <button class="btn btn-outline-secondary btn-toggle-vis" type="button">👁️</button>
+                                            </div>
+                                            {% if erreurs_champsEDIT.password %}<div class="text-danger small">{{ erreurs_champsEDIT.password }}</div>{% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer"><button type="submit" class="btn btn-success w-100">Sauvegarder</button></div>
+                                </form>
+                            </div></div>
+                        </div>
+
+                        <div class="modal fade" id="delModal{{u.id}}" tabindex="-1">
+                            <div class="modal-dialog"><div class="modal-content">
+                                <form method="POST" action="{% url 'delete_user' u.id %}">{% csrf_token %}
+                                    <div class="modal-body text-center">Supprimer l'utilisateur <b>{{ u.nom }}</b> ?</div>
+                                    <div class="modal-footer"><button type="submit" class="btn btn-danger w-100">Confirmer la suppression</button></div>
+                                </form>
+                            </div></div>
+                        </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab-menus">
+            <form method="POST" action="{% url 'update_menus' %}">
+                {% csrf_token %}
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr><th>Utilisateurs</th>{% for m in menus %}<th>{{ m.nom }}</th>{% endfor %}</tr>
+                        </thead>
+                        <tbody>
+                            {% for u in roles %}
+                            <tr>
+                                <td>{{ u.nom_role }} <br><small class="text-muted">({{ u.nom_role }})</small></td>
+                                {% for m in menus %}
+                                <td>
+                                    <div class="form-check form-switch">
+                                                                                    
+                                            {% check_access u.id m.id acces_existants as is_checked %}
+
+                                            {% if u.nom_role == "Administrateur" and m.nom == "Gestion des Utilisateurs" %}
+                                            <input class="form-check-input" type="checkbox"
+                                                    name="access_{{ u.id }}_{{ m.id }}"
+                                                    checked
+                                                    disabled>
+                                            {% else %}
+                                            <input class="form-check-input" type="checkbox"
+                                                    name="access_{{ u.id }}_{{ m.id }}"
+                                                    {% if is_checked %}checked{% endif %}>
+                                            {% endif %}
+
+                                    </div>
+                                </td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <button type="submit" class="btn btn-success mt-3">Enregistrer les permissions</button>
+            </form>
+        </div>
+
+        <div class="tab-pane fade" id="tab-contacts">
+            <table class="table table-striped">
+                <thead><tr><th>Date</th><th>Auteur</th><th>Message</th></tr></thead>
+                <tbody>
+                    {% for c in contacts %}
+                    <tr>
+                        <td>{{ c.date_envoi|date:"d/m/Y H:i" }}</td>
+                        <td>{{ c.nom }}<br><small class="text-muted">{{ c.email }}</small></td>
+                        <td>{{ c.message }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="3" class="text-center">Aucun message reçu.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="POST" action="{% url 'add_user' %}">
+                {% csrf_token %}
+                <div class="modal-header"><h5>Nouvel Utilisateur</h5></div>
+                <div class="modal-body">
+                    <label class="form-label small">Nom complet</label>
+                    <input type="text" name="nom" class="form-control mb-3" placeholder="Ex: Jean Dupont" value="{{ donnees.nom|default:'' }}" required>
+                    {% if erreurs_champs.nom %}<div class="text-danger small mb-2">{{ erreurs_champs.nom }}</div>{% endif %}
+                    
+                    <label class="form-label small">Adresse Email</label>
+                    <input type="email" name="email" class="form-control mb-3" placeholder="email@exemple.com" value="{{ donnees.email|default:'' }}" required>
+                    {% if erreurs_champs.email %}<div class="text-danger small mb-2">{{ erreurs_champs.email }}</div>{% endif %}
+
+                    <label class="form-label small">Rôle du compte</label>
+                    <select name="role" class="form-select mb-3">
+                        {% for r in roles %}
+                            <option value="{{ r.nom_role }}">{{ r.nom_role }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label class="form-label small">Mot de passe</label>
+                    <div class="input-group">
+                        <input type="password" name="password" class="form-control mdp-toggle-target" placeholder="Minimum 6 caractères" required>
+                        <button class="btn btn-outline-secondary btn-toggle-vis" type="button">👁️</button>
+                    </div>
+                    {% if erreurs_champs.password %}<div class="text-danger small mt-1">{{ erreurs_champs.password }}</div>{% endif %}
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary w-100">Créer le compte</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="error-data" data-user-id-erreur="{{ user_id_erreur|default:'' }}"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. GESTION DES ERREURS DANS LES MODALES EDIT
+    const errorData = document.getElementById('error-data');
+    if (errorData) {
+        const userId = errorData.getAttribute('data-user-id-erreur');
+        if (userId) {
+            const modalElement = document.getElementById("editModal" + userId);
+            if (modalElement) new bootstrap.Modal(modalElement).show();
+        }
+    }
+
+    // 2. RE-OUVRIR ADDMODAL SI ERREUR CREATION
+    const erreurPresente = "{% if erreurs_champs %}true{% else %}false{% endif %}";
+    if (erreurPresente === "true") {
+        const addModal = new bootstrap.Modal(document.getElementById('addModal'));
+        addModal.show();
+    }
+
+    // 3. MEMORISATION DES ONGLETS
+    const activeTab = sessionStorage.getItem('activeTab');
+    if (activeTab) {
+        const btn = document.querySelector(`button[data-bs-target="${activeTab}"]`);
+        if (btn) new bootstrap.Tab(btn).show();
+    }
+    document.querySelectorAll('button[data-bs-toggle="tab"]').forEach(btn => {
+        btn.addEventListener('shown.bs.tab', e => sessionStorage.setItem('activeTab', e.target.getAttribute('data-bs-target')));
+    });
+
+    // 4. VISIBILITÉ MOT DE PASSE
+    document.querySelectorAll('.btn-toggle-vis').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const parent = this.closest('.d-flex') || this.closest('.input-group');
+            const input = parent.querySelector('.mdp-toggle-target');
+            if (input.type === "password") {
+                input.type = "text";
+                this.textContent = "🙈";
+            } else {
+                input.type = "password";
+                this.textContent = "👁️";
+            }
+        });
+    });
+});
+</script>
+
+</body>
+
+<!--
+https://gemini.google.com/app/f8e0c025fb9d3e33
+https://gemini.google.com/app/f8e0c025fb9d3e33
+https://gemini.google.com/app/f8e0c025fb9d3e33
+
+https://gemini.google.com/app/890db5bebf3f514c
+https://gemini.google.com/app/890db5bebf3f514c
+https://gemini.google.com/app/890db5bebf3f514c
+-->
+<div class="alert alert-secondary mt-3">
+    <p><strong>DEBUG Rôles :</strong> <span>{{ roles }}</span></p>
+    <p><strong>DEBUG Données Edit :</strong> <span>{{ donnees_edit }}</span></p>
+    <p><strong>DEBUG mes_menus_visibles : <span>{{ mes_menus_visibles }}</span></strong></p>
+</div>
+
+</html>

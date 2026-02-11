@@ -1,0 +1,7 @@
+django
+
+Documentation
+The flatpages app
+
+https://docs.djangoproject.com/en/6.0/ref/contrib/flatpages/
+https://docs.djangoproject.com/en/6.0/ref/contrib/flatpages/

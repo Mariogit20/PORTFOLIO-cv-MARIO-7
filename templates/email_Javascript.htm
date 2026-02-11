@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact / Devis</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- <link rel="stylesheet" href="bootstrap-5.0.2/dist/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/* =====================================================
+    DÉFINITION DES VARIABLES ET STYLES GÉNÉRAUX
+===================================================== 
+*/
+:root {
+    --couleur-primaire: #3a7bd5; /* Bleu principal */
+/*    --couleur-secondaire: #e74c3c;     */   /* Rouge accentuation */     /* Couleur ORIGINAL */    /* Mario */
+
+    --couleur-secondaire: #10c69d; /* Couleur d'accent */
+
+    --couleur-texte: #2c3e50; /* Gris-bleu foncé */
+    --couleur-fond-clair: #f7f9fc;
+    --font-principale: 'Poppins', sans-serif;
+
+/*
+DEBUT ================> Style CSS de Tanjona ::::::::::::::::::::::::::::::::::::
+*/    
+  --brand: #5aa6ff;
+  --brand-2: #7c4dff;
+/*
+FIN   ================> Style CSS de Tanjona !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/ 
+}
+/*
+html {
+    scroll-behavior: smooth;
+}
+*/
+
+body {
+    font-family: var(--font-principale);
+    color: var(--couleur-texte);
+/*    line-height: 1.6;           */
+    background-color: white;
+/*    margin: 0;    */
+/*    padding-top: 56px; */       /* Espace pour la barre de navigation fixe de Bootstrap */
+}
+
+
+/* =====================================================
+    STYLES DE LA BARRE DE NAVIGATION (NAVBAR)
+===================================================== 
+*/
+.navbar {
+    background-color: white; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1030; /* Assure que la barre de navigation est au-dessus du contenu */
+}
+
+/* Amélioration de la couleur des liens de navigation */
+.navbar-nav .nav-link {
+    color: var(--couleur-texte) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--couleur-primaire) !important;
+}
+
+/* Conteneur pour les sous-menus (dropdown-submenu) */
+.dropdown-submenu {
+    position: relative;
+}
+
+/* Styles pour les sous-menus de niveau 2 (dans .dropdown-submenu) */
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    border-radius: 0 5px 5px 5px;
+}
+
+/* Cacher les sous-menus par défaut en mode desktop (hover) */
+@media (min-width: 992px) {
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Styles spécifiques pour le menu en mode mobile (au-dessous de 992px) */
+@media (max-width: 991.98px) {
+    .dropdown-menu {
+        border-radius: 0;
+        background-color: var(--couleur-fond-clair);
+    }
+    .dropdown-submenu .dropdown-menu {
+        position: static;
+        left: auto;
+        border: none;
+        padding-left: 20px;
+        box-shadow: none;
+    }
+    .dropdown-submenu > a::after {
+        /* Ajout d'une flèche pour indiquer l'existence d'un sous-menu en mode mobile */
+        display: inline-block;
+        margin-left: .5em;
+        vertical-align: middle;
+        content: "▶"; /* Flèche vers la droite */
+        transition: transform 0.3s;
+    }
+    /* Rotation de la flèche lorsque le sous-menu est ouvert */
+    .dropdown-submenu .dropdown-menu.show ~ a::after {
+        transform: rotate(90deg);
+        content: "▼"; /* Flèche vers le bas */
+    }
+}
+
+
+</style>
+
+
+
+    <style>
+/*        
+.COULEUR_DEGRADE_du_BOUTON_CIRCUlAIRE {
+*/
+.COULEUR_DEGRADE_du_BOUTON {    
+/* 
+https://gemini.google.com/app/04dcf77f56400952?hl=fr
+https://gemini.google.com/app/04dcf77f56400952?hl=fr
+https://gemini.google.com/app/04dcf77f56400952?hl=fr
+https://gemini.google.com/app/04dcf77f56400952?hl=fr
+https://gemini.google.com/app/04dcf77f56400952?hl=fr 
+*/
+
+
+
+
+
+  /* Le dégradé est un cercle, centré (at center),
+     passant du Blanc (0%) au Bleu (#3a7bd5 à 100%) */
+
+/*
+Le """""GRIS""""" est AU """""CENTRE""""" DU """""BOUTON"""""      <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON btn cta-button" style="margin-top:7.2px;">Voir mes projets</a>
+
+Le """""BLEU""""" est AU """""BORDURE""""" DU """""BOUTON"""""      <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON btn cta-button" style="margin-top:7.2px;">Voir mes projets</a>
+*/  
+/*
+  background-image: radial-gradient(
+    circle at center, 
+    gray 0%, 
+    #3a7bd5 100%
+  );
+*/
+  background-image: radial-gradient(
+    circle at center, 
+    var(--brand) 0%, 
+    #3a7bd5 100%
+  );
+
+}
+
+
+
+
+/*
+.COULEUR_DEGRADE_du_BOUTON {
+
+
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+
+background-image: -webkit-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -moz-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -ms-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -o-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);							 
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D60F0F',endColorstr='#FFDD00', GradientType=1);		
+
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+*/
+
+
+
+
+/*
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+
+EXEMPLE 1
+
+background-image: -webkit-linear-gradient(right top, gray 0%, #3a7bd5 100%);
+background-image: -moz-linear-gradient(right top, gray 0%, #3a7bd5 100%);
+background-image: -ms-linear-gradient(right top, gray 0%, #3a7bd5 100%);
+background-image: -o-linear-gradient(right top, gray 0%, #3a7bd5 100%);
+background-image: linear-gradient(right top, gray 0%, #3a7bd5 100%);							 
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='gray',endColorstr='#3a7bd5', GradientType=1);		
+
+EXEMPLE 1
+
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+
+}
+*/
+    </style>
+
+
+
+
+
+    <style>
+.Le_COIN_ARRONDI_du_RECTANGLE
+{	
+       border-radius:12px 12px 12px 12px;                 /*       border-radius:12px;                 = (________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________ Navigateur)    (en CSS3)            */
+	   -moz-border-radius:12px 12px 12px 12px;            /*       -moz-border-radius:12px;            = Mozila Firefox        (en CSS3)            */
+	   -o-border-radius:12px 12px 12px 12px;              /*       -o-border-radius:12px;              = Opera                 (en CSS3)            */
+	   -webkit-border-radius:12px 12px 12px 12px;         /*       -webkit-border-radius:12px;         = Google Chrome , Safary   (en CSS3)         */
+       -ms-border-radius:12px 12px 12px 12px;	          /*       -ms-border-radius:12px;      = Internet Explorer (version 9 et plus)   (en CSS3) */	
+}	
+    </style>
+
+</head>
+
+<body class="bg-light">
+    
+
+
+
+<!--
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+-->
+<style>
+
+.infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML
+{
+	position:absolute;
+/*     background:#000;           */
+/*    padding:12px 7px;           */
+/*    -moz-border-radius:12px;    */
+	
+       border-radius:12px 12px 12px 12px;                 /*       border-radius:12px;                 = (________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________ Navigateur)    (en CSS3)            */
+	   -moz-border-radius:12px 12px 12px 12px;            /*       -moz-border-radius:12px;            = Mozila Firefox        (en CSS3)            */
+	   -o-border-radius:12px 12px 12px 12px;              /*       -o-border-radius:12px;              = Opera                 (en CSS3)            */
+	   -webkit-border-radius:12px 12px 12px 12px;         /*       -webkit-border-radius:12px;         = Google Chrome , Safary   (en CSS3)         */
+       -ms-border-radius:12px 12px 12px 12px;	          /*       -ms-border-radius:12px;      = Internet Explorer (version 9 et plus)   (en CSS3) */	
+	
+/*    -webkit-border-radius:12px;    */
+    color:#000000;    
+    text-align:center;	
+	
+font-family:Semibold; 
+font-size:24px; 
+border:5.75px dotted orange;
+     background-color:#F9F9F9;      
+	
+}
+
+</style>
+<!--
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+    
+
+
+
+
+    
+<div id="EMAIL_en_JAVASCRIPT" style="position: relative;">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <!-- <ul class="navbar-nav ms-auto"> -->
+<!--
+ms-auto poussait le menu à la droite. me-auto pousse le menu à la gauche en remplissant l'espace à droite, forçant l'élément suivant (la marque) à se positionner sur le bord droit du conteneur.                    
+-->                    
+                <ul class="navbar-nav                       me-auto">                    
+                    <li class="nav-item">
+<!--
+                        <a class="nav-link active" aria-current="page" href="index.html#accueil">Accueil</a>
+-->
+<!--
+
+    # href="index.html#accueil"    
+
+-->
+                        <a class="nav-link active" aria-current="page" href="{% url 'name_Page_accueil_section_Accueil' %}#accueil">Accueil</a>
+
+                    </li>
+                    <li class="nav-item">
+<!--
+                        <a class="nav-link" href="index.html#projets">Projets</a>
+-->
+<!--
+
+    # href="index.html#projets"
+    
+--> 
+                        <a class="nav-link" href="{% url 'name_Page_accueil_section_projets' %}#projets">Projets</a>
+
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Service 1</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="submenuService2" role="button">
+                                    Service 2
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="submenuService2">
+                                    <li><a class="dropdown-item" href="#">Sous-service A</a></li>
+                                    <li><a class="dropdown-item" href="#">Sous-service B</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="submenuService3" role="button">
+                                            Service 3
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="submenuService3">
+                                            <li><a class="dropdown-item" href="#">Sous-service C</a></li>
+                                            <li><a class="dropdown-item" href="#">Sous-service D</a></li>
+<!--
+DEBUT ========> SOUS MENU de QUATRIEME NIVEAU :::::::::                                            
+-->                                            
+                                                        <li class="dropdown-submenu">
+                                                            <a class="dropdown-item dropdown-toggle" href="#" id="submenuService5" role="button">
+                                                                Service 5
+                                                            </a>
+                                                            <ul class="dropdown-menu" aria-labelledby="submenuService5">
+                                                                <li><a class="dropdown-item" href="#">Sous-service D_1</a></li>
+                                                                <li><a class="dropdown-item" href="#">Sous-service D_2</a></li>
+                                                            </ul>
+                                                        </li>         <!-- <li class="dropdown-submenu"> -->
+<!--
+FIN   ========> SOUS MENU de QUATRIEME NIVEAU !!!!!!!!!
+-->
+                                        </ul>
+                                    </li>         <!-- <li class="dropdown-submenu"> -->
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="submenuService4" role="button">
+                                    Service 4
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="submenuService4">
+                                    <li><a class="dropdown-item" href="#">Sous-service E</a></li>
+                                    <li><a class="dropdown-item" href="#">Sous-service F</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+<!--
+                        <a class="nav-link" href="index.html#temoignages">Témoignages</a>
+-->
+<!--
+
+    # href="index.html#temoignages"
+    
+--> 
+                        <a class="nav-link" href="{% url 'name_Page_accueil_section_temoignages' %}#temoignages">Témoignages</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" href="#a-propos">À Propos</a> -->
+<!--
+                        <a class="nav-link" href="index.html#a-propos">À Propos</a>                        
+-->
+                        <a class="nav-link" href="{% url 'name_Page_accueil_section_a_propos' %}#a-propos">&Agrave; Propos</a>                        
+
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" href="#contact">Contact</a> -->
+<!--
+                        <a class="nav-link" href="index.html#contact">Contact</a>                        
+-->
+                        <a class="nav-link" href="{% url 'name_Page_accueil_section_contact' %}#contact">Contact</a>                        
+
+                    </li>
+                </ul>
+            </div>       <!--  <div class="collapse navbar-collapse" id="navbarNavDropdown">  -->
+
+            <a class="navbar-brand" href="#accueil">Mario | DEV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+</header>
+
+    <div class="container mt-5 pt-4" id="email_JAVASCRIPT"> 
+        
+        <div class="row justify-content-center"> 
+            
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto"> 
+            
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Contacter par Email :</h2>
+                        
+                        <form onsubmit="submitContact(event)">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nom complet</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nom de l&apos;Exp&eacute;diteur" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Adresse email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email de l&apos;Exp&eacute;diteur" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Détails</label>
+                                <textarea class="form-control" id="message" placeholder="D&eacute;crivez bri&egrave;vement vos attentes ici"  rows="5" required></textarea>
+                            </div>
+<!--                            
+                            <button type="submit" class="btn btn-primary w-100">Envoyer le message</button>
+-->
+                            <button                                         numero_TABLE_Appreciation="3"        id='LIEN_IDENTIFICATION_________F_503'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Contactez Moi 😃 !"          title=''                   class="                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51                     btn btn-primary w-100 py-2           COULEUR_DEGRADE_du_BOUTON       Le_COIN_ARRONDI_du_RECTANGLE  "     type="submit">                                
+                                Envoyer ma demande
+                            </button>                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div> 
+    
+    </div> 
+
+</div> 
+
+
+
+<script>
+    // =========================================================================
+    // SCRIPT DE GESTION DU FORMULAIRE MAILTO
+    // =========================================================================
+        function submitContact(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Encodage pour mailto
+            const subject = encodeURIComponent('Message de - ' + name);
+            const body = encodeURIComponent(
+                "Nom: " + name + "\n" +
+                "Email: " + email + "\n" +
+                "Message:\n" + message
+            );
+
+            // Correction du mail
+/*
+            window.location.href =
+                "mailto:rafaltanjonaniaina@gmail.com?subject=" +
+                subject + "&body=" + body;
+*/
+
+            window.location.href =
+                "mailto:progsuividpe@gmail.com?subject=" +
+                subject + "&body=" + body;
+                
+        }
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+-->
+<script>
+
+
+/*
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+*/
+// alert("INFOBULLE à CREER !")  
+
+  /*
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  */  
+  function FONCTION________Creer_une_INFOBULLE_51(x){
+                           $(document).ready(function(){
+  
+  //    alert($(x).attr("id"))
+  
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  
+  //// /
+  /*
+  if($(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt")=="")
+            {		
+      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"  style="display:none;  "></span>');      
+      return false;   
+            }
+  */
+  if($("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).attr("alt")=="")
+            {		
+//      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"  style="display:none;  "></span>');      
+      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"  style="display:none;                font-size: 3vw;      "></span>');      
+      return false;         
+//      return false;   
+            }
+  
+  /*
+      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span>');
+      var bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML:last");
+      bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.append($(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt"));
+      $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt","");           
+  */
+//  $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span>');
+  $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"                  style="    font-size: 3vw;      "></span>');  
+      var bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML:last");
+      bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.append($("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation")  ).attr("alt"));
+      $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).attr("alt","");           
+  
+  /*
+  DEBUT ========================> CODE ENCORE A CORRIGER / AJUSTER :::::::::::::::::::::::::::::::::::::::::::
+  */
+  /* 
+        DEBUT DE LA PERSONNALISATION DE MARIO :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        DEBUT DE LA PERSONNALISATION DE MARIO :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        DEBUT DE LA PERSONNALISATION DE MARIO :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        DEBUT DE LA PERSONNALISATION DE MARIO :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        DEBUT DE LA PERSONNALISATION DE MARIO ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+  */
+  /*
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  */
+  /*
+  
+   $(window).width()     =     "LARGEUR" de la "FENETRE DE L'ORDINATEUR" !!!
+   
+  */
+  var largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(window).width();
+  /*
+  
+   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left    =    "Position X (left ou GAUCHE)" du "CURSEUR DE LA SOURIS" par rapport à l'ECRAN DE L'ORDINATEUR !!!
+   
+   bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width()    =    "LARGEUR" de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!! 
+   
+   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).width()    =    "LARGEUR" de la balise HTML nommée de garde et <a href="#" alt="Un monde très merveilleux !!">tout</a> ________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________ bloc de !!! 
+   
+   2    =    "BORDURE Gauche" de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!  
+  
+   2    =    "BORDURE Droite" de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+   0    =    "MARGE INTERNE" Gauche de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+   0    =    "MARGE INTERNE" Droite de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+  */
+  
+  /*
+        var posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().top-bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.height()*2.25;	
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().left + (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() + 2 + 2 + 0 + 0);		
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 + ( 0 + 0 );                 /// <div id="mm1" style="width:150px;">	  
+  var Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51;
+  var Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-$("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).width();    
+  */
+  
+///////// ORIGINAL CODE de  MARIO   ///////        var posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().top-bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.height()*2.25;	
+/*
+// L INFOBULLE se trouve AU DESSUS du   BOUTON LIEN
+
+var posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 =     $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().top - 10; // Décalage minimal pour la position verticale
+*/
+/* Début : Détection du débordement en haut */
+var hauteur_bulle = bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.height();
+var position_lien_top = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().top;
+
+// Si la position calculée posTop_... est négative (l'infobulle déborde au-dessus de l'écran)...
+if (position_lien_top - (hauteur_bulle * 2.25) < 0) {
+    // ... alors, on repositionne l'infobulle EN DESSOUS de l'élément.
+    posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = 
+        position_lien_top + 
+        $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).height() + 10; // + 10px de marge
+
+    // (Note : Le 10px est une marge à ajuster)
+
+} else {
+    // ... sinon, on garde la position par défaut (au-dessus)
+    posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = 
+        position_lien_top - (hauteur_bulle * 2.25);
+}
+/* Fin : Détection du débordement en haut */
+
+
+
+
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().left + (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() + 2 + 2 + 0 + 0);		
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 + ( 0 + 0 );                 /// <div id="mm1" style="width:150px;">	  
+  var Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51;
+  var Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-$("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).width();    
+  
+  /*
+  
+  La CONDITION SI	suivante
+  
+                       if(CONDITION)
+                       {
+                          instruction 1 
+                       }
+                       else
+                       {
+                          instruction 2
+                       }
+  
+  est la même que la CONDITION SI suivante
+  
+                       if( !(CONDITION) )
+                       {
+                          instruction 2
+                       }
+                       else
+                       {
+                          instruction 1 
+                       }
+  
+  */
+  /*
+  
+  La CONDITION SI	suivante
+  
+                                                  if( ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 >= 0 ) && ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 < Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 ) )
+                                                  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left;   	  
+                                                  }
+                                                  else
+                                                  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left - (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() - $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).width() + 2 + 2 + 0 + 0);		
+                                                  }
+  
+  est la même que la CONDITION SI suivante
+  
+                                                  if( !( ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 >= 0 ) && ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 < Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 ) ) )
+                                                  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left - (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() - $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).width() + 2 + 2 + 0 + 0);		
+                                                  }
+                                                  else
+                                                  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left;   	  
+                                                  }
+  
+  */
+  if( !( ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 >= 0 ) && ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 < Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 ) ) )
+  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().left - (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() - $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).width() + 2 + 2 + 0 + 0);		
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 - ( 0 + 0 );                 /// <div id="mm1" style="width:150px;">	  	  
+  /*
+  
+   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left    =    "Position X (left ou GAUCHE)" du "CURSEUR DE LA SOURIS" par rapport à l'ECRAN DE L'ORDINATEUR !!!
+   
+   bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width()    =    "LARGEUR" de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!! 
+   
+   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).width()    =    "LARGEUR" de la balise HTML nommée de garde et <a href="#" alt="Un monde très merveilleux !!">tout</a> ________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________ bloc de !!! 
+   
+   2    =    "BORDURE Gauche" de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!  
+  
+   2    =    "BORDURE Droite" de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+   0    =    "MARGE INTERNE" Gauche de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+   0    =    "MARGE INTERNE" Droite de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+  */
+  }
+  else
+  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().left;   	  
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 + ( 0 + 0 );                 /// <div id="mm1" style="width:150px;">	  	  
+  }		
+  /*
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  */
+  
+  /* 
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+  */
+  
+  /*
+      bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.css({
+        left:posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51,
+  //			top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-20,
+        top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-0,
+        opacity:0.99
+      });
+  */
+  
+      bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.css({
+        left:posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51,
+  //			top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-20,
+        top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-0,
+        opacity:0.99
+      });
+  /*		bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.animate({
+        top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51,
+        opacity:0.99
+      });         */
+  /*
+  FIN   ===========================> TEXTE de L'INFOBULLE !!!
+  */
+  /*
+  FIN   ========================> CODE ENCORE A CORRIGER / AJUSTER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  */
+  
+  
+
+
+
+
+
+/*
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+  $(x).click(function() {
+  
+//     alert("Voiture n° " + $(x).attr("numero_TABLE_Appreciation") )     // Si on    """""CLIQUE""""" SUR L'"""""INFOBULLE""""" ,  alors on voit """""apparaître le MESSAGE""""" :        """""Bonjour 4"""""
+  
+  //  localStorage  =======> Pour STOCKER LES DONNEES dans le NAVIGATEUR MOZILLA FIREFOX si NAVIGATEUR EN COURS au lieu de STOCKER DANS LA BASE DE DONNEES ::::: 
+  //  localStorage  =======> Pour STOCKER LES DONNEES dans le NAVIGATEUR et non dans la BASE DE DONNEES
+   // Identifiant DE LA Voiture
+   // Identifiant DE LA Voiture
+   // Identifiant DE LA Voiture  
+   sessionStorage.removeItem('Identifiant_DE_LA_Voiture')      // Identifiant DE LA Voiture         
+  if(!sessionStorage.getItem('Identifiant_DE_LA_Voiture')){      // Identifiant DE LA Voiture                   // Identifiant DE LA Voiture
+    sessionStorage.setItem('Identifiant_DE_LA_Voiture', JSON.stringify(  $(x).attr("numero_TABLE_Appreciation")  ));   // Identifiant DE LA Voiture
+  }
+
+
+console.log("sessionStorage.getItem('Identifiant_DE_LA_Voiture') = " + sessionStorage.getItem('Identifiant_DE_LA_Voiture')  )                   // Identifiant_DE_LA_Voiture  =  8
+
+console.dir("sessionStorage.getItem('Identifiant_DE_LA_Voiture') = " + sessionStorage.getItem('Identifiant_DE_LA_Voiture')  )                   // Identifiant_DE_LA_Voiture  =  8
+
+
+/*
+  //
+  //// $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") ).css("background-color","blue")
+  
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  ///// $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") ).fadeOut()
+  
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  //// var BALISE_EXCLUSION = "form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation")                 // ##################### Le """""CODE ORIGINAL""""" 
+  var BALISE_EXCLUSION = "#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation")                 // ##################### Le """""CODE ORIGINAL""""" 
+  // $("form.ZONE_DE_TEXTE_de_MODIFICATION_de_la_TABLE_Testimonials:not("  +  BALISE_EXCLUSION  +  ")").fadeOut()                 // ##################### Le """""CODE ORIGINAL"""""
+  $(".ZONE_DE_TEXTE_de_MODIFICATION_de_la_TABLE_Testimonials:not("  +  BALISE_EXCLUSION  +  ")").fadeOut()                 // ##################### Le """""CODE ORIGINAL"""""
+  
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") ).fadeIn()                 // ##################### Le """""CODE ORIGINAL"""""
+  $("#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") ).fadeIn()                 // ##################### Le """""CODE ORIGINAL"""""
+  
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","green")     // VERT foncé
+  //////// """""COULEUR""""" de la Balise """""TEXTAREA""""" en """""Vert clair""""" selon un """""CODE COULEUR""""" en NOTATION """""Code hexadécimal""""" :::::::
+  ///////////// $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","#90EE90")       // Vert clair
+  //////// """""COULEUR""""" de la Balise """""TEXTAREA""""" en """""Vert clair""""" selon un """""CODE COULEUR""""" en NOTATION """""Nom de couleur""""" :::::::
+  ///////////// $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","lightgreen")       // Vert clair
+  //////// """""COULEUR""""" de la Balise """""TEXTAREA""""" en """""Vert clair""""" selon un """""CODE COULEUR""""" en NOTATION """""Valeur RGB""""" :::::::
+  // $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","rgb(144, 238, 144)")       // Vert clair                 ##################### Le """""CODE ORIGINAL"""""
+  $("#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","rgb(144, 238, 144)")       // Vert clair                 ##################### Le """""CODE ORIGINAL"""""
+  //
+*/
+
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+/*
+//  purple : Violet
+
+  $("a.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50.TEXTE_____DE_L_INFOBULLE_50.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51:hover").css({"color":"purple"})
+*/
+//  pink : rose
+
+/// Il y a    """""une LIGNE"""""    """""AU-DESSUS""""" DU TEXTE   :    """""Voir mes Projets""""" :::::::::: 
+////  $("a.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50.TEXTE_____DE_L_INFOBULLE_50.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51:hover").css({"text-decoration":"overline"})
+
+/// Il y a    """""une LIGNE"""""    """""EN-BAS""""" DU TEXTE   :    """""Voir mes Projets""""" :::::::::: 
+////  $("a.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50.TEXTE_____DE_L_INFOBULLE_50.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51:hover").css({"text-decoration":"underline"})
+
+/// Il y a    """""une LIGNE"""""    """""SUR""""" LE TEXTE   :    """""Voir mes Projets""""" :::::::::: 
+////  $("a.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50.TEXTE_____DE_L_INFOBULLE_50.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51:hover").css({"text-decoration":"line-through"})
+  
+  })     // $(x).click(function() {
+/*
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+
+
+  
+
+
+  
+  
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  ///// var BALISE_EXCLUSION = "form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation")  
+  //////////////////// $("form.ZONE_DE_TEXTE_de_MODIFICATION_de_la_TABLE_Testimonials").fadeOut()
+  
+  
+  
+                           });		   //           $(document).ready(function(){
+  
+  }       //    function FONCTION________Creer_une_INFOBULLE_51(x) {
+  /*
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  */	   
+       
+       
+           
+           
+           
+           
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+  /*
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  */
+  function FONCTION________Supprimer_une_INFOBULLE_51(x) {
+    $(document).ready(function(){
+  
+  //    alert($(x).attr("id"))
+  
+  //   $(document).ready(function(){
+                                  //  //   alert("SUPPRESSION DE L'INFOBULLE !");
+  /*
+                                        //  //   alert("bonjour !");
+                                        //  //   alert(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x);
+                                        //  //   alert(     $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt")     );
+  */
+  //   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x)          =          $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x);
+  
+  /*
+  DEBUT ===========================> TEXTE de L'INFOBULLE :::
+  */
+  var bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML:last");	
+  $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML").remove();			
+  $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).attr("alt",bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.text());
+  /*		bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.animate
+  (
+  {
+  top:bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.offset().top+10,
+  opacity:0.99
+  },
+  500,
+  "linear",
+  function(){
+  bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.remove();
+  }
+  );			   */
+  /*        $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML").remove();              */
+  /*
+  FIN   ===========================> TEXTE de L'INFOBULLE !!!
+  */		   
+  
+  
+  
+  });		   //           $(document).ready(function(){
+  
+  }       //    function FONCTION________Supprimer_une_INFOBULLE_51(x) {
+  /*
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  */	
+  //// /  
+  
+
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+// Lundi 10 Mars 2025 !!!!!!!!!!!!!!
+// FIN   ====================> INFOBULLE du BOUTON """"Modifier votre Appréciation 3"""" !!!!!
+/*
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+</script>
+<!--
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+    
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    /*
+     * CORRECTION: Gestion du menu déroulant multi-niveaux (dropdown-submenu) 
+     * en mode mobile/tablette (moins de 992px) SANS RECHARGEMENT lors du redimensionnement.
+     * Utilisation de window.matchMedia pour une gestion dynamique et performante.
+     */
+    document.addEventListener("DOMContentLoaded", function () {
+        const mediaQuery = window.matchMedia('(max-width: 991.98px)');
+
+        function handleMediaQueryChange(e) {
+            // e.matches est vrai si la condition est remplie (mode mobile/tablette)
+            if (e.matches) {
+                // Mode mobile/tablette : on gère l'accordéon au clic
+                document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
+                    trigger.removeEventListener('click', handleMobileClick); 
+                    trigger.addEventListener('click', handleMobileClick);
+                });
+            } else {
+                // Mode bureau : on désactive la gestion manuelle du clic
+                document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
+                    trigger.removeEventListener('click', handleMobileClick);
+                    // Ferme les sous-menus ouverts s'il y en a pour revenir au comportement 'hover' de Bootstrap
+                    const submenu = trigger.nextElementSibling;
+                    if (submenu) {
+                        submenu.classList.remove('show');
+                    }
+                });
+            }
+        }
+
+        function handleMobileClick(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const submenu = this.nextElementSibling;
+            const parentMenu = this.closest('.dropdown-menu');
+            
+            // Ferme les autres sous-menus ouverts
+            parentMenu.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+                if (openMenu !== submenu) {
+                    openMenu.classList.remove('show');
+                }
+            });
+            
+            submenu.classList.toggle('show');
+        }
+
+        // Gère le comportement initial au chargement de la page
+        handleMediaQueryChange(mediaQuery);
+
+        // Ajoute un écouteur pour les changements de média (redimensionnement dynamique)
+        mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+        // Empêche la propagation du clic sur les éléments de sous-menu pour ne pas fermer le menu principal
+        document.querySelectorAll('.dropdown-submenu').forEach(function(submenuItem) {
+            submenuItem.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    }); 
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1466 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #4361ee; --bg: #f8f9fc; }
+        body { background-color: var(--bg); font-family: 'Inter', sans-serif; padding-top: 30px; }
+        .tab-content { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1); margin-top: 20px; }
+        .nav-tabs .nav-link { border: none; font-weight: 600; color: #858796; padding: 12px 20px; }
+        .nav-tabs .nav-link.active { background: var(--primary) !important; color: white !important; border-radius: 8px; }
+        .img-preview { width: 80px; height: 80px; object-fit: cover; border-radius: 10px; border: 2px solid #ddd; }
+        .card-custom { transition: transform 0.2s; border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; }
+        .card-custom:hover { transform: translateY(-3px); }
+        .status-badge { position: absolute; top: 10px; right: 10px; font-size: 0.7rem; padding: 4px 8px; border-radius: 20px; z-index: 10; }
+        .bg-success-soft { background-color: #e3fcef; color: #00ab66; border: 1px solid #00ab66; }
+        .section-control { background-color: #f0f2ff; border: 1px dashed var(--primary); border-radius: 10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+
+
+
+{% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} mb-2">{{ message }}</div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+
+
+
+
+<div class="container mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-dark">Espace Administration</h2>
+        <a href="/" class="btn btn-outline-primary shadow-sm">Voir le site public</a>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+                <i class="fa-solid fa-circle-info me-2"></i> {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <ul class="nav nav-tabs border-0" id="adminTab">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profil">Profil & Bio</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#specialite">Spécialité</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#realisations">Réalisations</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#temoignages">Témoignages</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#competences">Compétences</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact">Me Contacter</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#stats_vues">Vues Projets</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#graphique">Graphique</button></li>
+
+        <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#exporter">
+            Exporter Données
+        </button>
+        </li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#historique_user">Historique Utilisateur</button></li>
+
+                
+    </ul>
+
+    <div class="tab-content">
+        <!-- ============================
+             PROFIL & BIO
+        ============================= -->
+        <div class="tab-pane fade show active" id="profil">
+            <div class="row g-4">
+                <!-- PHOTO PROFIL -->
+                <div class="col-lg-6">
+                    <div class="card card-custom p-4">
+                        <h5 class="fw-bold mb-3"><i class="fa-solid fa-image me-2 text-primary"></i> Photo de Profil</h5>
+
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            <div class="mb-3 d-flex align-items-center gap-3">
+                                {% if AFFICHER_la_PHOTO_DE_PROFIL and AFFICHER_la_PHOTO_DE_PROFIL.images %}
+                                    <img src="{{ AFFICHER_la_PHOTO_DE_PROFIL.images.url }}" class="img-preview" alt="Photo profil">
+                                {% else %}
+                                    <div class="img-preview d-flex align-items-center justify-content-center bg-light text-muted">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                {% endif %}
+                                <div class="flex-grow-1">
+                                    <input type="file" name="images" class="form-control form-control-sm">
+                                </div>
+                            </div>
+{% if request.session.user %}
+  {% with user_role=request.session.user.role %}
+    
+    {# Bouton Mettre à jour : Admin ou Modérateur #}
+    {% if user_role == 'Administrateur' or user_role == 'Moderateur' %}
+      <div class="d-grid gap-2">
+        <button type="submit" name="btn_photo" class="btn btn-primary btn-sm w-100">
+          Mettre à jour
+        </button>
+      </div>
+    {% else %}
+      <div class="alert alert-warning small mb-2">
+        Seul l'Administrateur ou le Modérateur peut modifier cette section.
+      </div>
+    {% endif %}
+
+    {# Bouton Supprimer : Admin uniquement #}
+    {% if user_role == 'Administrateur' %}
+      <div class="d-grid gap-2 mt-2">
+        <button type="submit" name="btn_supprimer_photo" class="btn btn-outline-danger btn-sm w-100">
+          Supprimer
+        </button>
+      </div>
+    {% else %}
+      <div class="alert alert-warning small mb-0">
+        Seul l'Administrateur peut supprimer.
+      </div>
+    {% endif %}
+
+  {% endwith %}
+{% endif %}
+
+                        </form>
+
+                        <hr class="my-4">
+
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="est_visible" id="visPhoto"
+                                    {% if AFFICHER_la_PHOTO_DE_PROFIL and AFFICHER_la_PHOTO_DE_PROFIL.est_visible %}checked{% endif %}>
+                                <label class="form-check-label fw-semibold" for="visPhoto">Afficher la photo sur le site</label>
+                            </div>
+                            <button type="submit" name="btn_visibilite_photo_auto" class="btn btn-outline-primary btn-sm mt-3">Enregistrer visibilité</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- BIO -->
+                <div class="col-lg-6">
+                    <div class="card card-custom p-4">
+                        <h5 class="fw-bold mb-3"><i class="fa-solid fa-user-pen me-2 text-primary"></i> À propos de moi</h5>
+
+                        <form method="post">
+                            {% csrf_token %}
+                            <textarea class="form-control" name="description" rows="5" placeholder="Écris ici ta bio...">{% if A_PROPOS_DE_MOI %}{{ A_PROPOS_DE_MOI.description }}{% endif %}</textarea>
+
+{% if request.session.user %}
+  {% with user_role=request.session.user.role %}
+
+    {# Bouton Mettre à jour : Admin ou Modérateur #}
+    {% if user_role == 'Administrateur' or user_role == 'Moderateur' %}
+      <div class="d-grid gap-2 mt-3">
+        <button type="submit" name="btn_apropos" class="btn btn-primary btn-sm w-100">
+          Mettre à jour
+        </button>
+      </div>
+    {% else %}
+      <div class="alert alert-warning small mt-3 mb-2">
+        Seul l'Administrateur ou le Modérateur peut modifier cette section.
+      </div>
+    {% endif %}
+
+    {# Bouton Supprimer : Admin uniquement #}
+    {% if user_role == 'Administrateur' %}
+      <div class="d-grid gap-2 mt-2">
+        <button type="submit" name="btn_supprimer_apropos" class="btn btn-outline-danger btn-sm w-100">
+          Supprimer
+        </button>
+      </div>
+    {% else %}
+      <div class="alert alert-warning small mb-0">
+        Seul l'Administrateur peut supprimer.
+      </div>
+    {% endif %}
+
+  {% endwith %}
+{% endif %}
+
+                        </form>
+
+                        <hr class="my-4">
+
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="est_visible_bio" id="visBio"
+                                    {% if A_PROPOS_DE_MOI and A_PROPOS_DE_MOI.est_visible %}checked{% endif %}>
+                                <label class="form-check-label fw-semibold" for="visBio">Afficher la section sur le site</label>
+                            </div>
+                            <button type="submit" name="btn_visibilite_bio_auto" class="btn btn-outline-primary btn-sm mt-3">Enregistrer visibilité</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================
+             SPECIALITE
+        ============================= -->
+        <div class="tab-pane fade" id="specialite">
+            <div class="section-control p-3 d-flex justify-content-between align-items-center">
+                <div>
+                    <span class="fw-semibold">Contrôle de section</span>
+                    <div class="small text-muted">Afficher / cacher la section "Spécialité"</div>
+                </div>
+                <form method="post" class="d-flex gap-2 align-items-center mb-0">
+                    {% csrf_token %}
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" name="est_visible"
+                            {% if SPECIALITE and SPECIALITE.est_visible %}checked{% endif %}>
+                        <label class="form-check-label small">Visible</label>
+                    </div>
+                    <button type="submit" name="btn_visibilite_section_spec" class="btn btn-outline-primary btn-sm">Appliquer</button>
+                </form>
+            </div>
+
+            <div class="card card-custom p-4">
+                <h5 class="fw-bold mb-3"><i class="fa-solid fa-star me-2 text-primary"></i> Spécialité</h5>
+
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="mb-3 d-flex align-items-center gap-3">
+                        {% if SPECIALITE and SPECIALITE.images %}
+                            <img src="{{ SPECIALITE.images.url }}" class="img-preview" alt="Spécialité">
+                        {% else %}
+                            <div class="img-preview d-flex align-items-center justify-content-center bg-light text-muted">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+                        {% endif %}
+                        <div class="flex-grow-1">
+                            <input type="file" name="images" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <textarea class="form-control" name="description_speciality" rows="3" placeholder="Description...">{% if SPECIALITE %}{{ SPECIALITE.description_speciality }}{% endif %}</textarea>
+
+{% if request.session.user %}
+  {% with user_role=request.session.user.role %}
+
+    {# Bouton Mettre à jour : Admin ou Modérateur #}
+    {% if user_role == 'Administrateur' or user_role == 'Moderateur' %}
+      <div class="d-grid gap-2 mt-3">
+        <button type="submit" name="btn_specialite" class="btn btn-primary btn-sm w-100">
+          Mettre à jour
+        </button>
+      </div>
+    {% else %}
+      <div class="alert alert-warning small mt-3 mb-0">
+        Seul l'Administrateur peut modifier cette section.
+      </div>
+    {% endif %}
+
+  {% endwith %}
+{% endif %}
+
+                </form>
+            </div>
+        </div>
+
+        <!-- ============================
+             REALISATIONS
+        ============================= -->
+        <div class="tab-pane fade" id="realisations">
+            <div class="section-control p-3 d-flex justify-content-between align-items-center">
+                <div>
+                    <span class="fw-semibold">Contrôle de section</span>
+                    <div class="small text-muted">Afficher / cacher tous les projets "Réalisations"</div>
+                </div>
+                <form method="post" class="d-flex gap-2 align-items-center mb-0">
+                    {% csrf_token %}
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" name="est_visible" checked>
+                        <label class="form-check-label small">Visible</label>
+                    </div>
+                    <button type="submit" name="btn_visibilite_section_real" class="btn btn-outline-primary btn-sm">Appliquer</button>
+                </form>
+            </div>
+
+            <div class="card card-custom p-4 mb-4">
+                <h5 class="fw-bold mb-3"><i class="fa-solid fa-folder-plus me-2 text-primary"></i> Ajouter une Réalisation</h5>
+
+                <form method="post" enctype="multipart/form-data" class="row g-3">
+                    {% csrf_token %}
+                    <div class="col-md-4"><input type="text" name="nom" class="form-control" placeholder="Nom du projet" required></div>
+                    <div class="col-md-4"><input type="file" name="images" class="form-control" required></div>
+                    <div class="col-md-4"><input type="text" name="description" class="form-control" placeholder="Description" required></div>
+
+                                <div class="col-12"><button type="submit" name="btn_ajouter_real" class="btn btn-success w-100">Ajouter</button></div>
+                </form>
+            </div>
+
+            <div class="row g-4">
+                {% for r in AFFICHER_les_REALISATIONS_PERSONNELLES %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-custom p-3 h-100">
+                        <span class="status-badge {% if r.est_visible %}bg-success-soft{% else %}bg-secondary text-white{% endif %}">
+                            {% if r.est_visible %}Visible{% else %}Caché{% endif %}
+                        </span>
+
+                        {% if r.images %}
+                            <img src="{{ r.images.url }}" class="w-100 rounded mb-3" style="height: 200px; object-fit: cover;" alt="{{ r.nom }}">
+                        {% endif %}
+
+                        <h6 class="fw-bold">{{ r.nom }}</h6>
+                        <p class="text-muted small mb-2">{{ r.description }}</p>
+
+                        <div class="d-flex justify-content-between gap-2">
+                            <form method="post" class="w-50">
+                                {% csrf_token %}
+                                <input type="hidden" name="id_realisation" value="{{ r.id }}">
+                                <button type="submit" name="btn_bascule_vis_real" class="btn btn-outline-primary btn-sm w-100">
+                                    {% if r.est_visible %}Masquer{% else %}Afficher{% endif %}
+                                </button>
+                            </form>
+{% if request.session.user %}
+  {% with user_role=request.session.user.role %}
+
+    {# Bouton Mettre à jour : Admin ou Modérateur #}
+    {% if user_role == 'Administrateur' or user_role == 'Moderateur' %}
+                            <button class="btn btn-outline-warning btn-sm w-50" data-bs-toggle="modal" data-bs-target="#editReal{{ r.id }}">
+                                Modifier
+                            </button>
+    {% else %}
+      <div class="alert alert-warning small mt-3 mb-2">
+        Seul l'Administrateur ou le Modérateur peut modifier cette section.
+      </div>
+    {% endif %}
+
+  {% endwith %}
+{% endif %}
+                        </div>
+
+                        <form method="post" class="mt-2">
+                            {% csrf_token %}
+                            <input type="hidden" name="id_realisation" value="{{ r.id }}">
+{% if request.session.user %}
+  {% with user_role=request.session.user.role %}
+
+    {# Bouton Supprimer : Admin uniquement #}
+    {% if user_role == 'Administrateur' %}                         
+                            <button type="submit" name="btn_supprimer_real" class="btn btn-outline-danger btn-sm w-100">Supprimer</button>
+    {% else %}
+      <div class="alert alert-warning small mb-0">
+        Seul l'Administrateur peut supprimer.
+      </div>
+    {% endif %}
+
+  {% endwith %}
+{% endif %}
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="editReal{{ r.id }}" tabindex="-1">
+                    <div class="modal-dialog">
+                        <form method="post" enctype="multipart/form-data" class="modal-content">
+                            {% csrf_token %}
+                            <input type="hidden" name="id_realisation" value="{{ r.id }}">
+                            <div class="modal-header border-0">
+                                <h5 class="modal-title fw-bold">Modifier {{ r.nom }}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" name="nom" class="form-control mb-3" value="{{ r.nom }}" required>
+                                <textarea name="description" class="form-control mb-3" rows="3" required>{{ r.description }}</textarea>
+                                <input type="file" name="images" class="form-control">
+                            </div>
+                            <div class="modal-footer border-0">
+                                <button type="submit" name="btn_modifier_real" class="btn btn-success w-100">Mettre à jour</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- ============================
+             TEMOIGNAGES
+        ============================= -->
+        <div class="tab-pane fade" id="temoignages">
+            <div class="section-control p-3 d-flex justify-content-between align-items-center">
+                <div>
+                    <span class="fw-semibold">Contrôle de section</span>
+                    <div class="small text-muted">Afficher / cacher tous les témoignages</div>
+                </div>
+                <form method="post" class="d-flex gap-2 align-items-center mb-0">
+                    {% csrf_token %}
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" name="est_visible" checked>
+                        <label class="form-check-label small">Visible</label>
+                    </div>
+                    <button type="submit" name="btn_visibilite_section_tem" class="btn btn-outline-primary btn-sm">Appliquer</button>
+                </form>
+            </div>
+
+            <div class="card card-custom p-4 mb-4">
+                <h5 class="fw-bold mb-3"><i class="fa-solid fa-comment-dots me-2 text-primary"></i> Ajouter un Témoignage</h5>
+
+                <form method="post" enctype="multipart/form-data" class="row g-3">
+                    {% csrf_token %}
+                    <div class="col-md-4"><input type="text" name="nom" class="form-control" placeholder="Nom" required></div>
+                    <div class="col-md-4"><input type="file" name="images" class="form-control" required></div>
+                    <div class="col-md-4"><input type="text" name="description" class="form-control" placeholder="Message" required></div>
+
+                                <div class="col-12"><button type="submit" name="btn_ajouter_temoignage" class="btn btn-success w-100">Ajouter</button></div>
+                </form>
+            </div>
+
+            <div class="row g-4">
+                {% for t in TEMOIGNAGES_des_PERSONNES_cards %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-custom p-3 h-100">
+                        <span class="status-badge {% if t.est_visible %}bg-success-soft{% else %}bg-secondary text-white{% endif %}">
+                            {% if t.est_visible %}Visible{% else %}Caché{% endif %}
+                        </span>
+
+                        {% if t.images %}
+                            <img src="{{ t.images.url }}" class="w-100 rounded mb-3" style="height: 200px; object-fit: cover;" alt="{{ t.nom }}">
+                        {% endif %}
+
+                        <h6 class="fw-bold">{{ t.nom }}</h6>
+                        <p class="text-muted small mb-2">{{ t.description }}</p>
+
+                        <div class="d-flex justify-content-between gap-2">
+                            <form method="post" class="w-50">
+                                {% csrf_token %}
+                                <input type="hidden" name="id_temoignage" value="{{ t.id }}">
+                                <button type="submit" name="btn_bascule_vis_tem" class="btn btn-outline-primary btn-sm w-100">
+                                    {% if t.est_visible %}Masquer{% else %}Afficher{% endif %}
+                                </button>
+                            </form>
+
+{% if request.session.user %}
+  {% with user_role=request.session.user.role %}
+
+    {# Bouton Mettre à jour : Admin ou Modérateur #}
+    {% if user_role == 'Administrateur' or user_role == 'Moderateur' %}
+                            <button class="btn btn-outline-warning btn-sm w-50" data-bs-toggle="modal" data-bs-target="#editTem{{ t.id }}">
+                                Modifier
+                            </button>
+    {% else %}
+      <div class="alert alert-warning small mt-3 mb-2">
+        Seul l'Administrateur ou le Modérateur peut modifier cette section.
+      </div>
+    {% endif %}
+
+  {% endwith %}
+{% endif %}
+
+                        </div>
+
+                        <form method="post" class="mt-2">
+                            {% csrf_token %}
+                            <input type="hidden" name="id_temoignage" value="{{ t.id }}">
+
+{% if request.session.user %}
+  {% with user_role=request.session.user.role %}
+
+    {# Bouton Supprimer : Admin uniquement #}
+    {% if user_role == 'Administrateur' %}                         
+                            <button type="submit" name="btn_supprimer_temoignage" class="btn btn-outline-danger btn-sm w-100">Supprimer</button>
+    {% else %}
+      <div class="alert alert-warning small mb-0">
+        Seul l'Administrateur peut supprimer.
+      </div>
+    {% endif %}
+
+  {% endwith %}
+{% endif %}
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="editTem{{ t.id }}" tabindex="-1">
+                    <div class="modal-dialog">
+                        <form method="post" enctype="multipart/form-data" class="modal-content">
+                            {% csrf_token %}
+                            <input type="hidden" name="id_temoignage" value="{{ t.id }}">
+                            <div class="modal-header border-0">
+                                <h5 class="modal-title fw-bold">Modifier {{ t.nom }}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" name="nom" class="form-control mb-3" value="{{ t.nom }}" required>
+                                <textarea name="description" class="form-control mb-3" rows="3" required>{{ t.description }}</textarea>
+                                <input type="file" name="images" class="form-control">
+                            </div>
+                            <div class="modal-footer border-0"><button type="submit" name="btn_modifier_temoignage" class="btn btn-success w-100">Mettre à jour</button></div>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- ============================
+             COMPETENCES
+        ============================= -->
+        <div class="tab-pane fade" id="competences">
+            <div class="section-control p-3 d-flex justify-content-between align-items-center">
+                <div>
+                    <span class="fw-semibold">Contrôle de section</span>
+                    <div class="small text-muted">Afficher / cacher toutes les compétences</div>
+                </div>
+                <form method="post" class="d-flex gap-2 align-items-center mb-0">
+                    {% csrf_token %}
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" name="est_visible" checked>
+                        <label class="form-check-label small">Visible</label>
+                    </div>
+                    <button type="submit" name="btn_visibilite_section_comp" class="btn btn-outline-primary btn-sm">Appliquer</button>
+                </form>
+            </div>
+
+            <div class="card card-custom p-4 mb-4">
+                <h5 class="fw-bold mb-3"><i class="fa-solid fa-list-check me-2 text-primary"></i> Ajouter une Compétence</h5>
+                <form method="post" class="row g-2">
+                    {% csrf_token %}
+                    <div class="col-md-9"><input type="text" name="nom_competence" class="form-control" placeholder="Nom de la compétence" required></div>
+
+                    <div class="col-md-3"><button type="submit" name="btn_ajouter_comp" class="btn btn-success w-100">Ajouter</button></div>
+
+                </form>
+            </div>
+
+            <div class="row g-3">
+                {% for c in Mes_Competences_Cles %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-custom p-3">
+                        <span class="status-badge {% if c.est_visible %}bg-success-soft{% else %}bg-secondary text-white{% endif %}">
+                            {% if c.est_visible %}Visible{% else %}Caché{% endif %}
+                        </span>
+                        <div class="fw-bold">{{ c.nom }}</div>
+
+                        <div class="d-flex gap-2 mt-2">
+                            <form method="post" class="w-50">
+                                {% csrf_token %}
+                                <input type="hidden" name="id_competence" value="{{ c.id }}">
+                                <button type="submit" name="btn_bascule_vis_comp" class="btn btn-outline-primary btn-sm w-100">
+                                    {% if c.est_visible %}Masquer{% else %}Afficher{% endif %}
+                                </button>
+                            </form>
+                            <form method="post" class="w-50">
+                                {% csrf_token %}
+                                <input type="hidden" name="id_competence" value="{{ c.id }}">
+                                
+{% if request.session.user %}
+  {% with user_role=request.session.user.role %}
+
+    {# Bouton Supprimer : Admin uniquement #}
+    {% if user_role == 'Administrateur' %}                                                         
+                                <button type="submit" name="btn_supprimer_comp" class="btn btn-outline-danger btn-sm w-100">Supprimer</button>
+    {% else %}
+      <div class="alert alert-warning small mb-0">
+        Seul l'Administrateur peut supprimer.
+      </div>
+    {% endif %}
+
+  {% endwith %}
+{% endif %}
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- ============================
+             STATS VUES
+        ============================= -->
+
+        <!-- ============================
+             ME CONTACTER (RÉSEAUX SOCIAUX)
+        ============================= -->
+        <div class="tab-pane fade" id="contact">
+            <div class="row g-4">
+
+                <!-- Contrôle visibilité globale -->
+                <div class="col-12">
+                    <div class="section-control p-3 d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-0 fw-bold"><i class="fa-solid fa-address-book me-2 text-primary"></i> Section « Me Contacter »</h5>
+                            <small class="text-muted">Active/désactive l’affichage de tous les liens de contact sur la page d’accueil.</small>
+                        </div>
+                        <form method="post" class="d-flex align-items-center gap-2">
+                            {% csrf_token %}
+                            <div class="form-check form-switch m-0">
+                                <input class="form-check-input" type="checkbox" name="est_visible" id="switch_contact_visible">
+                                <label class="form-check-label" for="switch_contact_visible">Visible</label>
+                            </div>
+                            <button class="btn btn-primary btn-sm" type="submit" name="btn_visibilite_section_res">
+                                Enregistrer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+<!--
+
+    <a href="mailto:halleymariomen@gmail.com" target="_blank" 
+       class="bouton-social  email" 
+       id='LIEN_509997' 
+       onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)' 
+       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)" 
+       alt="halleymariomen@gmail.com">
+        <i class="fas fa-envelope fa-2x"></i>
+        <span>email</span>
+    </a>
+
+    <a href="https://wa.me/+261340903559" target="_blank" 
+       class="bouton-social  aapp" 
+       id='LIEN_509994' 
+       onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)' 
+       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)" 
+       alt="+26134 09 035 59">
+        <i class="fab fa-whatsapp fa-2x"></i>
+        <span>whatsApp</span>
+    </a>    
+
+-->
+
+                <!-- Ajouter / Mettre à jour un lien -->
+                <div class="col-lg-6">
+                    <div class="card card-custom p-4">
+                        <h5 class="fw-bold mb-3"><i class="fa-solid fa-plus me-2 text-primary"></i> Ajouter / Mettre à jour</h5>
+
+                        <form method="post" class="row g-3">
+                            {% csrf_token %}
+                            <div class="col-12">
+                                <label class="form-label">Type</label>
+                                <input class="form-control" name="nom_reseau" list="reseaux_list" placeholder="email, whatsapp, github, linkedin..." required>
+                                <datalist id="reseaux_list">
+                                    <option value="email">
+                                    <option value="whatsapp">
+                                    <option value="linkedin">
+                                    <option value="github">
+                                    <option value="facebook">
+                                    <option value="instagram">
+                                    <option value="twitter">
+                                    <option value="telegram">
+                                    <option value="youtube">
+                                </datalist>
+                                <div class="form-text">
+                                    Astuce : pour <b>email</b>, saisissez seulement l’adresse (ex: <code>progsuividpe@gmail.com</code>). Pour <b>whatsapp</b>, utilisez un lien <code>https://wa.me/...</code>.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Lien / Valeur</label>
+                                <input class="form-control" name="url_reseau" placeholder="https://... ou email" required>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-success w-100" type="submit" name="btn_reseau">
+                                    Enregistrer
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Liste des liens -->
+                <div class="col-lg-6">
+                    <div class="card card-custom p-4">
+                        <h5 class="fw-bold mb-3"><i class="fa-solid fa-list me-2 text-primary"></i> Mes liens</h5>
+
+                        {% if Mes_Reseaux %}
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Lien / Valeur</th>
+                                        <th class="text-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for r in Mes_Reseaux %}
+                                    <tr>
+                                        <td><span class="badge bg-secondary">{{ r.nom }}</span></td>
+                                        <td style="max-width: 280px;">
+                                            <small class="text-break">{{ r.url }}</small>
+                                        </td>
+                                        <td class="text-end">
+                                            <form method="post" class="d-inline">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="id_reseau" value="{{ r.id }}">
+                                                <button class="btn btn-outline-danger btn-sm" type="submit" name="btn_supprimer_reseau"
+                                                        onclick="return confirm('Supprimer ce lien ?');">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% else %}
+                            <p class="text-muted mb-0">Aucun lien enregistré pour le moment.</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="tab-pane fade" id="stats_vues">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+                <div>
+                    <h5 class="fw-bold mb-1">Statistiques des clics "Démo Live"</h5>
+                    <div class="small text-muted">
+                        Total clics : <b>{{ TOTAL_CLICS_DEMO_LIVE }}</b>
+                        <span class="ms-2">| Généré le : <span id="chartsGeneratedAt" data-server="{{ now|date:'c' }}"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th>Projet</th>
+                            <th>Clics Démo Live</th>
+                            <th>Statut</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in REALISATIONS_STATS %}
+                        <tr>
+                            <td class="fw-semibold">{{ p.nom }}</td>
+                            <td><span class="badge bg-primary">{{ p.compteur_demo_live }}</span></td>
+                            <td>
+                                {% if p.est_visible %}
+                                    <span class="badge bg-success">Visible</span>
+                                {% else %}
+                                    <span class="badge bg-secondary">Caché</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a class="btn btn-sm btn-outline-danger" href="{% url 'reinitialiser_compteur_unique' p.id %}">
+                                    Réinitialiser
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr><td colspan="4" class="text-center text-muted">Aucune donnée</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ============================
+             GRAPHIQUE
+        ============================= -->
+        <div class="tab-pane fade" id="graphique">
+            <div class="row g-3">
+                <div class="col-12">
+                    <div class="card card-custom p-4" style="background:#D3D3D3; color:#000000;">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                            <div>
+                                <h5 class="fw-bold mb-0">Graphiques "Démo Live"</h5>
+                                <div class="small text-dark">Export PNG plus lisible (fond gris + textes noirs).</div>
+                                <div class="small text-dark">Généré le : <span id="graphGeneratedAt" data-server="{{ now|date:'c' }}"></span></div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="form-check form-switch m-0">
+                                    <input class="form-check-input" type="checkbox" id="filterVisibleOnly">
+                                    <label class="form-check-label small text-dark" for="filterVisibleOnly">Visibles seulement</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="border-dark my-3">
+
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="fw-bold mb-0">Barres — Top 10</h6>
+                                    <button type="button" id="exportBarPng" class="btn btn-sm btn-primary shadow-sm">
+                                        Export PNG
+                                    </button>
+                                </div>
+                                <div class="rounded p-2" style="background:#D3D3D3;">
+                                    <canvas id="demoLiveBarTop10" height="140"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="fw-bold mb-0">Camembert — Répartition</h6>
+                                    <button type="button" id="exportPiePng" class="btn btn-sm btn-primary shadow-sm">
+                                        Export PNG
+                                    </button>
+                                </div>
+                                <div class="rounded p-2" style="background:#D3D3D3;">
+                                    <canvas id="demoLivePie" height="220"></canvas>
+                                </div>
+
+                                <div id="demoLivePieDetails" class="mt-3 small text-dark"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ============================
+             Export / Import (JSON + Base64)
+        ============================= -->
+<div class="tab-pane fade" id="exporter">
+  <div class="card card-custom p-4">
+    <h5 class="fw-bold mb-3">
+      <i class="fa-solid fa-file-export me-2"></i>
+      Export / Import (JSON + Base64)
+    </h5>
+
+    <ul class="nav nav-tabs border-0" id="exportTab" style="margin-bottom:15px;">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#export_portfolio">
+          Export Portfolio
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#export_users">
+          Export Utilisateurs
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#import_data">
+          Importer Données
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content" style="box-shadow:none; padding:0; margin-top:0;">
+
+      <!-- Export portfolio -->
+      <div class="tab-pane fade show active" id="export_portfolio">
+        <p class="text-muted mb-3">
+          Exporte toutes les données portfolio (texte + images en base64).
+        </p>
+        <a class="btn btn-success" href="{% url 'export_portfolio_json' %}">
+          Télécharger le JSON Portfolio
+        </a>
+        <div class="small text-muted mt-2">
+          Nom du fichier: <code>YYYYMMDD_export_portfolio.json</code>
+        </div>
+      </div>
+
+      <!-- Export users -->
+      <div class="tab-pane fade" id="export_users">
+        <p class="text-muted mb-3">
+          Exporte rôles, utilisateurs, contacts, menus et permissions.
+        </p>
+        <a class="btn btn-primary" href="{% url 'export_users_json' %}">
+          Télécharger le JSON Utilisateurs
+        </a>
+        <div class="small text-muted mt-2">
+          Nom du fichier: <code>YYYYMMDD_export_users.json</code>
+        </div>
+
+        <div class="alert alert-warning small mt-3 mb-0">
+          <b>Note :</b> <code>User.password</code> est exporté en hash (normal).
+        </div>
+      </div>
+
+      <!-- Import -->
+      <div class="tab-pane fade" id="import_data">
+        <p class="text-muted">
+          Uploade 1 ou 2 fichiers JSON exportés (portfolio / users). Tu peux choisir de remplacer les données existantes.
+        </p>
+
+        <form method="POST" action="{% url 'import_json_bundle' %}" enctype="multipart/form-data" class="mt-3">
+          {% csrf_token %}
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label fw-bold">JSON Portfolio</label>
+              <input type="file" name="json_portfolio" class="form-control" accept=".json,application/json">
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" name="replace_portfolio" id="replace_portfolio">
+                <label class="form-check-label" for="replace_portfolio">
+                  Remplacer toutes les données Portfolio existantes
+                </label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label fw-bold">JSON Utilisateurs</label>
+              <input type="file" name="json_users" class="form-control" accept=".json,application/json">
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" name="replace_users" id="replace_users">
+                <label class="form-check-label" for="replace_users">
+                  Remplacer toutes les données Utilisateurs existantes
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-dark mt-4">
+            Lancer l'import
+          </button>
+
+          <div class="alert alert-info small mt-3 mb-0">
+            Conseil : l’ordre interne d’import est géré (Role/Menu avant permissions).
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+        <!-- ============================
+             HISTORIQUE UTILISATEUR
+        ========================== -->
+        <div class="tab-pane fade" id="historique_user">
+            <div class="card card-custom p-4">
+                <h5 class="fw-bold mb-3">
+                    <i class="fa-solid fa-clock-rotate-left me-2"></i>
+                    Historique Utilisateur
+                </h5>
+
+
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <a class="btn btn-outline-danger btn-sm" href="{% url 'export_historique_pdf' %}">
+                        Exporter vers PDF
+                    </a>
+                    <a class="btn btn-outline-success btn-sm" href="{% url 'export_historique_excel' %}">
+                        Exporter vers Excel
+                    </a>
+                    <a class="btn btn-outline-primary btn-sm" href="{% url 'export_historique_csv' %}">
+                        Exporter vers CSV
+                    </a>
+                    <small class="text-muted align-self-center ms-2">
+                        (exporte l’historique actuellement en base)
+                    </small>
+                </div>
+
+                <!-- Le fragment HTML est chargé en AJAX depuis /fragment/ -->
+                <div id="historique_container" class="p-2 text-muted">Chargement...</div>
+            </div>
+        </div>
+
+    </div>                              <!--   <div class="tab-content">   -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+/* =========================
+   THEME GRAPHIQUES (lisibilité + export PNG)
+   - Fond non transparent (évite PNG sombre selon viewer)
+   - Textes en blanc
+   - Export plus net (DPR=2)
+   ========================= */
+(function () {
+  if (!window.Chart) return;
+
+  const canvasBackgroundPlugin = {
+    id: 'canvasBackground',
+    beforeDraw(chart, args, opts) {
+      const { ctx, width, height } = chart;
+      ctx.save();
+      ctx.globalCompositeOperation = 'destination-over';
+      ctx.fillStyle = (opts && opts.color) ? opts.color : '#D3D3D3';
+      ctx.fillRect(0, 0, width, height);
+      ctx.restore();
+    }
+  };
+
+  Chart.register(canvasBackgroundPlugin);
+  Chart.defaults.color = '#000000';
+  // Force legend text color for exports
+  if (Chart.defaults.plugins && Chart.defaults.plugins.legend && Chart.defaults.plugins.legend.labels) {
+    Chart.defaults.plugins.legend.labels.color = '#000000';
+  }
+  Chart.defaults.borderColor = 'rgba(0,0,0,0.18)';
+  Chart.defaults.devicePixelRatio = 2;
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+/* ============================
+   HISTORIQUE UTILISATEUR (AJAX)
+   - Charge le fragment:  GET /fragment/
+   - Sauvegarde / purge: POST /settings/
+   ========================== */
+(function () {
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[2]) : '';
+  }
+  const csrfToken = getCookie('csrftoken');
+
+  async function loadHistorique() {
+    const container = document.getElementById('historique_container');
+    if (!container) return;
+    container.innerHTML = 'Chargement...';
+    const res = await fetch('/fragment/', { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+    container.innerHTML = await res.text();
+  }
+
+  async function postSettings(payload) {
+    const form = new FormData();
+    Object.keys(payload).forEach(k => form.append(k, payload[k]));
+    const res = await fetch('/settings/', {
+      method: 'POST',
+      headers: {
+        'X-CSRFToken': csrfToken,
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: form
+    });
+    return await res.json();
+  }
+
+  // Fonctions appelées depuis le fragment (boutons Enregistrer / Purger)
+window.saveRetention = async function () {
+  const yearsEl = document.getElementById('retention_years');
+  const years = yearsEl ? yearsEl.value : '2';
+
+  const data = await postSettings({ btn_save_retention: '1', retention_years: years });
+
+  // Recharge d'abord le fragment (il recrée hist_msg)
+  await loadHistorique();
+
+  // Puis afficher le message dans le nouveau fragment
+  const msg = document.getElementById('hist_msg');
+  if (msg) {
+    msg.textContent = data.message || "✅ Enregistré.";
+    msg.classList.remove("text-danger");
+    msg.classList.add("text-success");
+  }
+};
+
+window.purgeHistory = async function () {
+  const data = await postSettings({ btn_purge_history: '1' });
+
+  await loadHistorique();
+
+  const msg = document.getElementById('hist_msg');
+  if (msg) {
+    msg.textContent = data.message || "🧹 Purge exécutée.";
+    msg.classList.remove("text-danger");
+    msg.classList.add("text-success");
+  }
+};
+
+
+
+  // Chargement automatique au moment où l’onglet est affiché (Bootstrap Tabs)
+  document.addEventListener('shown.bs.tab', function (e) {
+    const tgt = e.target && e.target.getAttribute('data-bs-target');
+    if (tgt === '#historique_user') {
+      loadHistorique();
+    }
+  });
+
+  // Si l'onglet "Historique Utilisateur" est déjà actif au chargement (restauration localStorage),
+  // on charge le fragment tout de suite.
+  document.addEventListener('DOMContentLoaded', function () {
+    const activeBtn = document.querySelector('#adminTab .nav-link.active');
+    if (activeBtn && activeBtn.getAttribute('data-bs-target') === '#historique_user') {
+      loadHistorique();
+    }
+  });
+})();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+        if (window.__adminChartsInit) return;
+        window.__adminChartsInit = true;
+
+        // Restauration de l'onglet actif
+        var activeTab = localStorage.getItem('activeTab');
+        if(activeTab){
+            var tabEl = document.querySelector('button[data-bs-target="' + activeTab + '"]');
+            if(tabEl) { new bootstrap.Tab(tabEl).show(); }
+        }
+        // Sauvegarde au clic
+        document.querySelectorAll('button[data-bs-toggle="tab"]').forEach(function(btn){
+            btn.addEventListener('shown.bs.tab', function(e){
+                localStorage.setItem('activeTab', e.target.getAttribute('data-bs-target'));
+            });
+        });
+
+        // Horodatage (heure locale) d'affichage des graphiques
+        function setTimestamp(elId){
+        var el = document.getElementById(elId);
+        if (!el) return;
+        try {
+            var d = new Date();
+            el.textContent = d.toLocaleString('fr-FR');
+            var serverTs = el.getAttribute("data-server");
+            if (serverTs) {
+                el.title = "Heure serveur au rendu : " + serverTs;
+            }
+        } catch (e) {}
+    }
+
+    // Horodatage (heure locale) pour les sections Stats + Graphiques
+    setTimestamp("chartsGeneratedAt");
+    setTimestamp("graphGeneratedAt");
+
+// Graphiques "Démo Live" (Chart.js)
+// Données: mêmes valeurs que l'onglet "Vues Projets"
+var labelsAll = [{% for p in REALISATIONS_STATS %}"{{ p.nom|escapejs }}"{% if not forloop.last %}, {% endif %}{% endfor %}];
+var valuesAll = [{% for p in REALISATIONS_STATS %}{{ p.compteur_demo_live|default:0 }}{% if not forloop.last %}, {% endif %}{% endfor %}];
+var visibleAll = [{% for p in REALISATIONS_STATS %}{% if p.est_visible %}true{% else %}false{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}];
+
+function generateHslColors(n){
+    var out = [];
+    for(var i=0;i<n;i++){
+        var hue = Math.round((360 * i) / Math.max(1,n));
+        out.push('hsl(' + hue + ', 70%, 55%)');
+    }
+    return out;
+}
+
+function pct(value, total){
+    if(!total) return 0;
+    return (Number(value || 0) / total) * 100;
+}
+
+function toPairs(onlyVisible){
+    var pairs = labelsAll.map(function(l, i){
+        return {
+            label: l,
+            value: Number(valuesAll[i] || 0),
+            visible: Boolean(visibleAll[i])
+        };
+    });
+
+    if(onlyVisible){
+        pairs = pairs.filter(function(x){ return x.visible; });
+    }
+    pairs.sort(function(a,b){ return b.value - a.value; });
+    return pairs;
+}
+
+function topN(pairs, n){
+    return pairs.slice(0, n);
+}
+
+function stampForFilename(){
+    var d = new Date();
+    function z(x){ return String(x).padStart(2,'0'); }
+    return d.getFullYear() + z(d.getMonth()+1) + z(d.getDate()) + '_' + z(d.getHours()) + z(d.getMinutes()) + z(d.getSeconds());
+}
+
+function exportChartPngWithTimestamp(chart, filename){
+    if(!chart) return;
+
+    // Canvas source (déjà avec fond + rendu Chart.js)
+    var srcCanvas = chart.canvas;
+
+    // ✅ On ajoute une marge en bas pour écrire la date/heure SANS superposer la légende
+    var extraH = Math.max(60, Math.round(srcCanvas.height * 0.10));
+
+    // Canvas temporaire (plus haut) pour inclure l'horodatage
+    var tmp = document.createElement('canvas');
+    tmp.width = srcCanvas.width;
+    tmp.height = srcCanvas.height + extraH;
+
+    var ctx = tmp.getContext('2d');
+
+    // Fond global (doit matcher le fond du graphique à l'export)
+    ctx.fillStyle = '#D3D3D3';
+    ctx.fillRect(0, 0, tmp.width, tmp.height);
+
+    // Dessine le graphique (incluant la légende) sans modification
+    ctx.drawImage(srcCanvas, 0, 0);
+
+    // Date/heure locale (affichée SUR l'image, dans la bande du bas)
+    var ts = new Date().toLocaleString('fr-FR');
+
+    ctx.save();
+    ctx.fillStyle = '#000000';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'bottom';
+
+    var fontSize = Math.max(16, Math.round(extraH * 0.42));
+    ctx.font = fontSize + 'px Arial';
+
+    var padding = Math.max(8, Math.round(fontSize * 0.45));
+    var metrics = ctx.measureText(ts);
+    var boxW = metrics.width + padding * 2;
+    var boxH = fontSize + padding * 1.4;
+
+    var x = tmp.width - 12;
+    var y = tmp.height - 12;
+
+    // Boîte claire derrière le texte (pour lisibilité), dans la marge ajoutée
+    ctx.fillStyle = 'rgba(255,255,255,0.65)';
+    ctx.fillRect(x - boxW, y - boxH, boxW, boxH);
+
+    // Texte
+    ctx.fillStyle = '#000000';
+    ctx.fillText(ts, x - padding, y - padding/2);
+
+    ctx.restore();
+
+    // Téléchargement PNG
+    var link = document.createElement('a');
+    link.href = tmp.toDataURL('image/png');
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+}
+
+var barChartInstance = null;
+var pieChartInstance = null;
+
+function renderCharts(onlyVisible){
+    var pairs = toPairs(onlyVisible);
+
+    // 1) Bar chart Top 10
+    var barEl = document.getElementById('demoLiveBarTop10');
+    if(barEl && window.Chart){
+        var top10 = topN(pairs, 10);
+        var barLabels = top10.map(function(x){ return x.label; });
+        var barValues = top10.map(function(x){ return x.value; });
+
+        if(barChartInstance){
+            barChartInstance.destroy();
+            barChartInstance = null;
+        }
+
+        if(barLabels.length){
+            barChartInstance = new Chart(barEl, {
+                type: 'bar',
+                data: {
+                    labels: barLabels,
+                    datasets: [{
+                        label: 'Clics Démo Live (Top 10)',
+                        data: barValues
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    devicePixelRatio: 2,
+                    plugins: {
+                        canvasBackground: { color: '#D3D3D3' },
+                        title: { display: true, text: 'Top 10 des projets les plus cliqués', color: '#000000' },
+                        subtitle: { display: true, text: onlyVisible ? 'Filtre: projets visibles uniquement.' : 'Filtre: tous les projets.', color: '#000000' },
+                        tooltip: {
+                            backgroundColor: '#D3D3D3',
+                            borderColor: '#000000',
+                            borderWidth: 1,
+                            titleColor: '#000000',
+                            bodyColor: '#000000',
+                            callbacks: {
+                                label: function(ctx){
+                                    var v = ctx.parsed.y;
+                                    return 'Clics : ' + v;
+                                }
+                            }
+                        },
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#000000' },
+                            grid: { color: 'rgba(0,0,0,0.12)' }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            ticks: { precision: 0, color: '#000000' },
+                            grid: { color: 'rgba(0,0,0,0.12)' }
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    // 2) Pie chart (Top 10 + Autres)
+    var pieEl = document.getElementById('demoLivePie');
+    if(pieEl && window.Chart){
+        var top10p = topN(pairs, 10);
+
+        var totalAll = pairs.reduce(function(a,b){ return a + Number(b.value || 0); }, 0);
+        var pieLabels = top10p.map(function(x){ return x.label; });
+        var pieValues = top10p.map(function(x){ return x.value; });
+
+        var sumTop10 = pieValues.reduce(function(a,b){ return a + Number(b || 0); }, 0);
+        var others = Math.max(0, totalAll - sumTop10);
+
+        if(others > 0){
+            pieLabels.push('Autres');
+            pieValues.push(others);
+        }
+
+        if(pieChartInstance){
+            pieChartInstance.destroy();
+            pieChartInstance = null;
+        }
+
+        if(pieLabels.length){
+            var colors = generateHslColors(pieLabels.length);
+            var pieTotal = pieValues.reduce(function(a,b){ return a + Number(b || 0); }, 0);
+
+            pieChartInstance = new Chart(pieEl, {
+                type: 'pie',
+                data: {
+                    labels: pieLabels,
+                    datasets: [{
+                        data: pieValues,
+                        backgroundColor: colors
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    devicePixelRatio: 2,
+                    plugins: {
+                        canvasBackground: { color: '#D3D3D3' },
+                        title: {
+                            display: true,
+                            text: 'Répartition des clics "Démo Live"',
+                            color: '#000000'
+                        },
+                        subtitle: {
+                            display: true,
+                            text: (onlyVisible ? 'Filtre: visibles uniquement. ' : 'Filtre: tous. ') + 'Top 10 + "Autres" (si applicable).',
+                            color: '#000000'
+                        },
+                        tooltip: {
+                            backgroundColor: '#D3D3D3',
+                            borderColor: '#000000',
+                            borderWidth: 1,
+                            titleColor: '#000000',
+                            bodyColor: '#000000',
+                            callbacks: {
+                                label: function(ctx){
+                                    var v = ctx.parsed;
+                                    var p = pct(v, pieTotal);
+                                    return ctx.label + ' : ' + v + ' (' + p.toFixed(1) + '%)';
+                                }
+                            }
+                        },
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#000000',
+                                generateLabels: function(chart){
+                                    var data = chart.data;
+                                    var meta = chart.getDatasetMeta(0);
+                                    var total = (data.datasets[0].data || []).reduce(function(a,b){ return a + Number(b || 0); }, 0);
+
+                                    return (data.labels || []).map(function(label, i){
+                                        var value = Number(data.datasets[0].data[i] || 0);
+                                        var p = pct(value, total);
+                                        var style = meta.controller.getStyle(i);
+
+                                        return {
+                                            text: label + ' — ' + value + ' (' + p.toFixed(1) + '%)',
+                                            fillStyle: style.backgroundColor,
+                                            strokeStyle: style.borderColor,
+                                            lineWidth: style.borderWidth,
+                                            hidden: isNaN(value) || meta.data[i].hidden,
+                                            index: i
+                                        ,
+                                            fontColor: '#000000',
+                                            color: '#000000'
+                                        };
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Détails sous le camembert
+            var detailsEl = document.getElementById('demoLivePieDetails');
+            if(detailsEl){
+                var rows = pieLabels.map(function(label, i){
+                    var v = Number(pieValues[i] || 0);
+                    var p = pct(v, pieTotal);
+                    return '<div class="d-flex justify-content-between border-bottom py-1">' +
+                           '<span class="text-dark">' + label + '</span>' +
+                           '<span class="text-dark">' + v + ' — ' + p.toFixed(1) + '%</span>' +
+                           '</div>';
+                }).join('');
+
+                detailsEl.innerHTML =
+                    '<div class="fw-bold mb-2">Détails</div>' +
+                    rows +
+                    '<div class="d-flex justify-content-between pt-2">' +
+                    '<span class="fw-bold">Total</span>' +
+                    '<span class="fw-bold">' + pieTotal + '</span>' +
+                    '</div>';
+            }
+        }
+    }
+
+    // Boutons export (PNG)
+    var btnBar = document.getElementById('exportBarPng');
+    if(btnBar){
+        btnBar.onclick = function(){
+            exportChartPngWithTimestamp(barChartInstance, 'bar_top10_' + stampForFilename() + '.png');
+        };
+        btnBar.disabled = !barChartInstance;
+    }
+
+    var btnPie = document.getElementById('exportPiePng');
+    if(btnPie){
+        btnPie.onclick = function(){
+            exportChartPngWithTimestamp(pieChartInstance, 'camembert_' + stampForFilename() + '.png');
+        };
+        btnPie.disabled = !pieChartInstance;
+    }
+}
+
+// Init + filtre "Visibles seulement"
+const filterToggle = document.getElementById('filterVisibleOnly');
+
+function applyFilter(){
+    const onlyVisible = !!(filterToggle && filterToggle.checked);
+    renderCharts(onlyVisible);
+}
+
+if(filterToggle){
+    filterToggle.addEventListener('change', applyFilter);
+}
+
+applyFilter();
+});
+</script>
+
+</body>
+</html>

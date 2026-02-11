@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block "contenu" %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4 border p-4 shadow-sm bg-white rounded">
+            <h3 class="text-center mb-4">Connexion</h3>
+            
+            <form method="post" action="{% url 'loginpage' %}">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label class="form-label font-weight-bold">Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="exemple@mail.com" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label font-weight-bold">Mot de passe</label>
+                    <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+                </div>
+
+                {% if erreurs_saisi_identification_login_password_user.login %}
+                    <div class="alert alert-danger py-2">
+                        <small>{{ erreurs_saisi_identification_login_password_user.login }}</small>
+                    </div>
+                {% endif %}
+
+                <button type="submit" class="btn btn-primary w-100 shadow-sm">Se connecter</button>
+            </form>
+            
+            <div class="text-center mt-3">
+                <small>Pas encore de compte ? <a href="{% url 'page_inscription' %}" onclick="showPopup()">S'inscrire</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

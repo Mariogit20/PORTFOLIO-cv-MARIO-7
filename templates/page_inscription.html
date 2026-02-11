@@ -1,0 +1,217 @@
+{% extends "layouts/main.html" %}
+
+{% block "contenu" %}
+
+<style>
+    /* --- CSS RESPONSIVE --- */
+    .popup-overlay {
+        display: none; 
+        position: fixed; 
+        z-index: 9999; 
+        left: 0; top: 0; 
+        width: 100%; height: 100%; 
+        background-color: rgba(0,0,0,0.6);
+        align-items: center; 
+        justify-content: center;
+        padding: 10px; /* Espace pour mobile */
+    }
+
+    .popup-content {
+        background-color: white;
+        padding: 24px;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 450px; /* Largeur max sur PC */
+        max-height: 90vh; /* Empêche de dépasser l'écran */
+        overflow-y: auto; /* Scroll interne si nécessaire */
+        position: relative;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    /* Gestion des boutons sur mobile (empilés) vs PC (côte à côte) */
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    @media (min-width: 600px) {
+        .btn-container {
+            flex-direction: row-reverse; /* Envoyer à droite, Annuler à gauche */
+        }
+        .btn-container button {
+            flex: 1;
+        }
+    }
+
+    /* Ajustement des messages d'alerte */
+    #messages-wrapper {
+        position: fixed; 
+        top: 10px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        z-index: 10000; 
+        width: 90%; 
+        max-width: 500px;
+    }
+
+    /* Style responsive pour le bouton d'appel */
+    .btn-inscription-main {
+        width: auto; /* Largeur automatique sur PC */
+        min-width: 250px;
+        padding: 15px 30px;
+        transition: all 0.3s ease;
+        display: inline-flex; /* Permet d'aligner l'icône et le texte */
+        align-items: center; /* Centre verticalement */
+        justify-content: center; /* Centre horizontalement si espace */
+    }
+
+    .btn-inscription-main .icon {
+        margin-left: 10px; /* Espace entre le texte et l'icône */
+        font-size: 1.2em; /* Taille de l'icône */
+        vertical-align: middle; /* Alignement */
+    }
+
+    @media (max-width: 600px) {
+        .btn-inscription-main {
+            width: 100%; /* Prend toute la largeur sur mobile */
+            font-size: 1.1em;
+            padding: 15px 20px; /* Ajuste le padding sur mobile */
+        }
+    }
+</style>
+
+<div id="messages-wrapper">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="w3-panel w3-display-container w3-animate-top w3-card-4 
+                {% if message.tags == 'error' %}w3-red{% elif message.tags == 'warning' %}w3-orange{% else %}w3-green{% endif %}" 
+                style="margin: 10px 0; border-radius: 8px; transition: opacity 0.6s ease;">
+                
+                <span onclick="this.parentElement.style.display='none'" 
+                      class="w3-button w3-transparent w3-display-topright" style="font-weight: bold;">&times;</span>
+                
+                <div style="padding: 8px 16px; display: flex; align-items: center;">
+                    <span style="font-size: 20px; margin-right: 12px; flex-shrink: 0;">
+                        {% if message.tags == 'error' %} ⚠️ 
+                        {% elif message.tags == 'warning' %} 🔔 
+                        {% else %} ✅ 
+                        {% endif %}
+                    </span>
+                    <p style="margin: 0; word-wrap: break-word; font-size: 0.95em;">{{ message }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<div class="w3-container w3-padding-64 w3-center">
+    <button onclick="showPopup()" 
+            class="w3-button w3-blue w3-round-large w3-large w3-hover-shadow btn-inscription-main">
+        <b>S'inscrire maintenant</b> <span class="icon">&#10140;</span>
+    </button>
+</div>
+
+<div id="myPopup" class="popup-overlay">
+    <div class="popup-content w3-animate-zoom">
+        <span class="w3-button w3-transparent w3-display-topright w3-xlarge w3-hover-text-red" onclick="closePopup()">&times;</span>
+        
+        <h3 class="w3-center w3-text-blue" style="margin-top: 0;">Créer un compte</h3>        
+        
+        <form method="post" enctype="multipart/form-data" action="{% url 'root_gemini_accueil' %}">           
+            {% csrf_token %}            
+            
+            <p>
+                <label><b>Nom et Prénom</b></label>
+                <input type="text" name="nom" autocomplete="name"
+                       class="w3-input w3-border w3-round {% if erreurs_champs.nom %}w3-border-red{% endif %}" 
+                       value="{{ donnees.nom|default:'' }}" required>
+                {% if erreurs_champs.nom %}
+                    <span class="w3-text-red w3-small">{{ erreurs_champs.nom }}</span>
+                {% endif %}
+            </p>
+
+            <p>
+                <label><b>Adresse Mail</b></label>
+                <input type="email" name="email" autocomplete="email"
+                       class="w3-input w3-border w3-round {% if erreurs_champs.email %}w3-border-red{% endif %}" 
+                       value="{{ donnees.email|default:'' }}" required>
+                {% if erreurs_champs.email %}
+                    <span class="w3-text-red w3-small">{{ erreurs_champs.email }}</span>
+                {% endif %}
+            </p>            
+            
+            <p>
+                <label><b>Mot de passe</b></label>
+                <div style="position: relative;">
+                    <input type="password" id="password" name="password" 
+                           autocorrect="off" autocapitalize="off"
+                           class="w3-input w3-border w3-round {% if erreurs_champs.password %}w3-border-red{% endif %}" 
+                           style="padding-right: 45px !important;" required>
+                    <span onclick="togglePassword()" 
+                          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 20px; z-index: 10;">
+                        👁️
+                    </span>
+                </div>
+                {% if erreurs_champs.password %}
+                    <span class="w3-text-red w3-small">{{ erreurs_champs.password }}</span>
+                {% endif %}
+            </p>                                    
+            
+            <div class="btn-container">
+                <button type="submit" class="w3-button w3-green w3-round">Envoyer</button>           
+                <button type="button" onclick="closePopup()" class="w3-button w3-light-grey w3-round">Annuler</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function showPopup() {
+        const popup = document.getElementById("myPopup");
+        if (popup) {
+            popup.style.display = "flex";
+            document.body.style.overflow = "hidden"; 
+        }
+    }
+
+    function closePopup() {
+        const popup = document.getElementById("myPopup");
+        if (popup) {
+            popup.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+
+    window.onclick = function(event) {
+        const popup = document.getElementById("myPopup");
+        if (event.target == popup) closePopup();
+    }
+
+    function togglePassword() {
+        const pInput = document.getElementById("password");
+        pInput.type = (pInput.type === "password") ? "text" : "password";
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Auto-fermeture messages
+        const panels = document.querySelectorAll('#messages-wrapper .w3-panel');
+        panels.forEach((panel) => {
+            if (!panel.classList.contains('w3-red')) {
+                setTimeout(() => {
+                    panel.style.opacity = '0';
+                    setTimeout(() => panel.remove(), 600);
+                }, 7000);
+            }
+        });
+
+        // Ré-ouvrir si erreurs serveurs
+        const erreurPresente = "{{ erreurs_champs|yesno:'true,false' }}";
+        if (erreurPresente === "true") {
+            showPopup();
+        }
+    });
+</script>
+
+{% endblock "contenu" %}

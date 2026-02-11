@@ -1,0 +1,16 @@
+Vous : CREER un """"ADMINISTRATEUR PAR DEFAUT"""" dans la TABLE """"app_contact_user"""" :::::::::::::::::::::::
+Vous : CREER un """"ADMINISTRATEUR PAR DEFAUT"""" dans la TABLE """"app_contact_user"""" :::::::::::::::::::::::
+Vous : CREER un """"ADMINISTRATEUR PAR DEFAUT"""" dans la TABLE """"app_contact_user"""" :::::::::::::::::::::::
+
+BUT : CREER un """"ADMINISTRATEUR PAR DEFAUT"""" en utilisant un """"FICHIER DE MIGRATION"""" avec Django
+
+app_contact > migrations > 0007_administrateur_role.py
+app_contact > migrations > 0007_administrateur_role.py
+app_contact > migrations > 0007_administrateur_role.py
+
+https://gemini.google.com/app/5a9a859ff2a2f94e
+https://gemini.google.com/app/5a9a859ff2a2f94e
+https://gemini.google.com/app/5a9a859ff2a2f94e
+
+0006_table_role_de_user.py
+

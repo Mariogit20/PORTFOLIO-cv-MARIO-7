@@ -1,0 +1,2111 @@
+{% extends "layouts/main.html" %}
+       <!-- Site Web de Locations de Voitures de Transports de Marchandises -->
+ {% block "title" %}
+
+
+      PORTFOLIO DYNAMIQUE de Halley Mario
+ {% endblock "title" %}
+  {% block 'desc' %}
+      description du Portfolio c'est-à-dire du Site Web CV en ligne dynamique de ANDRIANTSIMBAHARILANTO Halley Mario, ici !
+ {% endblock 'desc' %}
+
+
+{% load static %}
+{% block "contenu" %}
+
+
+{% comment %} filtre DECLARE DANS TEMPLATE index.html PUIS DANS L'Application nommée app_acceuil < templatetags < mon_filtre.py < def est_pair(value) / load mon_filtre {% endcomment %}
+
+
+
+
+
+
+{% comment %} 
+
+3 est impair
+
+filtre DECLARE DANS TEMPLATE index.html PUIS DANS L'Application nommée app_acceuil < templatetags < mon_filtre.py < def est_pair(value) / load mon_filtre  
+
+{% endcomment %}
+
+
+
+
+
+
+
+{% comment %} REDEMARREZ le SERVEUR DE DEVELOPPEMENT de DJANGO ( Par Exemple ici :      REDEMARREZ      Visual Studio Code      avec :      
+
+# Stoppez puis relancez le serveur        VISUAL STUDIO CODE      :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+CTRL+C
+python manage.py runserver
+
+) {% endcomment %}
+
+
+
+{% comment %} {{ 4|est_pair }} {% endcomment %}
+
+{% if utilisateur.nom and utilisateur.email %}
+        {% comment %} <p class="text-center text-danger">{{ utilisateur.nom }} - {{ utilisateur.email }}</p> {% endcomment %}
+        <!-- <span style="text-decoration:underline; ">{{ utilisateur.nom }} - {{ utilisateur.email }}</span>      -->
+        <!-- <input type="text" id="utilisateur_nom_A_TRONQUER_EN_22_CARACTERES"  value="{{ utilisateur.nom }}&nbsp;{{ utilisateur.prenom }}" />  -->
+        <!-- <input type="hidden" id="utilisateur_nom_A_TRONQUER_EN_22_CARACTERES"  value="{{ utilisateur.nom }}&nbsp;{{ utilisateur.prenom }}" />        -->
+        
+        <input type="text" id="utilisateur_nom_A_TRONQUER_EN_22_CARACTERES"  value="{{ utilisateur.nom }}&nbsp;{{ utilisateur.prenom }}" />               
+
+        <!-- <span style="color:blue; "   id="utilisateur_nom_TRONQUER_22_CARACTERES" >{{ utilisateur.nom }}&nbsp;{{ utilisateur.prenom }}, {{ utilisateur.email }}</span>           -->
+
+        
+    {% comment %} 
+    # ROLE_CHOICES = [
+    #     ('admin', 'Administrateur'),
+    #     ('moderator', 'Modérateur'),
+    #     ('user', 'Utilisateur'),
+    # ]
+
+    # ✅ Récapitulatif des rôles des 3 TYPES D'UTILISATEURS ( ADMINISTRATEUR, MODERATEURS, SIMPLES UTILISATEUR )
+    # Fonction	Qui peut
+    # CRUD Véhicules / Commandes	Modérateur (création/édition), Administrateur (suppression)
+    # Réinitialisation de mot de passe :	Modérateur et Administrateur
+
+    # 🔁 Réinitialisation de mot de passe (modérateurs)
+
+    # 👁 Supervision des publications par les :	  Modérateurs
+
+    # Gestion complète des utilisateurs :	Administrateur
+
+
+
+    # 🔑 Rôles utilisateurs
+    # Rôle	Accès
+    # Admin	CRUD total + gestion des utilisateurs et mots de passe
+    # Modérateur	CRUD (sauf suppression) + surveillance du contenu
+    # Utilisateur	Accès lecture, publication (si activé), pas de gestion
+    # 📩 Réinitialisation du mot de passe
+
+    # Les modérateurs peuvent réinitialiser leur mot de passe via /users/password-reset/.
+
+
+
+    # admin ===> ADMINISTRATEUR du SITE WEB : 
+    # moderator ===> MODERATEUR du SITE WEB :
+    # user ===> SIMPLE UTILISATEUR :
+
+
+
+    # ROLE_CHOICES = [
+    #     ('admin', 'Administrateur'),
+    #     ('moderator', 'Modérateur'),
+    #     ('user', 'Utilisateur'),
+    # ]    
+    {% endcomment %}
+
+{% endif %} 
+
+    <!-- <h1>Bienvenue à l'Agence de Transport <sup>ESPACE R&Eacute;SERVATION</sup></h1> -->
+    {% comment %} <h1>Bienvenue à l'Agence de Transport <marquee behavior="" direction=""><sub>ESPACE R&Eacute;SERVATION du Client</sub></marquee></h1>      {% endcomment %}
+    {% comment %} <h1>Bienvenue à l'Agence de Transport de Marchandises<sub>👍</sub></h1>  {% endcomment %}
+
+    <!-- <h1 align="center">Bienvenue à l'Agence de Transport de Marchandises<sub>👍</sub></h1>      -->
+
+{% comment %} 
+{% if message.Connexion_Reussie %}
+    {{ message.Connexion_Reussie }} Félicitations !
+{% endif %} 
+{% endcomment %}
+
+
+
+                {% comment %} 
+                
+                3 est 
+                {% if 3|est_pair %}
+                    <strong>pair</strong>
+                {% else %}
+                    <strong>impair</strong>
+                {% endif %} 
+                
+                {% endcomment %}
+
+
+                
+
+    {% comment %} <h1>filtre DECLARE DANS TEMPLATE index.html PUIS DANS L'Application nommée app_acceuil < templatetags < mon_filtre.py < def est_pair(value) / load mon_filtre </h1>      {% endcomment %}
+
+
+
+
+<!--   """"BALISE DE DEPLACEMENT de DROITE vers la GAUCHE"""" du MOT """"IntegrÃ© le HTML pure""""
+
+ direction="up"       MONTER vers le HAUT
+ direction="right"       ALLER vers la DROITE
+
+ <marquee behavior="alternate" direction="down">
+ <marquee behavior="alternative" direction="right">    
+ <marquee behavior="alternate" direction="right"> 
+    
+ <marquee behavior="" direction="down">     -->    
+    <!-- <h2><marquee behavior="alternative" direction="right"><span style="font-family: fantasy; ">👌ESPACE R&Eacute;SERVATION du Client</span></marquee></h2>         -->
+            <!-- <br>      BALISE de   RETOUR A LA LIGNE -->
+
+
+
+
+
+<!--
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+1) AFFICHAGE UNIQUEMENT suivant l'   """"Ordre Croissant des Villes de Destination des Marchandises transportées"""" uniquement ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+2) AFFICHAGE PREMIEREMENT suivant les DISPONIBILITES des VOITURES ( 'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT' ) ensuite suivant l'   """"ORDRE CROISSANT""""    des    """"MARQUES DES VOITURES ( Darcia, Ferarri, Landrover, Pegeot, Terracan )"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    DISPONIBILITE_de_la_VOITURE_DE_TRANSPORT_DE_MARCHANDISES = [
+        ('voiture_LIBRE', 'Voiture Libre'),
+        ('en_ATTENTE_DE_CONFIRMATION', 'Voiture En ATTENTE DE CONFIRMATION'),
+        ('voiture_RESERVEE_par_le_CLIENT', 'Voiture RESERVEE par le CLIENT'), 
+    ]             
+-->
+
+<!--
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1) AFFICHAGE UNIQUEMENT suivant l'   """"ORDRE CROISSANT""""    des    """"MARQUES DES VOITURES ( Darcia, Ferarri, Landrover, Pegeot, Terracan )"""" uniquement ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+2) AFFICHAGE PREMIEREMENT suivant les DISPONIBILITES des VOITURES ( 'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT' ) ensuite suivant l'   """"ORDRE CROISSANT""""    des    """"MARQUES DES VOITURES ( Darcia, Ferarri, Landrover, Pegeot, Terracan )"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    DISPONIBILITE_de_la_VOITURE_DE_TRANSPORT_DE_MARCHANDISES = [
+        ('voiture_LIBRE', 'Voiture Libre'),
+        ('en_ATTENTE_DE_CONFIRMATION', 'Voiture En ATTENTE DE CONFIRMATION'),
+        ('voiture_RESERVEE_par_le_CLIENT', 'Voiture RESERVEE par le CLIENT'), 
+    ]             
+-->
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+DEBUT =========> du        PORTFOLIO        c'est-à-dire du        CURRICULUM VITAE (CV) en LIGNE :::::::::::::::::::::::::::::::: 
+-->
+
+
+
+
+
+
+<main>
+    
+<!-- 
+    <section id="accueil" class="hero"      style="    padding-top: 0rem;  " >    style="  padding:4rem 1rem;  " 
+-->
+<!--
+
+    # href="index.html#accueil"
+    
+-->         
+    <section id="accueil" class="hero"  >         
+        <!-- <h2>Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario</h2> -->
+<!--
+        <p style="font-size: xx-large; " >Bienvenue ! Je suis <span style="color: rgb(40, 5, 238); ">ANDRIANTSIMBAHARILANTO Halley Mario 😃</span></p>        
+-->         
+<!--  
+        <p style="    font-size: 3vw;    " >Bienvenue ! Je suis <span style="color: rgb(40, 5, 238); ">ANDRIANTSIMBAHARILANTO Halley Mario 😃</span></p>        
+-->        
+
+<!--
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+
+
+
+
+Si votre objectif est d'afficher le drapeau de Madagascar avec une taille spécifique en utilisant des icônes de drapeau (comme celles de la librairie Flag Icon CSS ou Font Awesome) :
+
+
+
+Comment contrôler la taille de l'icône du drapeau
+
+Pour changer la taille d'une icône de drapeau (ou de toute icône Font Awesome), il faut utiliser les classes de taille prédéfinies ou ajuster la taille de la police (font-size) via CSS.
+1. Utiliser les classes de taille (méthode recommandée)
+
+Si vous utilisez Font Awesome ou une bibliothèque similaire, remplacez la classe de taille standard (fa-lg) par une autre, comme :
+
+    Très Petit : fa-xs ou fa-sm
+
+    Petit/Moyen : fa-1x (par défaut) ou fa-lg
+
+    Grand : fa-2x, fa-3x, fa-4x, fa-5x
+
+
+
+<i class="fi fi-mg **fa-xs**"></i>
+
+
+
+
+2. Utiliser le style CSS (méthode plus précise)
+
+Si vous voulez une taille exacte (comme vos 12 pixels), vous devez spécifier la propriété font-size en CSS.
+
+(Votre code corrigé) L'attribut fa size n'est pas une propriété CSS valide. Il faut utiliser font-size.
+HTML
+
+<i class="fi fi-mg fa-lg" **style="font-size: 12px;"**></i>
+
+
+
+
+
+
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+
+
+
+🇲🇬 Voici le drapeau de Madagascar à différentes tailles :
+
+Taille	Classe utilisée	Résultat
+
+Très Grand	fa-5x	<i class="fi fi-mg fa-5x"></i>
+Grand	fa-2x	<i class="fi fi-mg fa-2x"></i>
+Moyen	fa-lg	<i class="fi fi-mg fa-lg"></i>
+Petit (12px)	style="font-size: 12px;"	<i class="fi fi-mg" style="font-size: 12px;"></i>
+Très Petit	fa-xs	<i class="fi fi-mg fa-xs"></i>
+-->
+<!--
+        <p style="    font-size: 3vw;    " >Bienvenue ! Je suis <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;       text-shadow:none;  ">ANDRIANTSIMBAHARILANTO Halley Mario</span> <i class="fi fi-mg fa-lg"></i> <i class="fi fi-mg **fa-xs**"></i> 😃</p>     
+-->   
+
+
+
+
+
+<!--
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+
+
+
+🇲🇬 Voici le drapeau de Madagascar à différentes tailles :
+
+Taille	Classe utilisée	Résultat
+
+Très Grand	fa-5x	<i class="fi fi-mg fa-5x"></i>
+Grand	fa-2x	<i class="fi fi-mg fa-2x"></i>
+Moyen	fa-lg	<i class="fi fi-mg fa-lg"></i>
+Petit (12px)	style="font-size: 12px;"	<i class="fi fi-mg" style="font-size: 12px;"></i>
+Très Petit	fa-xs	<i class="fi fi-mg fa-xs"></i>
+-->
+
+<!--
+<style>
+i.fi.fi-mg {
+    /* Propriétés de la bordure */
+    border: 0px solid #0056b3; /* Bordure de 2px, style 'solid', couleur bleu foncé */
+    border-radius: 4px;        /* Coins légèrement arrondis */
+    padding: 2px 4px;          /* Espacement intérieur pour que la bordure ne colle pas au drapeau */
+    display: inline-block;     /* Important pour que la bordure entoure correctement l'icône */
+    line-height: 1;            /* Assure un alignement vertical propre si l'icône est un peu décalée */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ajoute une petite ombre portée pour un effet 3D */
+}    
+</style>        
+-->
+
+<style>
+/*
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+
+https://gemini.google.com/app/1f68fb82c68ee801?hl=fr
+https://gemini.google.com/app/1f68fb82c68ee801?hl=fr
+https://gemini.google.com/app/1f68fb82c68ee801?hl=fr
+https://gemini.google.com/app/1f68fb82c68ee801?hl=fr
+
+Pouvez vous mettre une bordure stylé en css autour de la balise : <i class="fi fi-mg fa-xs"></i>    ???????????
+
+Pouvez vous mettre une bordure stylé en css autour de la balise : <i class="fi fi-mg fa-xs"></i>    ???????????
+
+Pouvez vous mettre une bordure stylé en css autour de la balise : <i class="fi fi-mg fa-xs"></i>    ?
+
+Pouvez vous mettre une bordure stylé en css autour de la balise : <i class="fi fi-mg fa-xs"></i>    ?
+*/
+i.fi.fi-mg {
+    border: none; /* Pas de bordure visible, on utilise l'ombre */
+    border-radius: 50%; /* Bordure circulaire si l'icône le permet (le drapeau est rectangulaire, mais ça peut donner un effet intéressant) */
+    padding-left: 5px;   /* Augmente le rembourrage pour mieux voir l'effet */
+    padding-right: 5px;   /* Augmente le rembourrage pour mieux voir l'effet */    
+    display: inline-block;
+    
+    /* L'effet "Néon" 
+    box-shadow: 0 0 5px #ff4500,   Ombre orange clair 
+                0 0 10px #ff4500,  Ombre orange plus intense 
+                0 0 15px #ff8c00;  Ombre de diffusion plus large, couleur différente */
+
+box-shadow: 0 0 5px #EE82EE, 0 0 10px #EE82EE, 0 0 15px #FF00FF;                
+
+/*
+box-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00BFFF;
+*/
+/*
+box-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #32CD32;
+*/
+
+/* NOUVEL EFFET "Néon Bleu" */
+/*    box-shadow: 0 0 5px #00FFFF,  */ /* Cyan clair (plus proche de la source) */
+/*                0 0 10px #00FFFF, */ /* Cyan plus intense */
+/*                0 0 15px #00BFFF; */ /* Bleu ciel (diffusion plus large) */
+    transition: box-shadow 0.3s ease-in-out; /* Ajoute une transition douce pour un effet interactif */
+}
+
+/* Optionnel : un effet au survol (hover) */
+i.fi.fi-mg:hover {
+    box-shadow: 0 0 8px #00bfff,
+                0 0 20px #00bfff,
+                0 0 30px #00ffff;
+}    
+</style>
+
+        <p style="    font-size: 3vw;    " >Bienvenue ! Je suis <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;       text-shadow:none;  ">ANDRIANTSIMBAHARILANTO Halley Mario</span> <i class="fi fi-mg fa-xs"></i> 😃</p>           
+<!--
+        <p style="    font-size: 3vw;    " >Bienvenue ! Je suis <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;       text-shadow:none;  ">ANDRIANTSIMBAHARILANTO Halley Mario</span> <i class="fi fi-mg fa-xs"></i> 😃</p>             
+-->
+        <p>Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.</p>
+<!--        
+    -webkit-text-stroke: 2px blue;   /* """""BORDURE de COULEUR BLEU"""""    à la    """""PHRASE"""""    suivante =========>      """""Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes."""""     */         /* Mario */  
+-->
+
+<!--
+        <a href="#projets" class="cta-button"   style="    -webkit-text-stroke: 0px transparent;    transform: translateY(0px);   " >Voir mes Projets</a>
+-->
+
+<!--
+        <a href="#projets"                                         numero_TABLE_Appreciation="3"        id='LIEN_IDENTIFICATION_________F_503'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Je suis un Deuxi&egrave;me Bouton Lien !"          title=''                   class="btn btn-primary                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51                     cta-button"                                            style="    -webkit-text-stroke: 0px transparent;    transform: translateY(0px);   " >Voir mes Projets</a>
+-->
+
+        <a href="#projets"                                         numero_TABLE_Appreciation="9995"        id='LIEN_IDENTIFICATION_________F_509995'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Visitez Mes Projets !"          title=''                   class="btn btn-primary                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51                     cta-button           COULEUR_DEGRADE_du_BOUTON     Le_COIN_ARRONDI_du_RECTANGLE"                                            style="    -webkit-text-stroke: 0px transparent;    transform: translateY(0px);      text-shadow:none;   " >Voir mes Projets</a>
+
+        <!-- <a href="#"class=''      >Survollez ce Deuxi&egrave;me Bouton Lien .....</a>                 -->
+<!--
+        <a href="#"        numero_TABLE_Appreciation="3"        id='LIEN_IDENTIFICATION_________F_503'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Je suis un Deuxi&egrave;me Bouton Lien !"          title=''         class='btn btn-primary                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         '      >Survollez ce Deuxi&egrave;me Bouton Lien .....</a>        
+-->
+<!--
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+-->
+<!--
+        <a href="#"        numero_TABLE_Appreciation="3"        id='LIEN_IDENTIFICATION_________F_503'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Je suis un Deuxi&egrave;me Bouton Lien !"          title=''         class='btn btn-primary                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         '      >Survollez ce Deuxi&egrave;me Bouton Lien .....</a>
+-->
+<!--
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+    </section>
+
+    <section id="responsive_mario">
+        <div class="row" style="margin-right:0; margin-left:0; " >
+            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+
+                <div class="row" style="margin-right:0; margin-left:0; " >
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                        <div class="row" style="margin-right:0; margin-left:0; " >
+                            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                <div class="row" style="margin: 0 !important;">
+                                    <!-- <h1>On m&apos;appelle <span style="color: rgb(40, 5, 238); ">Mario</span></h1> -->
+                                    <h1>On m'appelle 
+<!--
+DEBUT ================> Style CSS de Tanjona ::::::::::::::::::::::::::::::::::::
+    
+  --brand: #5aa6ff;
+  --brand-2: #7c4dff;  
+-->
+                                        <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent"><span style="font-weight: bold; " >Mario</span></span>
+<!--
+FIN   ================> Style CSS de Tanjona !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->                              
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                <div class="row" style="margin: 0 !important;">
+<!--
+                                    <p style="text-align: left; ">
+                                        Développeur Django - Python
+                                    </p>
+-->
+                                    <p style="text-align: left; ">
+                                        <!-- Développeur Django - Python -->
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   :::::::::::::::::::   
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   :::::::::::::::::::   
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   :::::::::::::::::::   
+-->  
+
+        {% if EXISTENCE_de_PREMIERE_SPECIAISATION %}
+                {% for x in AFFICHER_la_PREMIERE_SPECIAISATION %}
+
+
+                                    <!-- <p style="text-indent:1.5cm;  line-height:1cm;  text-align:justify; " > x.description_speciality </p>  -->
+                                        <!-- Développeur Django - Python -->                                     
+                                    <span>{{x.description_speciality}}<br></span>                                     
+
+
+                {% endfor %}
+        {% else %}
+                    <!-- <p>D&eacute;sol&eacute; ! ! Il n'existe aucun Texte de Premi&egrave;re Sp&eacute;cialisation enregistré pour le moment !</p> -->
+
+<div class="alert alert-light custom-shadow border-0 rounded-3 p-4 text-center">
+    <p class="mb-0">
+        <i class="bi bi-chat-dots-fill text-primary mb-2 d-block fs-3"></i>
+        Désolé ! Il n'existe aucun Texte de Premi&egrave;re Sp&eacute;cialisation enregistré pour le moment.
+    </p>
+</div>
+        {% endif %}
+<!--
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+--> 
+
+
+
+
+
+
+
+
+
+                                    </p>
+<!--
+                                    <p style="text-align: left; ">
+                                        Développeur Django - Python
+                                    </p>
+-->
+                                </div>
+                            </div>
+                            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                <div class="row" style="margin: 0 !important;">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">+1 an d'XP</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">Apps performantes</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">SEO & Accessibilité</button>
+                                        </div>
+                                    </div>
+<!--
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+halleymariomen@gmail.com
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+
+
+
+<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+    <p class="d-md-none d-xl-block">
+        Cet élément est caché quand on est en col-md-6, mais apparaît en col-xl-4.
+    </p>
+    <div class="d-md-none d-xl-block">
+        </div>
+</div>
+
+
+
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+-->                                         
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+<!--
+Le code peut être réduit à trois classes :
+HTML
+
+<span class="d-block d-lg-none d-xl-block">
+    &nbsp;
+</span>
+
+Classe	Point de Rupture	Effet
+d-block	XS (< 576px)	Affiché (Maintient l'affichage jusqu'à LG)
+d-lg-none	LG (≥ 992px)	Caché
+d-xl-block	XL (≥ 1200px)	Affiché (Maintient l'affichage pour XXL)                                        
+-->
+                                                <span class="d-block d-sm-none d-md-block d-lg-none d-xl-none">               <!--  EST EQUIVALENT au CODE suivant :       <span class="d-block d-lg-none d-xl-block">   -->                                                                                     
+                                        &nbsp;
+                                                </span>
+<!--
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+Pour """"""""""CACHER"""""""""" ou """"""""""AFFICHER"""""""""" la BALISE D'""""""""""ESPACEMENT"""""""""" ==========>       &nbsp;
+
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+
+
+
+
+
+🧐 Analyse de Votre Code
+
+Vous utilisez les classes sur la balise <span> pour contrôler son affichage :
+HTML
+
+<span class="d-block d-sm-block d-md-block d-lg-none d-xl-block">
+    &nbsp;
+</span>
+
+1. Comportement Visé
+
+Votre intention est d'afficher l'élément partout (XS, SM, MD, XL, XXL) sauf sur les écrans Large (lg).
+
+    d-block : Affiche l'élément par défaut (XS: < 576px).
+
+    d-sm-block : Maintient l'affichage à partir de Small (≥ 576px).
+
+    d-md-block : Maintient l'affichage à partir de Medium (≥ 768px).
+
+    d-lg-none : Cache l'élément à partir de Large (≥ 992px).
+
+    d-xl-block : Affiche à nouveau l'élément à partir de Extra-Large (≥ 1200px).
+
+2. Redondance et Simplification
+
+Les classes d-block, d-sm-block, et d-md-block sont inutiles car d-block s'applique à toutes les tailles d'écran (XS) et continue de s'appliquer sur les points de rupture suivants (SM, MD) tant qu'il n'y a pas de classe de masquage.
+
+Le code peut être réduit à trois classes :
+HTML
+
+<span class="d-block d-lg-none d-xl-block">
+    &nbsp;
+</span>
+
+Classe	Point de Rupture	Effet
+d-block	XS (< 576px)	Affiché (Maintient l'affichage jusqu'à LG)
+d-lg-none	LG (≥ 992px)	Caché
+d-xl-block	XL (≥ 1200px)	Affiché (Maintient l'affichage pour XXL)
+-->                                                
+                                            <!-- </div>          -->
+                                    </div>                                    <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">&nbsp;</div> -->
+                                </div>
+                            </div>
+
+<!--
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+halleymariomen@gmail.com
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+
+
+
+<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+    <p class="d-md-none d-xl-block">
+        Cet élément est caché quand on est en col-md-6, mais apparaît en col-xl-4.
+    </p>
+    <div class="d-md-none d-xl-block">
+        </div>
+</div>
+
+
+
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+""""""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+-->    
+
+
+<!--
+DEBUT ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+DEBUT ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+DEBUT ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+DEBUT ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+DEBUT ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" ::::::::::::
+
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+https://gemini.google.com/app/c7e315844d502f30?hl=fr
+
+
+
+Explication des Modifications
+
+    Retrait de la Balise <p> :
+
+        J'ai supprimé la balise <p> ouvrante et fermante qui enveloppait les divs de colonne des liens CTA. C'est la source la plus probable du grand espace vertical.
+
+    Ajout de la Classe mt-0 :
+
+        J'ai ajouté la classe mt-0 (Margin Top 0) au div conteneur des liens (<div class="col-12 bordure mt-0"...>).
+
+        Ceci garantit que, même si d'autres règles CSS ajoutaient une marge supérieure, celle-ci est explicitement annulée par Bootstrap.
+
+Ces deux actions devraient supprimer l'espace indésirable entre les deux groupes de boutons et rapprocher "Apps performantes" (via son groupe) et "Me contacter" (via son groupe).
+-->
+<div class="col-12 bordure mt-0" style="margin: 0 !important; height: auto; text-align:left;">
+    <div class="row" style="margin: 0 !important; " >
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important; height: auto; text-align:left; ">
+            <div class="row" style="margin: 0 !important;">
+<!--
+                <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON btn cta-button" style="margin-top:7.2px;">Voir mes projets</a>
+-->
+                <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON     Le_COIN_ARRONDI_du_RECTANGLE    btn cta-button" style="margin-top:7.2px; " >Voir mes projets</a>
+
+            </div>
+        </div>
+        
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important; height: auto; text-align:left; ">
+            <div class="row" style="margin: 0 !important;">
+                <a href="#contact" class="btn cta-button     Le_COIN_ARRONDI_du_RECTANGLE    " style="margin-top:7.2px; background-color: var(--couleur-primaire); ">Me contacter</a>
+            </div>           
+
+                <br>
+        </div>
+        
+        </div>
+</div>       <!-- <div class="col-12 bordure mt-0" style="margin: 0 !important; height: auto; text-align:left;"> -->
+<!--
+FIN   ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+FIN   ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+FIN   ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+FIN   ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+FIN   ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML"""""""" !!!!!!!!!!!!
+-->  
+                        </div>
+                    </div> 
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                        <div class="row" style="margin-right:0; margin-left:0; " >
+                            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+<!--
+                                <div class="row" style="margin: 0 !important;    border:0px solid transparent;        --bs-gutter-x: 0rem; " >
+-->
+<!--
+                                <div class="row     Le_COIN_ARRONDI_du_RECTANGLE" style="margin: 0 !important;    border:1px solid black;        --bs-gutter-x: 0rem;       padding:15.7px; background-color:lightgray; " >
+-->
+                                <div class="row     Le_COIN_ARRONDI_du_RECTANGLE" style="margin: 0 !important;    border:1px solid transparent;        --bs-gutter-x: 0rem;       padding:15.7px; background-color:#e9b4d9; " >
+<!--
+                                    <img src="image/camion-routier.JPG" alt="Image illustrant le développement Django" class="img-fluid"> 
+-->
+<!--
+                                    <img src="image/Ordinateur.png" alt="Image illustrant le développement Django" class="img-fluid"    style="object-fit:cover;  margin-bottom:7.7px; " > 
+-->
+
+<style>
+.triangle-forme {
+  /* Dimensions de la boîte d'origine */
+/*
+  width: 200px;
+  height: 200px;
+*/
+
+  width: 100%;
+  height: auto;
+  
+
+  
+  /* Couleur d'arrière-plan */
+/*  background-color: #3498db;   */   /* Un bleu vif */
+  background-color: #e9b4d9;     /* Un VIOLET vif */        /* """""COULEUR DE FOND""""" DES """""ALENTOURS ( Les """""""""""QUATRES TRIANGLES""""""""""" )"""""    de l'    """""IMAGE"""""    à      l'"""""INTERIEUR d'un RECTANGLE"""""     dont les     """""QUATRE COINS"""""     sont     """""QUATRES TRIANGLES""""" */  
+  
+  /* Assurez-vous que le contenu à l'intérieur est centré */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  
+  /* ✂️ La Magie du Clip-Path */
+/*  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);   */   /* Triangle */
+
+/*
+  clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+*/
+
+
+
+/* Place l'    """""IMAGE"""""    à      l'"""""INTERIEUR d'un RECTANGLE"""""     dont les     """""QUATRE COINS"""""     sont     """""QUATRES TRIANGLES""""" */
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);        /* Place l'    """""IMAGE"""""    à      l'"""""INTERIEUR d'un RECTANGLE"""""     dont les     """""QUATRE COINS"""""     sont     """""QUATRES TRIANGLES""""" */
+
+}
+</style>
+
+<div class="triangle-forme">                                                                        
+<!--
+                                    <img src="image/Ordinateur.png" alt="Image illustrant le développement Django" class="img-fluid"    style="object-fit:cover;  margin-bottom:7.7px; " > 
+-->
+<!--                                    
+                                    <img src="media/static/images/Ordinateur.png" alt="Image illustrant le développement Django" class="img-fluid"    style="object-fit:cover;  margin-bottom:7.7px; " > 
+-->
+<!--
+A   RENDRE """"""DYNAMIQUE"""""""    avec   views.py    de    DJANGO   ::::::::::::            
+A   RENDRE """"""DYNAMIQUE"""""""    avec   views.py    de    DJANGO   ::::::::::::            
+A   RENDRE """"""DYNAMIQUE"""""""    avec   views.py    de    DJANGO   ::::::::::::            
+A   RENDRE DYNAMIQUE    avec   views.py    de    DJANGO   ::::::::::::            
+A   RENDRE DYNAMIQUE    avec   views.py    de    DJANGO   ::::::::::::                                    
+-->
+
+                                    <!-- <img src="media/static/images/Ordinateur.png" alt="Image illustrant le développement Django" class="img-fluid"    style="object-fit:cover;  margin-bottom:7.7px; " >  -->
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   :::::::::::::::::::   
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   :::::::::::::::::::   
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   :::::::::::::::::::   
+-->  
+
+        {% if EXISTENCE_de_PREMIERE_SPECIAISATION %}
+                {% for x in AFFICHER_la_PREMIERE_SPECIAISATION %}
+
+
+                                    <img src="media/{{x.images}}" alt="Image illustrant le développement Django" class="img-fluid"    style="object-fit:cover;  margin-bottom:7.7px; " > 
+
+
+                {% endfor %}
+        {% else %}
+                    <!-- <p>D&eacute;sol&eacute; ! ! Il n'existe aucune Image décrivant la Premi&egrave;re Sp&eacute;cialisation enregistrée pour le moment.</p> -->
+
+<div class="alert alert-light custom-shadow border-0 rounded-3 p-4 text-center">
+    <p class="mb-0">
+        <i class="bi bi-chat-dots-fill text-primary mb-2 d-block fs-3"></i>
+        Désolé ! Il n'existe aucune Image décrivant la Premi&egrave;re Sp&eacute;cialisation enregistrée pour le moment.
+    </p>
+</div>
+        {% endif %}
+<!--
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+--> 
+
+
+
+
+
+
+
+
+
+                                    <!-- <img src="media/static/images/Ordinateur.png" alt="Image illustrant le développement Django" class="img-fluid"    style="object-fit:cover;  margin-bottom:7.7px; " >  -->
+
+</div>                                                
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">Laravel</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">Django</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">VueJS</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">PostgreSQL</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </section>
+<!--
+
+    # href="index.html#projets"
+    
+--> 
+    <section id="projets" class="section-projets">
+        <h2 style="padding-top: 0rem; " >Mes Réalisations</h2>
+        
+        <div class="grille-projets">
+<!--            
+            <article class="carte-projet">
+                <img src="image/camion_fourgon.JPG" alt="Aperçu de mon Projet 1" class="img-fluid">
+                <h3>Site Vitrine d'Entreprise</h3>
+                <p>Création d'un site vitrine 100% responsive, axé sur la vitesse de chargement et l'accessibilité.</p>
+                <p>Zoom sur les 8 types de camions de transport routier ...</p>
+
+                <a href="TransportRoutier_Main.html" target="_blank" class="lien-demo">Démo Live</a>                 
+
+                <a href="https://github.com/Mariogit20/Javascript-Routier.git" target="_blank" class="lien-code">Code Source</a>                
+            </article>
+
+            <article class="carte-projet">
+                <img src="image/camion_porte-char.JPG" alt="Aperçude mon Projet 2" class="img-fluid">
+                <h3>Refonte de Blog</h3>
+                <p>Refonte complète du design d'un blog personnel en utilisant CSS Grid pour une mise en page magazine moderne.</p>
+                <p>Zoom sur les 8 types de camions de transport routier ...</p> 
+
+
+                <a href="TransportRoutier_Main.html" target="_blank" class="lien-demo">Démo Live</a>                 
+
+                <a href="https://github.com/Mariogit20/Javascript-Routier.git" target="_blank" class="lien-code">Code Source</a>                        
+            </article>
+
+            <article class="carte-projet">
+                <img src="image/camion_tautliner.JPG" alt="Aperçu de mon Projet 3" class="img-fluid">
+                <h3>Page d'Atterrissage (Landing Page)</h3>
+                <p style="text-align:justify;  text-indent:1.5cm;  line-height:1cm;  " >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, quia quaerat minima assumenda, nesciunt suscipit quae maiores laborum obcaecati accusamus fugiat voluptate? Minus eaque amet possimus earum quaerat? Impedit, cumque.</p>
+                <p style="text-indent:1.5cm;  " >Zoom sur les 8 types de camions de transport routier ...</p> 
+
+
+                <a href="TransportRoutier_Main.html" target="_blank" class="lien-demo">Démo Live</a>                 
+
+                <a href="https://github.com/Mariogit20/Javascript-Routier.git" target="_blank" class="lien-code">Code Source</a>              
+            </article>
+-->            
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ============>         Mes Réalisations    ,   LES """""PROJETS PERSONNELS""""" qui ont été """""réalisés"""""       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>         Mes Réalisations    ,   LES """""PROJETS PERSONNELS""""" qui ont été """""réalisés"""""       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>         Mes Réalisations    ,   LES """""PROJETS PERSONNELS""""" qui ont été """""réalisés"""""       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>         Mes Réalisations    ,   LES """""PROJETS PERSONNELS""""" qui ont été """""réalisés"""""       DYNAMIQUE   :::::::::::::::::::   
+-->  
+
+        {% if EXISTENCE_de_REALISATIONS_PERSONNELLES %}
+                {% for x in AFFICHER_les_REALISATIONS_PERSONNELLES %}
+
+
+            <article class="carte-projet">
+<!--
+                <img src="image/camion_tautliner.JPG" alt="Aperçu de mon Projet 3" class="img-fluid">
+-->
+                <img src="media/{{x.images}}" alt="Aperçu de mon Projet 3" class="img-fluid">
+<!--
+                <h3>Page d'Atterrissage (Landing Page)</h3>
+-->
+                <h3>{{x.nom}}</h3>                
+                <p style="text-align:justify;  text-indent:1.5cm;  line-height:1cm;  " >{{x.description}}</p>
+<!--
+                <p style="text-align:justify;  text-indent:1.5cm;  line-height:1cm;  " >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, quia quaerat minima assumenda, nesciunt suscipit quae maiores laborum obcaecati accusamus fugiat voluptate? Minus eaque amet possimus earum quaerat? Impedit, cumque.</p>                
+                
+                <p style="text-indent:1.5cm;  " >Zoom sur les 8 types de camions de transport routier ...</p> 
+-->     
+<!--
+                <a href="TransportRoutier_Main.html" target="_blank" class="lien-demo">Démo Live</a>                 
+-->
+                <a href="{% url 'realisation_demo_live' x.id %}" target="_blank" class="lien-demo">Démo Live</a>                 
+
+                <!-- <a href="#" target="_blank" class="lien-code">Code Source</a> -->
+                <a href="https://github.com/Mariogit20/Javascript-Routier.git" target="_blank" class="lien-code">Code Source</a>              
+            </article>
+
+
+                {% endfor %}
+        {% else %}
+                    <!-- <p>D&eacute;sol&eacute; ! ! Il n'existe aucune R&eacute;alisation Personnelle enregistrée !</p> -->
+
+<div class="alert alert-light custom-shadow border-0 rounded-3 p-4 text-center">
+    <p class="mb-0">
+        <i class="bi bi-chat-dots-fill text-primary mb-2 d-block fs-3"></i>
+        Désolé ! Il n'existe aucune R&eacute;alisation Personnelle enregistrée pour le moment.
+    </p>
+</div>
+        {% endif %}
+<!--
+FIN   ============>          Mes Réalisations    ,   LES """""PROJETS PERSONNELS""""" qui ont été """""réalisés"""""       DYNAMIQUE   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Mes Réalisations    ,   LES """""PROJETS PERSONNELS""""" qui ont été """""réalisés"""""       DYNAMIQUE   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Mes Réalisations    ,   LES """""PROJETS PERSONNELS""""" qui ont été """""réalisés"""""       DYNAMIQUE   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Mes Réalisations    ,   LES """""PROJETS PERSONNELS""""" qui ont été """""réalisés"""""       DYNAMIQUE   !!!!!!!!!!!!!!!!!!!   
+--> 
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </section>
+<!--
+
+    # href="index.html#temoignages"
+    
+-->     
+    <section id="temoignages" class="section-temoignages">
+        <h2>Ce qu'ils disent de moi</h2>
+
+
+<style>
+/*
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+
+https://gemini.google.com/app/1f68fb82c68ee801?hl=fr
+https://gemini.google.com/app/1f68fb82c68ee801?hl=fr
+https://gemini.google.com/app/1f68fb82c68ee801?hl=fr
+https://gemini.google.com/app/1f68fb82c68ee801?hl=fr
+
+Pouvez vous mettre une bordure stylé en css autour de la balise : <i class="fi fi-mg fa-xs"></i>    ???????????
+
+Pouvez vous mettre une bordure stylé en css autour de la balise : <i class="fi fi-mg fa-xs"></i>    ???????????
+
+Pouvez vous mettre une bordure stylé en css autour de la balise : <i class="fi fi-mg fa-xs"></i>    ?
+
+Pouvez vous mettre une bordure stylé en css autour de la balise : <i class="fi fi-mg fa-xs"></i>    ?
+*/
+/*
+MARGES INTERNES et MARGES EXTERNES en CSS :
+
+margin:5px;             MARGE EXTERNE 
+margin-top:5px;         MARGE EXTERNE du HAUT
+margin-bottom:5px;      MARGE EXTERNE du BAS
+margin-left:5px;        MARGE EXTERNE de la GAUCHE
+margin-right:5px;       MARGE EXTERNE de la DROITE
+
+padding:5px;             MARGE INTERNE 
+padding-top:5px;         MARGE INTERNE du HAUT
+padding-bottom:5px;      MARGE INTERNE du BAS
+padding-left:5px;        MARGE INTERNE de la GAUCHE
+padding-right:5px;       MARGE INTERNE de la DROITE
+*/
+/*
+i.fi.fi-mg {
+*/
+img.temoignages_des_CLIENTS {
+    border: none; /* Pas de bordure visible, on utilise l'ombre */
+    border-radius: 50%; /* Bordure circulaire si l'icône le permet (le drapeau est rectangulaire, mais ça peut donner un effet intéressant) */
+/*    padding-left: 5px;  */ /* Augmente le rembourrage pour mieux voir l'effet */
+/*    padding-right: 5px;  */ /* Augmente le rembourrage pour mieux voir l'effet */    
+    display: inline-block;
+    
+    /* L'effet "Néon" 
+    box-shadow: 0 0 5px #ff4500,   Ombre orange clair 
+                0 0 10px #ff4500,  Ombre orange plus intense 
+                0 0 15px #ff8c00;  Ombre de diffusion plus large, couleur différente */
+
+box-shadow: 0 0 5px #EE82EE, 0 0 10px #EE82EE, 0 0 15px #FF00FF;                
+
+/*
+box-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00BFFF;
+*/
+/*
+box-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #32CD32;
+*/
+
+/* NOUVEL EFFET "Néon Bleu" */
+/*    box-shadow: 0 0 5px #00FFFF,  */ /* Cyan clair (plus proche de la source) */
+/*                0 0 10px #00FFFF, */ /* Cyan plus intense */
+/*                0 0 15px #00BFFF; */ /* Bleu ciel (diffusion plus large) */
+    transition: box-shadow 0.3s ease-in-out; /* Ajoute une transition douce pour un effet interactif */
+}
+
+/* Optionnel : un effet au survol (hover) */
+/*
+i.fi.fi-mg:hover {
+*/
+/*
+i.fi.fi-mg {
+*/
+img.temoignages_des_CLIENTS:hover {
+    box-shadow: 0 0 8px #00bfff,
+                0 0 20px #00bfff,
+                0 0 30px #00ffff;
+}    
+</style>
+
+<style>
+/* Personnalisation de l'ombre pour un aspect plus doux ou coloré */
+.custom-shadow {
+    /* Syntaxe : horizontal | vertical | flou | étalement | couleur */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol pour rendre l'interface dynamique */
+.custom-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important;
+}    
+</style>
+
+        <div class="grille-temoignages">
+<!--            
+            <article class="carte-temoignage">
+                <p class="citation">"Le travail de ANDRIANTSIMBAHARILANTO Halley Mario sur notre site a été exceptionnel. La qualité du code et le respect du responsive design ont dépassé nos attentes."</p>
+
+                <p class="auteur"> <img src="image/samuel.jpg" alt="" class="img_fluid     avatar      temoignages_des_CLIENTS"> **Samuel J.** - Client Indépendant</p>                               
+
+            </article>
+
+            <article class="carte-temoignage">
+                <p class="citation">"Très réactif et d'une grande rigueur technique. Le portfolio est un exemple parfait de ce qu'on peut réaliser avec uniquement HTML et CSS."</p>
+
+                <p class="auteur"> <img src="image/Emma.JPG" alt="" class="img_fluid     avatar      temoignages_des_CLIENTS"> **Emma Eming.** - Client Indépendant</p>                        
+
+            </article>
+
+            <article class="carte-temoignage">
+                <p class="citation">"Très réactif et d'une grande rigueur technique. Le portfolio est un exemple parfait de ce qu'on peut réaliser avec uniquement HTML et CSS."</p>
+
+                <p class="auteur"> <img src="image/BRUEL.jpg" alt="" class="img_fluid     avatar      temoignages_des_CLIENTS"> **Bruel Patrick.** - Client Indépendant</p>                
+
+            </article>
+
+            <article class="carte-temoignage">
+                <p class="citation">"Très réactif et d'une grande rigueur technique. Le portfolio est un exemple parfait de ce qu'on peut réaliser avec uniquement HTML et CSS."</p>
+
+                <p class="auteur"> <img src="image/bruce_fille.JPG" alt="" class="img_fluid     avatar      temoignages_des_CLIENTS"> **Fille de Bruce** - Client Indépendant</p>
+
+            </article>
+
+            <article class="carte-temoignage">
+                <p class="citation">"Très réactif et d'une grande rigueur technique. Le portfolio est un exemple parfait de ce qu'on peut réaliser avec uniquement HTML et CSS."</p>
+                <p class="auteur"> <img src="image/arnold_adult.jpg" alt="" class="img_fluid     avatar      temoignages_des_CLIENTS"> **Arnold S.** - Client Indépendant</p>
+
+            </article>
+-->
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ============>          <article class="carte-temoignage">       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>          <article class="carte-temoignage">       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>          <article class="carte-temoignage">       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>          <article class="carte-temoignage">       DYNAMIQUE   :::::::::::::::::::   
+-->  
+<style>
+/*
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr    
+
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+*/
+
+/* Style pour les cartes de témoignages */
+.carte-temoignage-dynamique {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 2rem;
+    /* Ombre subtile personnalisée */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    height: 100%; /* Pour que toutes les cartes aient la même hauteur dans une grille */
+}
+
+/* Effet au survol (Hover) */           /*   """""NOUVEAUTE A AJOUTER""""" ce 2025   */
+.carte-temoignage-dynamique:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #0d6efd; /* Petite barre de couleur (bleu Bootstrap) au survol */
+}
+
+
+
+
+
+
+
+/*
+DEBUT =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" ::::::::
+DEBUT =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" ::::::::
+DEBUT =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" ::::::::
+DEBUT =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" ::::::::
+DEBUT =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" ::::::::
+DEBUT =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" ::::::::
+DEBUT =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" ::::::::
+DEBUT =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" ::::::::
+*/
+/* État par défaut de la carte */
+.carte-temoignage {
+    /* ... vos styles existants (background, padding, etc.) ... */
+    
+/*    border-left: 4px solid transparent;      */     /* Prépare la bordure pour éviter un saut de texte */
+    transition: 
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+        box-shadow 0.3s ease, 
+        border-left 0.3s ease;
+    
+    will-change: transform; /* Aide le navigateur à fluidifier l'animation */
+}
+
+/* Effet au survol (Hover) - NOUVEAUTÉ 2025 */
+.carte-temoignage:hover {
+/*    transform: translateY(-12px);   */  /* Légèrement plus haut pour accentuer l'effet "ressort" */
+/*    transform: translateY(-0.05px);  */  /* Légèrement plus haut pour accentuer l'effet "ressort" */    
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+/*    border-left: 4px solid #0d6efd;                    */
+/*    cursor: pointer;   */
+}
+/*
+FIN   =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" !!!!!!!!
+FIN   =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" !!!!!!!!
+FIN   =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" !!!!!!!!
+FIN   =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" !!!!!!!!
+FIN   =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" !!!!!!!!
+FIN   =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" !!!!!!!!
+FIN   =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" !!!!!!!!
+FIN   =========> OMBRE sur le BAS DROITE des Cards ========> """"Ce qu'ils disent de moi"""" !!!!!!!!
+*/
+
+
+
+
+
+
+
+/*
+.avatar-style {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #f8f9fa;
+}
+*/    
+</style>    
+
+        {% if EXISTENCE_de_TEMOIGNAGES %}
+                {% for x in TEMOIGNAGES_des_PERSONNES_cards %}
+                <article class="carte-temoignage">
+                <!-- <article class="carte-temoignage-dynamique">                     -->
+                    
+                    <p class="citation">{{x.description}}</p>
+
+                    <p class="auteur"> <img src="media/{{x.images}}" alt="" class="img_fluid     avatar      temoignages_des_CLIENTS"> **{{x.nom}}.** - Client Indépendant</p>
+
+<!--
+                    <p class="citation">"Très réactif et d'une grande rigueur technique. Le portfolio est un exemple parfait de ce qu'on peut réaliser avec uniquement HTML et CSS."</p>
+
+                    <p class="auteur"> <img src="image/arnold_adult.jpg" alt="" class="img_fluid     avatar      temoignages_des_CLIENTS"> **Arnold S.** - Client Indépendant</p>
+-->
+                </article>
+                {% endfor %}
+        {% else %}
+                    <!-- <p>D&eacute;sol&eacute; ! ! Il n'existe aucun Témoignage enregistré !</p> -->
+
+<!--
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr  
+
+
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr  
+
+
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr  
+
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+https://gemini.google.com/app/7ef82af70381daf0?hl=fr
+-->      
+<!--
+<div class="alert alert-light shadow-sm border p-3">
+    <p class="mb-0 text-muted">
+       <i class="bi bi-info-circle me-2"></i>
+       Désolé ! Aucun témoignage n'est disponible.
+    </p>
+</div>                    
+-->
+<div class="alert alert-light custom-shadow border-0 rounded-3 p-4 text-center">
+    <p class="mb-0">
+        <i class="bi bi-chat-dots-fill text-primary mb-2 d-block fs-3"></i>
+        Désolé ! Il n'existe aucun témoignage enregistré pour le moment.
+    </p>
+</div>
+        {% endif %}
+<!--
+FIN   ============>          <article class="carte-temoignage">       DYNAMIQUE   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          <article class="carte-temoignage">       DYNAMIQUE   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          <article class="carte-temoignage">       DYNAMIQUE   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          <article class="carte-temoignage">       DYNAMIQUE   !!!!!!!!!!!!!!!!!!!   
+--> 
+
+
+
+
+
+
+
+
+
+        </div>
+    </section>   
+<!--
+
+    # href="index.html#a-propos"
+    
+--> 
+    <section id="a-propos" class="section-a-propos">
+        <h2>À Propos de Moi</h2>
+        
+        <div class="contenu-a-propos">
+<!--            
+            <div class="image-profil">
+                <img src="image/Mario.JPG" alt="Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario">
+            </div>
+-->            
+
+
+
+
+
+
+
+
+<!--
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+
+
+
+🎨 Le Code CSS (à placer dans votre fichier styles.css)
+
+C'est ce code qui applique la forme circulaire et l'animation de rotation infinie à votre image.
+
+
+
+
+🎨 Le Code CSS (à placer dans votre fichier styles.css)
+
+C'est ce code qui applique la forme circulaire et l'animation de rotation infinie à votre image.
+-->
+<!--
+
+            <div class="image-profil">
+                <img src="image/Mario.JPG" alt="Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario">
+            </div>
+
+-->
+            <div class="image-profil">
+<!--
+                <img src="image/Mario.JPG" alt="Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario">                
+-->
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ============>          Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>          Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>          Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>          Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario       DYNAMIQUE   :::::::::::::::::::   
+
+https://gemini.google.com/app/9717884571d2f76c?hl=fr
+https://gemini.google.com/app/9717884571d2f76c?hl=fr
+https://gemini.google.com/app/9717884571d2f76c?hl=fr
+https://gemini.google.com/app/9717884571d2f76c?hl=fr
+https://gemini.google.com/app/9717884571d2f76c?hl=fr
+https://gemini.google.com/app/9717884571d2f76c?hl=fr
+https://gemini.google.com/app/9717884571d2f76c?hl=fr
+
+-->  
+
+        {% if AFFICHER_la_PHOTO_DE_PROFIL %}
+                
+                                    <img src="media/{{AFFICHER_la_PHOTO_DE_PROFIL.images}}" alt="Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario"          class="img-fluid"    >
+                                    <!-- <img alt="Image illustrant le développement Django" class="img-fluid"    style="object-fit:cover;  margin-bottom:7.7px; " >  -->                
+
+        {% else %}
+                    <!-- <p>D&eacute;sol&eacute; ! ! Il n'existe aucune Photo de Profil enregistrée !</p> -->
+
+<div class="alert alert-light custom-shadow border-0 rounded-3 p-4 text-center">
+    <p class="mb-0">
+        <i class="bi bi-chat-dots-fill text-primary mb-2 d-block fs-3"></i>
+        Désolé ! Il n'existe aucune Photo de Profil enregistrée pour le moment.
+    </p>
+</div>
+        {% endif %}
+<!--
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+--> 
+
+
+
+
+
+
+
+
+
+            </div>
+<!--
+
+            <div class="image-profil">
+                <img src="image/Mario.JPG" alt="Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario">
+            </div>
+            
+-->
+<!--
+🎨 Le Code CSS (à placer dans votre fichier styles.css)
+
+C'est ce code qui applique la forme circulaire et l'animation de rotation infinie à votre image.
+
+
+
+
+🎨 Le Code CSS (à placer dans votre fichier styles.css)
+
+C'est ce code qui applique la forme circulaire et l'animation de rotation infinie à votre image.
+
+
+
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+-->
+
+
+
+
+
+
+            <div class="texte-a-propos">
+<!--
+                <p>Je suis un développeur passionné par la **maîtrise du <span style="font-weight: bold; color:rgb(13, 167, 64); " >front-end</span>** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.</p>
+-->
+
+
+
+
+        {% if A_PROPOS_DE_MOI %}  {# Django vérifie automatiquement si l'objet existe et n'est pas None #}
+                
+<!--
+                <p>Je suis un développeur passionné par la **maîtrise du <span style="font-weight: bold; color:rgb(13, 167, 64); " >front-end</span>** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.</p>
+-->       
+
+                <p>{{ A_PROPOS_DE_MOI.description }}</p>
+
+        {% else %}
+                    <!-- <p>D&eacute;sol&eacute; ! Il n&apos;existe aucune Description de Mes Passions enregistr&eacute;e pour le moment !</p> -->
+
+<div class="alert alert-light custom-shadow border-0 rounded-3 p-4 text-center">
+    <p class="mb-0">
+        <i class="bi bi-chat-dots-fill text-primary mb-2 d-block fs-3"></i>
+        Désolé ! Il n&apos;existe aucune Description de Mes Passions enregistr&eacute;e pour le moment !
+    </p>
+</div>
+        {% endif %}                    
+                
+
+                
+
+                <h3>Mes Compétences Clés</h3>
+<!--
+    text-indent: 1.5cm;        /*   """"RETRAIT POSITIF DE PREMIERE LIGNE""""    du    """"TEXTE""""    suivant    ============>       """"Je suis un développeur passionné par la **maîtrise du front-end** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.""""    */
+-->                
+
+<!--
+
+                <ul class="liste-competences"   style="    text-indent: 0cm;  " >
+                    <li><i class="fab fa-html5 fa-lg icone-skill"></i> **HTML5 Sémantique**</li>
+                    <li><i class="fab fa-css3-alt fa-lg icone-skill"></i> **CSS3 Avancé**</li>
+                    <li><i class="fas fa-mobile-alt fa-lg icone-skill"></i> Responsive Design / Media Queries</li>
+                    <li><i class="fas fa-layer-group fa-lg icone-skill"></i> Flexbox & CSS Grid</li>
+                    <li><i class="fas fa-tachometer-alt fa-lg icone-skill"></i> Optimisation de Performance</li>
+                    <li><i class="fas fa-universal-access fa-lg icone-skill"></i> Accessibilité Web (ARIA)</li>
+                    <li><i class="fas fa-palette fa-lg icone-skill"></i> Design Mobile-First</li>
+                    <li><i class="fab fa-sass fa-lg icone-skill"></i> Préprocesseurs (SCSS/Less - si applicable)</li>
+                </ul>
+
+-->
+
+                <ul class="liste-competences"   style="    text-indent: 0cm;  " >
+<!--
+                    <li><i class="fab fa-html5 fa-lg icone-skill"></i> **HTML5 Sémantique**</li>
+                    <li><i class="fab fa-css3-alt fa-lg icone-skill"></i> **CSS3 Avancé**</li>
+                    <li><i class="fas fa-mobile-alt fa-lg icone-skill"></i> Responsive Design / Media Queries</li>
+                    <li><i class="fas fa-layer-group fa-lg icone-skill"></i> Flexbox & CSS Grid</li>
+                    <li><i class="fas fa-tachometer-alt fa-lg icone-skill"></i> Optimisation de Performance</li>
+                    <li><i class="fas fa-universal-access fa-lg icone-skill"></i> Accessibilité Web (ARIA)</li>
+                    <li><i class="fas fa-palette fa-lg icone-skill"></i> Design Mobile-First</li>
+                    <li><i class="fab fa-sass fa-lg icone-skill"></i> Préprocesseurs (SCSS/Less - si applicable)</li>
+-->
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       DYNAMIQUE   :::::::::::::::::::   
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   :::::::::::::::::::   
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   :::::::::::::::::::   
+DEBUT ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   :::::::::::::::::::   
+-->  
+
+        {% if Mes_Competences_Cles %}
+                {% for x in Mes_Competences_Cles %}
+
+
+                                    <!-- <p style="text-indent:1.5cm;  line-height:1cm;  text-align:justify; " > x.description_speciality </p>  -->
+                                        <!-- Développeur Django - Python --> 
+<!--
+Solution 2 : Utiliser une icône "Standard" (Le "FontAwesome standard")
+
+Si vous ne voulez pas gérer d'icônes spécifiques en base de données et que vous cherchez une icône qui passe partout pour une liste de compétences, voici les meilleures options "neutres" de FontAwesome :
+Icône	                                     Code Classe	              Usage recommandé
+
+<i class="fas fa-check-circle"></i>	         fas fa-check-circle	      Validation de compétence (Très propre)
+<i class="fas fa-code"></i>	                 fas fa-code	              Pour tout ce qui touche au développement
+<i class="fas fa-star"></i>	                 fas fa-star	              Pour mettre en avant un point fort
+<i class="fas fa-bolt"></i>	                 fas fa-bolt	              Pour des performances ou des outils rapides
+<i class="fas fa-terminal"></i>	             fas fa-terminal	          Pour les compétences techniques/back-end
+
+
+
+
+
+https://gemini.google.com/app/b83bdb7ebec35a6c
+https://gemini.google.com/app/b83bdb7ebec35a6c
+https://gemini.google.com/app/b83bdb7ebec35a6c
+https://gemini.google.com/app/b83bdb7ebec35a6c
+https://gemini.google.com/app/b83bdb7ebec35a6c
+https://gemini.google.com/app/b83bdb7ebec35a6c
+https://gemini.google.com/app/b83bdb7ebec35a6c
+https://gemini.google.com/app/b83bdb7ebec35a6c
+-->                                                                             
+                                    <li><i class="fas fa-star fa-lg icone-skill"></i> {{x.nom}}</li>                                     
+
+
+                {% endfor %}
+        {% else %}
+                    <!-- <p>D&eacute;sol&eacute; ! Il n'existe aucune Comp&eacute;tence Cl&eacute; enregistrée pour le moment !</p> -->
+
+<div class="alert alert-light custom-shadow border-0 rounded-3 p-4 text-center">
+    <p class="mb-0">
+        <i class="bi bi-chat-dots-fill text-primary mb-2 d-block fs-3"></i>
+        Désolé ! Il n'existe aucune Comp&eacute;tence Cl&eacute; enregistrée pour le moment !
+    </p>
+</div>
+        {% endif %}
+<!--
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+FIN   ============>          Image illustrant le développement Django    ,   Il n'existe aucune Premi&egrave;re Sp&eacute;cialisation enregistrée !       D   !!!!!!!!!!!!!!!!!!!   
+--> 
+
+
+
+
+
+
+
+
+                    
+
+                </ul>       <!--  <ul class="liste-competences"   style="    text-indent: 0cm;  " >   -->
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-contact">
+        <h2>Me Contacter</h2>
+        <p>N'hésitez pas à me contacter via les réseaux ou par email pour toute opportunité.</p>
+        
+<!--               
+<div class="liens-sociaux">
+    <a href="mailto:halleymariomen@gmail.com" target="_blank" 
+       class="bouton-social  email" 
+       id='LIEN_509997' 
+       onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)' 
+       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)" 
+       alt="halleymariomen@gmail.com">
+        <i class="fas fa-envelope fa-2x"></i>
+        <span>email</span>
+    </a>
+
+    <a href="https://wa.me/+261340903559" target="_blank" 
+       class="bouton-social  whatsapp" 
+       id='LIEN_509994' 
+       onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)' 
+       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)" 
+       alt="+26134 09 035 59">
+        <i class="fab fa-whatsapp fa-2x"></i>
+        <span>whatsApp</span>
+    </a>
+</div>        
+-->                             <!--    <div class="liens-sociaux">    -->
+
+
+<div class="liens-sociaux">
+    {% for r in Mes_Reseaux %}
+        {% if r.nom == 'email' %}
+            <a href="mailto:{{ r.url }}" target="_blank" 
+               class="bouton-social email" 
+               id='LIEN_50{{ r.id }}' 
+               onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)' 
+               onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)" 
+               alt="{{ r.url }}">
+                <i class="fas fa-envelope fa-2x"></i>
+                <span>email</span>
+            </a>
+        {% elif r.nom == 'whatsapp' %}
+            <a href="{{ r.url }}" target="_blank" 
+               class="bouton-social whatsapp" 
+               id='LIEN_50{{ r.id }}' 
+               onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)' 
+               onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)" 
+               alt="{{ r.url }}">
+                <i class="fab fa-whatsapp fa-2x"></i>
+                <span>whatsApp</span>
+            </a>
+        {% else %}
+            <a href="{{ r.url }}" target="_blank" 
+               class="bouton-social {{ r.nom }}" 
+               id='LIEN_50{{ r.id }}' 
+               onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)' 
+               onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)" 
+               alt="{{ r.url }}">
+                <i class="fab fa-{{ r.nom }} fa-2x"></i>
+                <span>{{ r.nom }}</span>
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>
+
+
+
+    </section>
+</main>
+
+
+
+
+
+
+
+
+
+<!-- POPUP affiché en BAS : -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+-->
+
+<!-- 
+page_inscription.html
+
+https://gemini.google.com/app/f7b714a644fad494
+https://gemini.google.com/app/f7b714a644fad494
+https://gemini.google.com/app/f7b714a644fad494
+https://gemini.google.com/app/f7b714a644fad494
+https://gemini.google.com/app/f7b714a644fad494 
+-->
+
+<div id="messages-wrapper" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 9999; width: 95%; max-width: 600px; max-height: 100vh; overflow-y: auto;">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="w3-panel w3-display-container w3-animate-top w3-card-4 
+                {% if message.tags == 'error' %}w3-red{% elif message.tags == 'warning' %}w3-orange{% else %}w3-green{% endif %}" 
+                style="margin: 10px 0; border-radius: 8px; transition: opacity 0.6s ease;">
+                
+                <span onclick="this.parentElement.style.display='none'" 
+                      class="w3-button w3-transparent w3-display-topright" style="font-weight: bold;">&times;</span>
+                
+                <div style="padding: 8px 16px; display: flex; align-items: center;">
+                    <span style="font-size: 24px; margin-right: 15px; flex-shrink: 0;">
+                        {% if message.tags == 'error' %} ⚠️ 
+                        {% elif message.tags == 'warning' %} 🔔 
+                        {% else %} ✅ 
+                        {% endif %}
+                    </span>
+                    <p style="margin: 0; word-wrap: break-word; padding-right: 25px;">{{ message }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<!--
+DEBUT ==========> BOUTON :     S'inscrire maintenant        ::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========> BOUTON :     S'inscrire maintenant        ::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========> BOUTON :     S'inscrire maintenant        ::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========> BOUTON :     S'inscrire maintenant        ::::::::::::::::::::::::::::::::::::::::::::
+-->
+<!--
+https://gemini.google.com/app/f7b714a644fad494
+https://gemini.google.com/app/f7b714a644fad494
+https://gemini.google.com/app/f7b714a644fad494
+https://gemini.google.com/app/f7b714a644fad494
+
+
+
+
+Voici le code complet du bouton incluant l'icône, l'effet de survol, et l'adaptabilité mobile.
+
+J'ai utilisé un code HTML simple pour l'icône (un emoji ou un caractère spécial) afin d'éviter de charger une bibliothèque lourde comme FontAwesome, tout en gardant un aspect professionnel.
+-->
+<style>
+    /* 1. Style de base du bouton */
+    .btn-inscription {
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animation plus fluide */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        display: inline-flex; /* Aligne l'icône et le texte proprement */
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* Espace entre l'icône et le texte */
+    }
+
+    /* 2. Effet au survol (PC) */
+    .btn-inscription:hover {
+        background-color: #0056b3 !important;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        transform: translateY(-3px); /* Soulèvement */
+    }
+
+    /* Animation de l'icône au survol */
+    .btn-inscription:hover .btn-icon {
+        transform: translateX(4px); /* La flèche bouge un peu vers la droite */
+    }
+
+    .btn-icon {
+        transition: transform 0.3s ease;
+        font-size: 1.2em;
+    }
+
+    /* 3. Adaptabilité Mobile (Responsive) */
+    @media (max-width: 600px) {
+        .btn-inscription {
+            width: 100% !important;
+            padding: 18px !important;
+            font-size: 1.2em !important;
+            border-radius: 12px !important; /* Arrondi plus prononcé sur mobile */
+        }
+    }
+</style>
+
+<div class="w3-container w3-padding-32 w3-center"        id="sinscrire" >
+    <button onclick="showPopup()" 
+            class="w3-button w3-blue w3-round-large w3-large btn-inscription">
+        <span>S'inscrire maintenant</span>
+        <span class="btn-icon">➔</span> 
+    </button>
+</div>
+<!--
+Pourquoi l'ajout de l'icône est stratégique ?
+
+    Affordance : Une flèche (➔) indique visuellement une action ou une direction (ici, l'entrée dans le processus d'inscription), ce qui augmente le taux de clic.
+
+    Animation Micro-interaction : Le fait que la flèche bouge légèrement vers la droite au survol (translateX) donne une impression de dynamisme et de modernité à ton site.
+
+    Alignement Flex : L'utilisation de display: inline-flex garantit que l'icône et le texte restent parfaitement alignés verticalement, même si tu changes la taille de la police plus tard.
+-->
+<!--
+FIN   ==========> BOUTON :     S'inscrire maintenant        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========> BOUTON :     S'inscrire maintenant        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========> BOUTON :     S'inscrire maintenant        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========> BOUTON :     S'inscrire maintenant        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+<div id="myPopup" class="popup-overlay">
+    <div class="popup-content w3-animate-zoom">
+<!--
+//        window.location.href = "/";       //  Garde l'historique ?  Oui      //  Navigation standard entre les pages.
+
+
+
+// On ""RECHARGE COMPLETEMENT"" la ""PAGE D'ACCUEIL"" nommé ""index.html"" afin de """"FAIRE APPARAITRE"""" les """"IMAGES"""" contenues dans le FICHIER """"index.html"""" :::::::::::::::::::::::::
+
+///// window.location.href = "/"       //  Garde l'historique ?  Oui      //  Navigation standard entre les pages.        
+-->        
+        <span class="w3-button w3-transparent w3-display-topright w3-xlarge" onclick="closePopup();     window.location.replace('/'); ">&times;</span>
+        <h3 class="w3-center w3-text-blue">Créer un compte</h3>        
+        
+        <form method="post" enctype="multipart/form-data" action="{% url 'root_gemini_accueil' %}">           
+            {% csrf_token %}            
+            
+            <p>
+                <label><b>Nom et Prénom</b></label>
+                <input type="text" name="nom" autocomplete="name"
+                       class="w3-input w3-border w3-round {% if erreurs_champs.nom %}w3-border-red{% endif %}" 
+                       value="{{ donnees.nom|default:'' }}" required>
+                {% if erreurs_champs.nom %}
+                    <span class="w3-text-red w3-small">{{ erreurs_champs.nom }}</span>
+                {% endif %}
+            </p>
+
+            <p>
+                <label><b>Adresse Mail</b></label>
+                <input type="email" name="email" autocomplete="email"
+                       class="w3-input w3-border w3-round {% if erreurs_champs.email %}w3-border-red{% endif %}" 
+                       value="{{ donnees.email|default:'' }}" required>
+                {% if erreurs_champs.email %}
+                    <span class="w3-text-red w3-small">{{ erreurs_champs.email }}</span>
+                {% endif %}
+            </p>            
+            
+            <p>
+                <label><b>Mot de passe</b></label>
+                <div style="position: relative;">
+                    <input type="password" id="password" name="password" 
+                           autocorrect="off" autocapitalize="off"
+                           class="w3-input w3-border w3-round {% if erreurs_champs.password %}w3-border-red{% endif %}" 
+                           style="padding-right: 45px !important;" required>
+                    <span onclick="togglePassword()" 
+                          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 20px; z-index: 10;">
+                        👁️
+                    </span>
+                </div>
+                {% if erreurs_champs.password %}
+                    <span class="w3-text-red w3-small">{{ erreurs_champs.password }}</span>
+                {% endif %}
+            </p>                                    
+            
+            <div class="btn-container">
+                <button type="submit" class="w3-button w3-green w3-round w3-block">Envoyer</button>  
+<!--
+//        window.location.href = "/";       //  Garde l'historique ?  Oui      //  Navigation standard entre les pages.
+
+
+
+// On ""RECHARGE COMPLETEMENT"" la ""PAGE D'ACCUEIL"" nommé ""index.html"" afin de """"FAIRE APPARAITRE"""" les """"IMAGES"""" contenues dans le FICHIER """"index.html"""" :::::::::::::::::::::::::
+
+///// window.location.href = "/"       //  Garde l'historique ?  Oui      //  Navigation standard entre les pages.                
+-->                         
+                <button type="button" onclick="closePopup();     window.location.replace('/'); "      class="w3-button w3-light-grey w3-round w3-block">Annuler</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // --- GESTION DU POPUP ---
+    function showPopup() {
+        const popup = document.getElementById("myPopup");
+        if (popup) {
+            popup.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Bloque le scroll arrière
+        }
+    }
+
+    function closePopup() {
+        const popup = document.getElementById("myPopup");
+        if (popup) {
+            popup.style.display = "none";
+            document.body.style.overflow = "auto";
+        }        
+    }
+
+    // Fermer si on clique sur le fond noir
+    window.onclick = function(event) {
+        const popup = document.getElementById("myPopup");
+        if (event.target == popup) {
+/*
+//        window.location.href = "/";       //  Garde l'historique ?  Oui      //  Navigation standard entre les pages.
+
+
+
+// On ""RECHARGE COMPLETEMENT"" la ""PAGE D'ACCUEIL"" nommé ""index.html"" afin de """"FAIRE APPARAITRE"""" les """"IMAGES"""" contenues dans le FICHIER """"index.html"""" :::::::::::::::::::::::::
+
+///// window.location.href = "/"       //  Garde l'historique ?  Oui      //  Navigation standard entre les pages.
+*/
+closePopup();     // window.location.replace('/');             
+
+        } 
+    }
+
+
+/*    
+BUT RECHERCHE ============> On souhaite """"FERMER LA POPUP"""" lorsque l'""""Utilisateur CLIQUE A L'EXTERIEUR DE LA POPUP"""" , c-à-d comme si l'on cliquait sur le """"BOUTON Fermer DE LA POPUP"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+BUT RECHERCHE ============> On souhaite """"FERMER LA POPUP"""" lorsque l'""""Utilisateur CLIQUE A L'EXTERIEUR DE LA POPUP"""" , c-à-d comme si l'on cliquait sur le """"BOUTON Fermer DE LA POPUP"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+BUT RECHERCHE ============> On souhaite """"FERMER LA POPUP"""" lorsque l'""""Utilisateur CLIQUE A L'EXTERIEUR DE LA POPUP"""" , c-à-d comme si l'on cliquait sur le """"BOUTON Fermer DE LA POPUP"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+BUT RECHERCHE ============> On souhaite """"FERMER LA POPUP"""" lorsque l'""""Utilisateur CLIQUE A L'EXTERIEUR DE LA POPUP"""" , c-à-d comme si l'on cliquait sur le """"BOUTON Fermer DE LA POPUP"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+BUT RECHERCHE ============> On souhaite """"FERMER LA POPUP"""" lorsque l'""""Utilisateur CLIQUE A L'EXTERIEUR DE LA POPUP"""" , c-à-d comme si l'on cliquait sur le """"BOUTON Fermer DE LA POPUP"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+BUT RECHERCHE ============> On souhaite """"FERMER LA POPUP"""" lorsque l'""""Utilisateur CLIQUE A L'EXTERIEUR DE LA POPUP"""" , c-à-d comme si l'on cliquait sur le """"BOUTON Fermer DE LA POPUP"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+BUT RECHERCHE ============> On souhaite """"FERMER LA POPUP"""" lorsque l'""""Utilisateur CLIQUE A L'EXTERIEUR DE LA POPUP"""" , c-à-d comme si l'on cliquait sur le """"BOUTON Fermer DE LA POPUP"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+BUT RECHERCHE ============> On souhaite """"FERMER LA POPUP"""" lorsque l'""""Utilisateur CLIQUE A L'EXTERIEUR DE LA POPUP"""" , c-à-d comme si l'on cliquait sur le """"BOUTON Fermer DE LA POPUP"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+https://gemini.google.com/app/fcaf7413cee446cc
+
+
+
+
+Un détail important sur      window.onclick
+
+L'événement      window.onclick      est très     global. Si vous avez d'autres scripts qui utilisent aussi      window.onclick      , ils peuvent      entrer en conflit. Il est préférable d'utiliser      addEventListener      :
+*/
+window.addEventListener('click', function(event) {
+    const popup = document.getElementById("myPopup");
+    if (event.target == popup) {
+//        window.location.href = "/";       //  Garde l'historique ?  Oui      //  Navigation standard entre les pages.
+
+
+
+// On ""RECHARGE COMPLETEMENT"" la ""PAGE D'ACCUEIL"" nommé ""index.html"" afin de """"FAIRE APPARAITRE"""" les """"IMAGES"""" contenues dans le FICHIER """"index.html"""" :::::::::::::::::::::::::
+
+///// window.location.href = "/"       //  Garde l'historique ?  Oui      //  Navigation standard entre les pages.
+
+window.location.replace("/")     //  Garde l'historique ?  Non      //  Redirection après un paiement ou une connexion (évite de revenir en arrière).
+
+    }
+});
+
+
+
+    // --- VISIBILITÉ MOT DE PASSE ---
+    function togglePassword() {
+        const pInput = document.getElementById("password");
+        pInput.type = (pInput.type === "password") ? "text" : "password";
+    }
+
+    // --- FERMETURE AUTO DES MESSAGES (7s) ---
+    document.addEventListener('DOMContentLoaded', function() {
+        const panels = document.querySelectorAll('#messages-wrapper .w3-panel');
+        panels.forEach((panel) => {
+            if (!panel.classList.contains('w3-red')) { // Ne pas fermer les erreurs critiques
+                setTimeout(() => {
+                    panel.style.opacity = '0';
+                    setTimeout(() => panel.remove(), 600);
+                }, 7000);
+            }
+        });
+
+        // RE-OUVRIR LE POPUP SI ERREURS DE VALIDATION
+        const erreurPresente = "{% if erreurs_champs %}true{% else %}false{% endif %}";
+        if (erreurPresente === "true") {
+            showPopup();
+        }
+    });
+</script>
+
+<!--
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+{% endblock "contenu" %}

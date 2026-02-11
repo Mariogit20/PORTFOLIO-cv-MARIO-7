@@ -1,0 +1,573 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <!-- <ul class="navbar-nav ms-auto"> -->
+<!--
+ms-auto poussait le menu à la droite. me-auto pousse le menu à la gauche en remplissant l'espace à droite, forçant l'élément suivant (la marque) à se positionner sur le bord droit du conteneur.                    
+-->                    
+                <ul class="navbar-nav                       me-auto">   
+<!--
+DEBUT ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" ::::::::::::::::::::::::                    
+-->                    
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Portfolio
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'name_acceuil' %}#accueil">Accueil</a></li>
+                            <li><a class="dropdown-item" href="{% url 'name_acceuil' %}#projets">Projets</a></li>
+                            <li><a class="dropdown-item" href="{% url 'name_acceuil' %}#temoignages">Témoignages</a></li>
+                            <li><a class="dropdown-item" href="{% url 'name_acceuil' %}#a-propos">À Propos</a></li>      
+                            <li><a class="dropdown-item" href="{% url 'name_acceuil' %}#contact">Contact</a></li>                                                                  
+                        </ul>                                                                        
+                    </li>
+
+<!--
+FIN   ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+FIN   ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+FIN   ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+FIN   ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+FIN   ============> """""Portfolio""""" pour """""PARCOURIR le CV en LIGNE""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+--> 
+                    
+
+
+
+
+
+
+
+
+<!--
+DEBUT ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" ::::::::::::::::::::::::                    
+-->                    
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menus dynamiques
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        {% for acces in mes_menus_visibles %}
+{% if  acces.menu.nom  ==  'Gestion des Utilisateurs'  %}        
+                            <li><a class="dropdown-item" href="#">Gestion des Utilisateurs</a></li>
+{% endif %}                            
+{% if  acces.menu.nom  ==  'Gestion d\'Affichage du Site'  %}   
+                            <li><a class="dropdown-item" href="#">Gestion d&apos;Affichage du Site</a></li>
+{% endif %}
+{% if  acces.menu.nom  ==  'Factures'  %}  
+                            <li><a class="dropdown-item" href="#">Factures</a></li>
+{% endif %}
+{% if  acces.menu.nom  ==  'Rapports'  %}  
+                            <li><a class="dropdown-item" href="#">Rapports</a></li>
+{% endif %}
+        {% endfor %}
+                        </ul>                                                                        
+                    </li>
+
+<!--
+FIN   ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+FIN   ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+FIN   ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+FIN   ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+FIN   ============> """""Menus dynamiques""""" A FAIRE selon """""page_utilisateur.html""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+--> 
+                    
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Service 1</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="submenuService2" role="button">
+                                    Service 2
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="submenuService2">
+                                    <li><a class="dropdown-item" href="#">Sous-service A</a></li>
+                                    <li><a class="dropdown-item" href="#">Sous-service B</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="submenuService3" role="button">
+                                            Service 3
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="submenuService3">
+                                            <li><a class="dropdown-item" href="#">Sous-service C</a></li>
+                                            <li><a class="dropdown-item" href="#">Sous-service D</a></li>
+<!--
+DEBUT ========> SOUS MENU de QUATRIEME NIVEAU :::::::::                                            
+-->                                            
+                                                        <li class="dropdown-submenu">
+                                                            <a class="dropdown-item dropdown-toggle" href="#" id="submenuService5" role="button">
+                                                                Service 5
+                                                            </a>
+                                                            <ul class="dropdown-menu" aria-labelledby="submenuService5">
+                                                                <li><a class="dropdown-item" href="#">Sous-service D_1</a></li>
+                                                                <li><a class="dropdown-item" href="#">Sous-service D_2</a></li>
+                                                            </ul>
+                                                        </li>         <!-- <li class="dropdown-submenu"> -->
+<!--
+FIN   ========> SOUS MENU de QUATRIEME NIVEAU !!!!!!!!!
+-->
+                                        </ul>
+                                    </li>         <!-- <li class="dropdown-submenu"> -->
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="submenuService4" role="button">
+                                    Service 4
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="submenuService4">
+                                    <li><a class="dropdown-item" href="#">Sous-service E</a></li>
+                                    <li><a class="dropdown-item" href="#">Sous-service F</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+<!--
+                    <li class="nav-item">
+                        <a class="nav-link" href="email_Javascript.htm#email_JAVASCRIPT">Email</a>
+                    </li>                    
+-->
+<!--
+
+
+
+
+# FORMULAIRE d'un    ENVOI d'un EMAIL    en javascript
+
+
+https://gemini.google.com/app/50f984f5e7992921?hl=fr
+https://gemini.google.com/app/50f984f5e7992921?hl=fr
+https://gemini.google.com/app/50f984f5e7992921?hl=fr
+https://gemini.google.com/app/50f984f5e7992921?hl=fr
+
+
+
+Pourquoi séparer l'ancre du nom du fichier ?
+
+Le schéma suivant montre comment Django traite votre demande :
+
+    Le Navigateur demande une URL.
+
+    Django exécute la fonction dans views.py.
+
+    Django cherche le fichier template (sans l'ancre car le système de fichier ne la reconnaît pas).
+
+    Django renvoie le HTML au navigateur.
+
+    Le Navigateur reçoit la page et, voyant #email_JAVASCRIPT dans son URL, fait défiler la page automatiquement.
+
+Souhaitez-vous que je vous aide à écrire le script JavaScript pour récupérer les données du formulaire et envoyer l'email ?
+
+
+Comment l'utilisateur arrive sur l'ancre ? Dans vos autres pages HTML (par exemple votre menu), votre lien doit ressembler à ceci :
+-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'name_Page_email_Javascript' %}#email_JAVASCRIPT">Email</a>
+                    </li>                    
+
+                    
+
+<!--
+DEBUT ============> """""Administration""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Administration""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Administration""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Administration""""" ::::::::::::::::::::::::                    
+DEBUT ============> """""Administration""""" ::::::::::::::::::::::::                    
+-->                    
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Administration
+                        </a>
+<!--
+DEBUT ============> https://gemini.google.com/app/fc6a08051ebbb6d7      :::::::::::::::::::::::::::
+DEBUT ============> https://gemini.google.com/app/fc6a08051ebbb6d7      :::::::::::::::::::::::::::
+DEBUT ============> https://gemini.google.com/app/fc6a08051ebbb6d7      :::::::::::::::::::::::::::
+DEBUT ============> https://gemini.google.com/app/fc6a08051ebbb6d7      :::::::::::::::::::::::::::
+DEBUT ============> https://gemini.google.com/app/fc6a08051ebbb6d7      :::::::::::::::::::::::::::                        
+
+https://gemini.google.com/app/57bb0c3daec258cd
+https://gemini.google.com/app/57bb0c3daec258cd
+https://gemini.google.com/app/57bb0c3daec258cd
+https://gemini.google.com/app/57bb0c3daec258cd
+
+https://gemini.google.com/app/692b6eb7d68bc9f7
+https://gemini.google.com/app/692b6eb7d68bc9f7
+-->
+<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    
+    {# 1. On parcourt TOUS LES MENUS qui sont       AFFICHES DYNAMIQUEMENT     ou     CACHES     en fonction du    ROLE (soit ADMINISTRATEUR , MODERATEUR , UTILISATEUR , Responsable de Saisie , ... ) de l'UTILISATEUR connecté     au     Site Web du     PORTFOLIO #}        
+        {% for acces in mes_menus_visibles %}
+
+            {# 2. Liens réservés UNIQUEMENT à l'Administrateur #}
+            {% if  acces.menu.nom  ==  'Gestion des Utilisateurs'  %}
+                <li><a class="dropdown-item" href="{% url 'gestion_globale' %}">Gestion des Utilisateurs</a></li>
+            {% endif %}
+
+            {# 3. Liens pour Admin OU Modérateur #}
+            {% if  acces.menu.nom  ==  'Gestion d\'Affichage du Site'  %}
+               {# Ce code est sécurisé et précis #}
+                <li><a class="dropdown-item" href="{% url 'dashboard_admin' %}">Gestion d&apos;Affichage du Site</a></li>
+                <!-- <li><a class="dropdown-item" href="#">Espace Modérateur</a></li> -->
+            {% endif %}
+
+            {# 4. Autres rôles spécifiques #}
+            {% if  acces.menu.nom  ==  'Factures'  %}
+               {# Ce code est sécurisé et précis #}
+                <li><a class="dropdown-item" href="#">Factures</a></li>
+                <!-- <li><a class="dropdown-item" href="#">Espace Modérateur</a></li> -->
+            {% endif %}
+
+            {% if  acces.menu.nom  ==  'Rapports'  %}
+               {# Ce code est sécurisé et précis #}
+                <li><a class="dropdown-item" href="#">Rapports</a></li>
+                <!-- <li><a class="dropdown-item" href="#">Espace Modérateur</a></li> -->
+            {% endif %}            
+
+        {% endfor %}
+
+
+
+</ul>
+<!--
+FIN   ============> https://gemini.google.com/app/fc6a08051ebbb6d7      !!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============> https://gemini.google.com/app/fc6a08051ebbb6d7      !!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============> https://gemini.google.com/app/fc6a08051ebbb6d7      !!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============> https://gemini.google.com/app/fc6a08051ebbb6d7      !!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============> https://gemini.google.com/app/fc6a08051ebbb6d7      !!!!!!!!!!!!!!!!!!!!!!!!!!!                        
+-->                                                                   
+                    </li>
+
+<!--
+FIN   ============> """""Administration""""" !!!!!!!!!!!!!!!!!!!!!!!!                 
+FIN   ============> """""Administration""""" !!!!!!!!!!!!!!!!!!!!!!!!                    
+FIN   ============> """""Administration""""" !!!!!!!!!!!!!!!!!!!!!!!!                 
+FIN   ============> """""Administration""""" !!!!!!!!!!!!!!!!!!!!!!!!                 
+FIN   ============> """""Administration""""" !!!!!!!!!!!!!!!!!!!!!!!!                 
+--> 
+                    
+
+
+
+
+
+
+<!--
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+-->  
+<!-- 
+                    <li class="nav-item">
+                        <a class="nav-link"              onclick="showPopup()"   cursor="pointer" >Se connecter</a>
+                    </li>                     
+-->
+<!-- 
+<li class="nav-item">
+    <button class="nav-link btn btn-link" onclick="showPopup()">
+        Se connecter
+    </button>
+</li> 
+-->
+<!--
+<li class="nav-item">
+    <a class="nav-link" onclick="showPopup()" style="cursor: pointer;">
+        Se connecter
+    </a>
+</li>
+-->
+
+{% if request.session.user %}
+    <li class="nav-item">
+<!--
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+
+
+
+Vous :      Question : En utilisant du code css , je voudrais afficher 10 caractères suivi de tris points de suspension
+
+
+
+GEMINI :
+1. La méthode CSS (Recommandée pour le design)
+
+C'est la plus flexible car les "..." s'adaptent si tu changes la taille de la police plus tard.
+
+
+
+GEMINI :
+
+C'est une excellente question ! En CSS, on appelle cela le Text Truncation.
+
+Pour que cela fonctionne, il y a une petite nuance : le CSS ne compte pas le nombre de caractères (comme 10), mais il se base sur la largeur (width) de l'élément. Si tu veux exactement 10 caractères, il faut utiliser une unité de mesure spéciale : le ch.
+La solution CSS "Trunk"
+
+Voici le code à appliquer sur ton élément (par exemple, ta balise <a> ou un <span>) :
+CSS
+
+.nav-link {
+    display: inline-block; /* Ou block */
+    max-width: 10ch;       /* Limite la largeur à environ 10 caractères */
+    overflow: hidden;      /* Cache ce qui dépasse */
+    white-space: nowrap;   /* Empêche le texte de revenir à la ligne */
+    text-overflow: ellipsis; /* Ajoute les "..." automatiquement */
+    vertical-align: bottom;
+}
+
+Pourquoi utiliser ch ?
+
+L'unité $1ch$ correspond à la largeur du caractère "0" de la police utilisée. C'est ce qui se rapproche le plus d'un compteur de caractères en CSS pur.
+
+
+
+
+RESULTAT OBTENU :       Administrateu...
+
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+-->        
+        <a class="nav-link" href="/" title="{{ request.session.user.nom }}"><span class="truncate-text">{{request.session.user.nom}}</span>&nbsp;({{request.session.user.role}})</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'deconexion' %}">D&eacute;connexion</a>
+    </li>    
+{% else %}
+    <li class="nav-item">
+
+        <a class="nav-link"                      style="cursor: pointer;"             href="{% url 'name_acceuil' %}#sinscrire" >
+            S&apos;inscrire
+        </a>
+<!--
+DEBUT =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     ::::::::::::::::::::::::::   
+DEBUT =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     ::::::::::::::::::::::::::   
+DEBUT =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     ::::::::::::::::::::::::::   
+DEBUT =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     ::::::::::::::::::::::::::   
+DEBUT =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     ::::::::::::::::::::::::::   
+
+        <a class="nav-link" onclick="showPopup()" style="cursor: pointer;"     >            
+            S&apos;inscrire
+        </a>
+
+FIN   =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     !!!!!!!!!!!!!!!!!!!!!!!!!!   
+FIN   =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     !!!!!!!!!!!!!!!!!!!!!!!!!!   
+FIN   =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     !!!!!!!!!!!!!!!!!!!!!!!!!!   
+FIN   =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     !!!!!!!!!!!!!!!!!!!!!!!!!!   
+FIN   =====> """""APPARITION"""""   de la    """""POPUP d'ENREGISTREMENT"""""    DE L'   """""INSCRIPTION"""""    DE L'   """""UTILISATEUR"""""     !!!!!!!!!!!!!!!!!!!!!!!!!!   
+-->
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'loginpage' %}">Connexion</a>
+    </li>
+{% endif %}
+<!--
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+
+                    
+                </ul>
+            </div>       <!--  <div class="collapse navbar-collapse" id="navbarNavDropdown">  -->
+
+            <a class="navbar-brand" href="#accueil">Mario | DEV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+</header>
+
+<!--
+DEBUT ========> de la BARRE DE NAVIGATION des MENUS et SOUS MENUS ou NavBar :::::::::::::::
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto"> 
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projets">Projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <a class="navbar-brand order-lg-last" href="#accueil">Mario | DEV</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+        </div>
+    </nav>
+</header>
+
+FIN   ========> de la BARRE DE NAVIGATION des MENUS et SOUS MENUS ou NavBar !!!!!!!!!!!!!!!
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+-->
+<style>
+/*
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+*/  
+/*
+ Style pour le popup 
+.popup-overlay {
+  display: none;                           Caché par défaut 
+  position: fixed;
+  z-index: 999;                            Au-dessus de tout le reste 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);       Fond sombre semi-transparent 
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: auto;                              Centre le popup 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;                                Largeur du popup 
+  max-width: 500px;                          Largeur maximale 
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+*/  
+/*
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+</style>
+
+
+
+
+
+<script>
+/*
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" :::::::::::::::::::::::::::::::::::::::::::::
+*/  
+/*
+    function showPopup() {
+        document.getElementById("myPopup").style.display = "flex";
+    }
+    function closePopup() {
+        document.getElementById("myPopup").style.display = "none";
+    }
+    window.onclick = function(event) {
+        var popup = document.getElementById("myPopup");
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+*/
+/*
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/	
+</script>
+<!--
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur le BOUTON"" nommé ""S'inscrire maintenant"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+<div class="alert alert-secondary mt-3">
+    <p><strong>DEBUG mes_menus_visibles (header.html) : <span>{{ mes_menus_visibles }}</span></strong></p>
+</div>
+
+<div class="alert alert-secondary mt-3">
+    <p><strong>DEBUG role user : <span>{{ request.session.user.role.nom_role }}</span></strong></p>
+</div>
+
+
+<pre>{{ request.session.user }}</pre>
+<p>Contenu du rôle : "{{ request.session.user.role.nom_role }}"</p>
+

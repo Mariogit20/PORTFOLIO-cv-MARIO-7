@@ -1,0 +1,1145 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Diaporama W3.CSS avec Popup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!--  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+-->
+  <!-- <link href="bootstrap-5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    
+    <!-- <link rel="stylesheet" href="bootstrap-5.0.2/dist/css/bootstrap.min.css"> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">     
+
+
+
+
+  
+  <style>
+/*
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+*/  
+    .dropdown-submenu {
+      position: relative;
+    }
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+      /* AJOUTS POUR SUPPRIMER L'ESPACE */
+      padding: 0;
+      margin: 0;
+    }
+    .dropdown-submenu .dropdown-menu li {
+      margin-bottom: 0;
+    }
+
+    /* Desktop hover */
+    @media (min-width: 992px) {
+      .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+      }
+    }
+
+    /* Mobile/tablette accordéon */
+    @media (max-width: 991.98px) {
+      .dropdown-menu {
+        display: none;
+      }
+      .dropdown-menu.show {
+        display: block;
+      }
+    }
+/*
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/	
+  </style>
+
+
+
+
+
+<style>
+/*
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+*/  
+/* Style pour le popup */
+.popup-overlay {
+  display: none; /* Caché par défaut */
+  position: fixed;
+  z-index: 999; /* Au-dessus de tout le reste */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7); /* Fond sombre semi-transparent */
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: auto; /* Centre le popup */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Largeur du popup */
+  max-width: 500px; /* Largeur maximale */
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+</style>
+
+
+
+
+
+<style>
+			/*
+      DEBUT ==============> Css Responsive Flexbox Cards ::::::::::::::::::::::::
+      DEBUT ==============> Css Responsive Flexbox Cards ::::::::::::::::::::::::
+      DEBUT ==============> Css Responsive Flexbox Cards ::::::::::::::::::::::::
+      DEBUT ==============> Css Responsive Flexbox Cards ::::::::::::::::::::::::                  
+			*/  
+  *{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+  }
+
+  body{
+    background: #fefefe;
+    font-family: sans-serif;
+  }
+
+  .container{
+    width:90%;
+    margin:50px auto;
+  }
+
+  .heading{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+
+  .row{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-flow:wrap;
+  }
+
+  .card{
+    width: 20%;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom:50px;
+    transition:0.3s;
+  }
+
+  .card-header{
+    text-align: center;
+    padding: 50px 10px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: #fff;
+  }
+
+  .card-body{
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .card-body .btn{
+    display: block;
+    color:#fff;
+    text-align: center;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    margin-top:30px;
+    text-decoration: none;
+    padding:10px 5px;
+  }
+
+  .card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 40px -10px rgba(0, 0, 0, 0.25);
+  }
+
+
+  /* Responsive media queries */
+
+  @media screen and (max-width:1000px){
+    .card{
+      width:40%;
+    }
+  }
+
+  @media screen and (max-width:620px){
+
+    .container{
+      width: 100%;
+    }
+
+    .heading{
+      /* padding: 20px; */
+      font-size:20px;
+    }
+
+    .card{
+      width:80%;
+    }
+  }  
+			/*
+      FIN   ==============> Css Responsive Flexbox Cards !!!!!!!!!!!!!!!!!!!!!!!!
+      FIN   ==============> Css Responsive Flexbox Cards !!!!!!!!!!!!!!!!!!!!!!!!
+      FIN   ==============> Css Responsive Flexbox Cards !!!!!!!!!!!!!!!!!!!!!!!!
+      FIN   ==============> Css Responsive Flexbox Cards !!!!!!!!!!!!!!!!!!!!!!!!
+			*/        
+</style>
+
+<style>
+/*
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+*/
+.COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER{
+					 
+					 border-radius:20px;
+					 -moz-border-radius:20px;
+					 -o-border-radius:20px;
+					 -webkit-border-radius:20px;
+					 -ms-border-radius:20px;
+				
+}
+/*
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+*/
+</style>
+
+</head>
+<body>
+
+<!--
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+-->
+<div class="w3-content w3-display-container">
+
+<img class="mySlides_CAROUSSEL w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_snow_wide.jpg' %}" style="width:100%">         <!--   image/img_snow_wide.jpg   -->
+<img class="mySlides_CAROUSSEL w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_lights_wide.jpg' %}" style="width:100%">       <!--   image/img_lights_wide.jpg   -->
+<img class="mySlides_CAROUSSEL w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_mountains_wide.jpg' %}" style="width:100%">    <!--   image/img_mountains_wide.jpg   -->
+
+</div>
+<!--
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+-->
+
+
+
+
+
+
+
+<!--
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Mon Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+<!--
+        <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
+-->
+        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>        
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Service 1</a></li>
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item dropdown-toggle" href="#">Service 2</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Sous-service A</a></li>
+                <li class="dropdown-submenu dropend">
+                  <a class="dropdown-item dropdown-toggle" href="#">Sous-service B</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">B - 1</a></li>
+                    <li class="dropdown-submenu dropend">
+                      <a class="dropdown-item dropdown-toggle" href="#">B - 2</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">B - 2 - 1</a></li>
+                        <li><a class="dropdown-item" href="#">B - 2 - 2</a></li>
+                        <li><a class="dropdown-item" href="#">B - 2 - 3</a></li>
+                        <li><a class="dropdown-item" href="#">B - 2 - 4</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item" href="#">Service 3</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+
+        <li class="nav-item dropdown">		
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Formation</a>
+          <ul class="dropdown-menu">		
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item dropdown-toggle" href="#">Informatique</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Sous-service A</a></li>
+                <li class="dropdown-submenu dropend">
+                  <a class="dropdown-item dropdown-toggle" href="#">Langage de Programmation</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">B - 1</a></li>
+                    <li class="dropdown-submenu dropend">
+                      <a class="dropdown-item dropdown-toggle" href="#">Frontend (côté Navigateur)</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#react">React</a></li>
+                        <li><a class="dropdown-item" href="#vue">Vue</a></li>
+                        <li><a class="dropdown-item" href="#angular">Angular</a></li>
+                        <li><a class="dropdown-item" href="#jquery">JQuery</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>		
+          </ul>
+        </li>		  
+			
+        <li class="nav-item dropdown">		
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Transport</a>
+          <ul class="dropdown-menu">		
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item dropdown-toggle" href="#">Transport de Marchandises</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Sous-service A</a></li>
+                <li class="dropdown-submenu dropend">
+                  <a class="dropdown-item dropdown-toggle" href="#">Camions</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">B - 1</a></li>
+                    <li class="dropdown-submenu dropend">
+                      <a class="dropdown-item dropdown-toggle" href="#">Camions Frigorifiques</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="diapo_Javascript_Page1.html#Exemple_de_Camion_Frigorifique_1">Exemple de Camion Frigorifique 1</a></li>
+                        <li><a class="dropdown-item" href="diapo_Javascript_Page1.html#Exemple_de_Camion_Frigorifique_2">Exemple de Camion Frigorifique 2</a></li>
+                        <li><a class="dropdown-item" href="diapo_Javascript_Page1.html#Exemple_de_Camion_Frigorifique_3">Exemple de Camion Frigorifique 3</a></li>
+                        <li><a class="dropdown-item" href="diapo_Javascript_Page1.html#Exemple_de_Camion_Frigorifique_4">Exemple de Camion Frigorifique 4</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>		
+          </ul>
+        </li>		  			
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Types de camions</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_tautliner">Le camion tautliner</a></li>
+            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_semi_remorque">Le camion semi-remorque</a></li>
+            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_frigorifique">Le camion frigorifique</a></li>
+            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_plateau">Le camion plateau</a></li>
+            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_fourgon">Le camion fourgon</a></li>                  
+            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_porte_char">Le camion porte-char</a></li>
+            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_benne">Le camion-benne</a></li>
+            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_citerne">Le camion-citerne</a></li>            
+          </ul>
+        </li>
+			
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+
+
+
+
+
+<br>	<!-- Balise de	 RETOUR A LA LIGNE -->
+
+
+
+
+
+
+
+<!--
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+-->  
+<div style="text-align:center; padding: 20px;">
+    <button onclick="showPopup()" class="w3-button w3-blue w3-round-large">Afficher Popup</button>
+</div>
+
+
+<div id="myPopup" class="popup-overlay">
+    <div class="popup-content">
+        <span class="close-button" onclick="closePopup()">&times;</span>
+        <h2>Formulaire d'inscription</h2>
+        <form action="#" method="post">
+            <p>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" class="w3-input w3-border" required>
+            </p>
+            <p>
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" class="w3-input w3-border" required>
+            </p>
+            <p>
+                <label for="age">Âge :</label>
+                <input type="number" id="age" name="age" class="w3-input w3-border" required>
+            </p>
+            <button type="submit" class="w3-button w3-green w3-round-large" style="margin-top: 10px;">Envoyer</button>
+            <button type="button" onclick="closePopup()" class="w3-button w3-red w3-round-large" style="margin-top: 10px;">Annuler</button>
+        </form>
+    </div>
+</div>
+<!--
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+
+
+
+
+
+<div class="container-fluid">									<!-- Aucune MARGE EXTERNE GAUCHE 	et 	  Aucune MARGE EXTERNE DROITE -->
+<!-- <div class="container"> -->								<!-- Presence d'une MARGE EXTERNE GAUCHE 	et 	  Presence d'une MARGE EXTERNE DROITE -->
+<!--     <div class="row" style="margin-right:0; " > -->
+  <div class="row" style="margin-right: 0; margin-left: 0; " >
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
+        <div class="row" style="margin: 0 !important;">
+
+<!--  
+DEBUT ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" ::::::::::::::::::::    
+DEBUT ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" ::::::::::::::::::::    
+DEBUT ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" ::::::::::::::::::::    
+DEBUT ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" ::::::::::::::::::::    
+-->
+<div class="col-sm-8" style="margin: 0 !important;">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+    <h1>Premier panneau</h1>
+    </div>
+    <div class="panel-body">
+    <p>Corps du panneau :</p>
+       <p>Denique Antiochensis ordinis vertices sub uno elogio sub uno elogio iussit occidi ideo efferatus, quod el celebrari vilitatem intempestivam urgenti</p>
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-sm-4" style="margin: 0 !important;">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+    <h1>Second panneau</h1>
+    </div>
+    <div class="panel-body">
+    <p>Corps du panneau :</p>
+       <p>Denique Antiochensis ordinis vertices sub uno elogio sub uno elogio iussit occidi ideo efferatus, quod el celebrari vilitatem intempestivam urgenti</p> 
+    </div>
+    </div>
+    </div>
+<!--  
+FIN   ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" !!!!!!!!!!!!!!!!!!!!    
+FIN   ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" !!!!!!!!!!!!!!!!!!!!    
+FIN   ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" !!!!!!!!!!!!!!!!!!!!    
+FIN   ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" !!!!!!!!!!!!!!!!!!!!    
+-->    
+
+        </div>	  <!-- <div class="row" style="margin: 0 !important;"> -->					 
+    </div>     <!--  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">  -->     
+  </div>  
+	<div class="row" style="margin-right:0; margin-left:0; " >
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" style="margin-bottom:14.95px; " >        
+		
+			<div class="heading">
+        <!-- <h1>Css Responsive Flexbox Cards</h1> -->
+        <h1>Camions Frigorifiques</h1>		
+      </div>
+			<!--
+      DEBUT ==============> Css Responsive Flexbox Cards ::::::::::::::::::::::::
+      DEBUT ==============> Css Responsive Flexbox Cards ::::::::::::::::::::::::
+      DEBUT ==============> Css Responsive Flexbox Cards ::::::::::::::::::::::::
+      DEBUT ==============> Css Responsive Flexbox Cards ::::::::::::::::::::::::                  
+			-->
+      <div class="row">
+
+
+        <div class="card">
+		
+<!-- 
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+      
+        <img src="../{{ vehicle.images.url }}" class="card-img-top         img-fluid" alt="{{ vehicle.name }}"   style="width:100%; margin-right:0px;     height:259.45px; " > 
+-->        
+<!--
+        <div border="1px solid black;" style="height:259.45px; width:259.45px;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>         
+-->		
+<!--
+		<div border="1px solid black;" style="height:auto; width:100%;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        
+-->
+<!--
+		<div border="1px solid black;" style="height:259.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        	
+-->
+<!--
+		<div border="1px solid black;" style="height:259.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/image_Terre.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        			
+-->		
+<!--
+		<div border="1px solid black;" style="height:379.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/image_Terre.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        			
+-->	
+		<div border="1px solid black;" style="height:auto; width:90%;      margin-right:auto; margin-left:auto; "><img src="{% static 'images_stockees/image_Terre.jpg' %}" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        					
+<!-- 
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+--> 			
+								
+		<a name="Exemple_de_Camion_Frigorifique_1" >
+          <div class="card-header">
+            <h1>Exemple_de_Camion_Frigorifique_1</h1>
+          </div>
+		</a>  
+          <div class="card-body">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat at sequi voluptate atque asperiores rem, quidem incidunt aliquam magni laudantium tempora quasi eos amet esse, soluta id! Animi, vitae. Esse.
+            </p>
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>     
+
+        <div class="card">
+		
+<!-- 
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+      
+        <img src="../{{ vehicle.images.url }}" class="card-img-top         img-fluid" alt="{{ vehicle.name }}"   style="width:100%; margin-right:0px;     height:259.45px; " > 
+-->        
+<!--
+        <div border="1px solid black;" style="height:259.45px; width:259.45px;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>         
+-->		
+<!--
+		<div border="1px solid black;" style="height:auto; width:100%;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        
+-->
+<!--
+		<div border="1px solid black;" style="height:259.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        	
+-->
+<!--
+		<div border="1px solid black;" style="height:259.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/image_Terre.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        			
+-->		
+<!--
+		<div border="1px solid black;" style="height:379.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/image_Terre.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        			
+-->	
+		<div border="1px solid black;" style="height:auto; width:90%;      margin-right:auto; margin-left:auto; "><img src="{% static 'images_stockees/image_Terre.jpg' %}" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        					
+<!-- 
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+--> 			
+								
+		<a name="Exemple_de_Camion_Frigorifique_2" >
+          <div class="card-header">
+            <h1>Exemple_de_Camion_Frigorifique_2</h1>
+          </div>
+		</a>  
+          <div class="card-body">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat at sequi voluptate atque asperiores rem, quidem incidunt aliquam magni laudantium tempora quasi eos amet esse, soluta id! Animi, vitae. Esse.
+            </p>
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>     
+
+        <div class="card">
+		
+<!-- 
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+      
+        <img src="../{{ vehicle.images.url }}" class="card-img-top         img-fluid" alt="{{ vehicle.name }}"   style="width:100%; margin-right:0px;     height:259.45px; " > 
+-->        
+<!--
+        <div border="1px solid black;" style="height:259.45px; width:259.45px;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>         
+-->		
+<!--
+		<div border="1px solid black;" style="height:auto; width:100%;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        
+-->
+<!--
+		<div border="1px solid black;" style="height:259.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        	
+-->
+<!--
+		<div border="1px solid black;" style="height:259.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/image_Terre.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        			
+-->		
+<!--
+		<div border="1px solid black;" style="height:379.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/image_Terre.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        			
+-->	
+		<div border="1px solid black;" style="height:auto; width:90%;      margin-right:auto; margin-left:auto; "><img src="{% static 'images_stockees/image_Terre.jpg' %}" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        					
+<!-- 
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+--> 			
+								
+		<a name="Exemple_de_Camion_Frigorifique_3" >
+          <div class="card-header">
+            <h1>Exemple_de_Camion_Frigorifique_3</h1>
+          </div>
+		</a>  
+          <div class="card-body">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat at sequi voluptate atque asperiores rem, quidem incidunt aliquam magni laudantium tempora quasi eos amet esse, soluta id! Animi, vitae. Esse.
+            </p>
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>     
+
+        <div class="card">
+		
+<!-- 
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+      
+        <img src="../{{ vehicle.images.url }}" class="card-img-top         img-fluid" alt="{{ vehicle.name }}"   style="width:100%; margin-right:0px;     height:259.45px; " > 
+-->        
+<!--
+        <div border="1px solid black;" style="height:259.45px; width:259.45px;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>         
+-->		
+<!--
+		<div border="1px solid black;" style="height:auto; width:100%;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        
+-->
+<!--
+		<div border="1px solid black;" style="height:259.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/img_lights_wide.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        	
+-->
+<!--
+		<div border="1px solid black;" style="height:259.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/image_Terre.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        			
+-->		
+<!--
+		<div border="1px solid black;" style="height:379.45px; width:90%;      margin-right:auto; margin-left:auto; "><img src="image/image_Terre.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        			
+-->	
+		<div border="1px solid black;" style="height:auto; width:90%;      margin-right:auto; margin-left:auto; "><img src="{% static 'images_stockees/image_Terre.jpg' %}" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>        					
+<!-- 
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+--> 			
+								
+		<a name="Exemple_de_Camion_Frigorifique_4" >
+          <div class="card-header">
+            <h1>Exemple_de_Camion_Frigorifique_4</h1>
+          </div>
+		</a>  
+          <div class="card-body">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat at sequi voluptate atque asperiores rem, quidem incidunt aliquam magni laudantium tempora quasi eos amet esse, soluta id! Animi, vitae. Esse.
+            </p>
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>     
+        
+      </div>
+			<!--
+      FIN   ==============> Css Responsive Flexbox Cards !!!!!!!!!!!!!!!!!!!!!!!!
+      FIN   ==============> Css Responsive Flexbox Cards !!!!!!!!!!!!!!!!!!!!!!!!
+      FIN   ==============> Css Responsive Flexbox Cards !!!!!!!!!!!!!!!!!!!!!!!!
+      FIN   ==============> Css Responsive Flexbox Cards !!!!!!!!!!!!!!!!!!!!!!!!
+			-->      
+		
+		</div>	
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+    <div class="row" style="margin-right:0; margin-left:0; " >	
+		<!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" style="margin-bottom:14.95px; " > -->      
+		<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="margin-bottom:14.95px; " >    		
+
+<!--
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+-->
+<div class="w3-content w3-display-container">
+
+<img class="mySlides_FOOTER_GAUCHE w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_snow_wide.jpg' %}" style="width:100%">                <!--    image/img_snow_wide.jpg    -->
+<img class="mySlides_FOOTER_GAUCHE w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_lights_wide.jpg' %}" style="width:100%">              <!--    image/img_lights_wide.jpg    -->
+<img class="mySlides_FOOTER_GAUCHE w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_mountains_wide.jpg' %}" style="width:100%">           <!--    image/img_mountains_wide.jpg   -->
+
+</div>
+<!--
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+-->
+		
+		</div>			<!--	<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="margin-bottom:14.95px; " >    -->	
+		
+		
+
+		<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="margin-bottom:14.95px; " >    		
+
+<!--
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+-->
+<div class="w3-content w3-display-container">
+
+<img class="mySlides_FOOTER_CENTRE w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_mountains_wide.jpg' %}" style="width:100%">
+<img class="mySlides_FOOTER_CENTRE w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_snow_wide.jpg' %}" style="width:100%">
+<img class="mySlides_FOOTER_CENTRE w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_lights_wide.jpg' %}" style="width:100%">
+
+</div>
+<!--
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+-->
+		
+		</div>			<!--	<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="margin-bottom:14.95px; " >    -->
+		
+		
+
+		<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="margin-bottom:14.95px; " >    		
+
+<!--
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+-->
+<div class="w3-content w3-display-container">
+
+<img class="mySlides_FOOTER_DROITE w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_lights_wide.jpg' %}" style="width:100%">
+<img class="mySlides_FOOTER_DROITE w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_mountains_wide.jpg' %}" style="width:100%">
+<img class="mySlides_FOOTER_DROITE w3-animate-opacity          COINS_ARRONDIS_des_TROIS_IMAGES_du_FOOTER" src="{% static 'images_stockees/img_snow_wide.jpg' %}" style="width:100%">
+
+</div>
+<!--
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+-->
+		
+		</div>			<!--	<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="margin-bottom:14.95px; " >    -->		
+		
+		
+	</div>		
+	
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+/*
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+DEBUT ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB :::::::
+*/
+    var myIndex_mySlides_CAROUSSEL = 0;
+    carousel();
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides_CAROUSSEL");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex_mySlides_CAROUSSEL++;
+        if (myIndex_mySlides_CAROUSSEL > x.length) {myIndex_mySlides_CAROUSSEL = 1}    
+        x[myIndex_mySlides_CAROUSSEL-1].style.display = "block";   
+        setTimeout(carousel, 2000); // Change l'image toutes les 2 secondes
+    }
+/*
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+FIN   ============= CAROUSSEL =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGES"""" avec COINS ARRONDIS du """"CAROUSSEL"""" de la PAGE WEB !!!!!!!
+*/	
+</script>
+
+<!--
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+-->
+<script>
+    var myIndex_mySlides_FOOTER_GAUCHE = 0;
+    carousel_mySlides_FOOTER_GAUCHE();
+    function carousel_mySlides_FOOTER_GAUCHE() {
+        var i;
+        var x = document.getElementsByClassName("mySlides_FOOTER_GAUCHE");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex_mySlides_FOOTER_GAUCHE++;
+        if (myIndex_mySlides_FOOTER_GAUCHE > x.length) {myIndex_mySlides_FOOTER_GAUCHE = 1}    
+        x[myIndex_mySlides_FOOTER_GAUCHE-1].style.display = "block";   
+        setTimeout(carousel_mySlides_FOOTER_GAUCHE, 2000); // Change l'image toutes les 2 secondes
+    }
+</script>
+<!--
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE GAUCHE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+-->
+
+<!--
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+-->
+<script>
+    var myIndex_mySlides_FOOTER_CENTRE = 0;
+    carousel_mySlides_FOOTER_CENTRE();
+    function carousel_mySlides_FOOTER_CENTRE() {
+        var i;
+        var x = document.getElementsByClassName("mySlides_FOOTER_CENTRE");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex_mySlides_FOOTER_CENTRE++;
+        if (myIndex_mySlides_FOOTER_CENTRE > x.length) {myIndex_mySlides_FOOTER_CENTRE = 1}    
+        x[myIndex_mySlides_FOOTER_CENTRE-1].style.display = "block";   
+        setTimeout(carousel_mySlides_FOOTER_CENTRE, 2000); // Change l'image toutes les 2 secondes
+    }
+</script>
+<!--
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE CENTRE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+-->
+
+<!--
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+DEBUT ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB :::::::
+-->
+<script>
+    var myIndex_mySlides_FOOTER_DROITE = 0;
+    carousel_mySlides_FOOTER_DROITE();
+    function carousel_mySlides_FOOTER_DROITE() {
+        var i;
+        var x = document.getElementsByClassName("mySlides_FOOTER_DROITE");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex_mySlides_FOOTER_DROITE++;
+        if (myIndex_mySlides_FOOTER_DROITE > x.length) {myIndex_mySlides_FOOTER_DROITE = 1}    
+        x[myIndex_mySlides_FOOTER_DROITE-1].style.display = "block";   
+        setTimeout(carousel_mySlides_FOOTER_DROITE, 2000); // Change l'image toutes les 2 secondes
+    }
+</script>
+<!--
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+FIN   ============= FOOTER =====> DIAPORAMA des TROIS IMAGES ========> """"IMAGE DROITE"""" avec COINS ARRONDIS du """"FOOTER"""" de la PAGE WEB !!!!!!!
+-->
+
+<!-- <script src="bootstrap-5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script>
+/*
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
+*/
+/*
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.innerWidth < 992) {
+            document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const submenu = this.nextElementSibling;
+                    const parentMenu = this.closest('.dropdown-menu');
+                    parentMenu.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+                        if (openMenu !== submenu) {
+                            openMenu.classList.remove('show');
+                        }
+                    });
+                    submenu.classList.toggle('show');
+                });
+            });
+
+            document.querySelectorAll('.dropdown-submenu').forEach(function(submenuItem) {
+                submenuItem.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+        }
+    });
+*/
+
+
+
+
+/*
+PROBLEME RENCONTRE :
+
+Pouvez vous corriger le point suivant :
+
+
+On utilise uniquement le navigateur comme mozilla firefox.
+
+
+Quand l'affichage de Mozilla Firefox correspond à la largeur de l'écran d'un DEKTOP alors quand on clique sur le menu "Service 2" alors les sous menus correspondant au menu "Service 2" s'affichent c'est-à-dire les sous menus "Sous-service A" et "Sous-service B" s'affichent correctement.
+
+
+Mais quand on redimensionne la LARGEUR du navigateur MOZILLA FIREFOX avec la LARGEUR de la TABLETTE ou la LARGEUR du SMARTPHONE puis qu'on CLIQUE ENSUITE sur le menu "Service 2" alors les sous menus correspondant au menu "Service 2" ne s'affichent pas c'est-à-dire les sous menus "Sous-service A" et "Sous-service B" ne s'affichent pas. 
+
+
+Alors que si on actualise ensuite le navigateur MOZILLA FIREFOX alors c'est uniquement de cette façon que les sous menus "Sous-service A" et "Sous-service B" s'affichent parfaitement après le redimensionnement du navigateur MOZILLA FIREFOX en partant depuis la largeur de l'écran DESKTOP vers la LARGEUR de l'écran TABLETTE ou SMARTPHONE.
+
+
+Pouvez vous corriger ce problème sans avoir à reloader la navigateur mozilla firefox ? 
+*/	
+
+
+
+/*
+C'est un problème courant de comportement de menu déroulant (dropdown) dans Bootstrap lors du redimensionnement de la fenêtre. Le souci est que le code JavaScript pour gérer l'ouverture du sous-menu en mode mobile n'est pas réévalué automatiquement lorsque la taille de la fenêtre change. Le code d'origine ne prend en charge que la taille initiale de la fenêtre.
+
+Pour résoudre ce problème sans recharger la page, on doit ajouter un écouteur d'événement sur le redimensionnement de la fenêtre. Cet écouteur va désactiver l'événement click sur le menu déroulant en mode mobile, puis le réactiver lorsque l'écran est suffisamment large. Voici la correction à apporter.
+
+Explication de la correction
+
+Le code JavaScript d'origine utilise if (window.innerWidth < 992) pour définir le comportement du menu. Cependant, cette condition n'est vérifiée qu'une seule fois au chargement de la page (DOMContentLoaded). Pour qu'elle soit évaluée à chaque redimensionnement, nous devons l'intégrer dans un événement resize.
+
+La solution consiste à utiliser la fonction matchMedia() qui est une API moderne pour détecter les changements de média (comme la largeur de l'écran). Cela permet de ne pas surcharger l'application en évaluant du code à chaque pixel de changement, mais plutôt lorsque les conditions de la media query changent.
+
+Voici le code corrigé :
+*/
+	
+	
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mediaQuery = window.matchMedia('(max-width: 991.98px)');
+
+    function handleMediaQueryChange(e) {
+        // e.matches est vrai si la condition est remplie (mode mobile/tablette)
+        if (e.matches) {
+            // Mode mobile/tablette : on gère l'accordéon
+            document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
+                trigger.addEventListener('click', handleMobileClick);
+            });
+        } else {
+            // Mode bureau : on désactive la gestion manuelle du clic
+            document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
+                trigger.removeEventListener('click', handleMobileClick);
+                // Ferme les sous-menus ouverts s'il y en a
+                const submenu = trigger.nextElementSibling;
+                if (submenu) {
+                    submenu.classList.remove('show');
+                }
+            });
+        }
+    }
+
+    function handleMobileClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const submenu = this.nextElementSibling;
+        const parentMenu = this.closest('.dropdown-menu');
+        
+        // Ferme les autres sous-menus ouverts
+        parentMenu.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+            if (openMenu !== submenu) {
+                openMenu.classList.remove('show');
+            }
+        });
+        
+        submenu.classList.toggle('show');
+    }
+
+    // Gère le comportement initial au chargement de la page
+    handleMediaQueryChange(mediaQuery);
+
+    // Ajoute un écouteur pour les changements de média
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    // Empêche la propagation du clic sur les éléments de sous-menu pour ne pas fermer le menu principal
+    document.querySelectorAll('.dropdown-submenu').forEach(function(submenuItem) {
+        submenuItem.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
+});	
+
+
+
+/*
+Étapes à suivre pour appliquer la correction
+
+    Copiez le bloc de code JavaScript ci-dessus.
+
+    Remplacez le second bloc <script> existant dans votre code HTML par le nouveau code.
+
+Ce nouveau script est plus robuste. Il utilise l'événement change sur la media query pour réagir dynamiquement aux redimensionnements, assurant que le menu se comporte comme attendu, que ce soit sur un ordinateur de bureau, une tablette ou un smartphone, sans avoir à recharger la page.
+*/
+/*
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+</script>
+
+<script>
+/*
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+*/  
+    function showPopup() {
+        document.getElementById("myPopup").style.display = "flex";
+    }
+    function closePopup() {
+        document.getElementById("myPopup").style.display = "none";
+    }
+    window.onclick = function(event) {
+        var popup = document.getElementById("myPopup");
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+/*
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/	
+</script>
+
+</body>
+</html>

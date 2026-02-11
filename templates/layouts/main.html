@@ -1,0 +1,2074 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <meta name="description" content="{% block 'desc'%}{% endblock 'desc' %}">
+
+<!-- 
+            block 'desc' 
+
+shgfgjfdgdfhghfgkmlkmlkmlklmkmlklmkmlksdfsdfdsfdfrtertt
+description du site pour faciliter les recherches et mettre en évidence le site
+
+REMARQUE IMPORTANTE : La	DESCRIPTION DE Chaque PAGE composant le SITE WEB	   peut être     PLACEE DANS     Chaque PAGE     du Site Web
+
+La     DESCRIPTION DE Chaque PAGE      ainsi que    le     TITRE DE Chaque PAGE    est UTILISE par le MOTEUR DE RECHERCHE Google lorsque le 	MOTEUR DE RECHERCHE Google EFFECTUE UNE RECHERCHE
+
+            endblock 'desc' 
+--> 
+
+      <!-- site metas -->  
+<title>
+    {% block "title" %}
+
+    {% endblock "title" %}  
+</title>  
+    <meta charset="UTF-8">
+
+      <meta name="keywords" content="">
+      <!-- <meta name="description" content=""> -->
+      <meta name="author" content="">    
+
+    <!-- Exemple d'inclusion du token CSRF dans une balise meta -->
+    <meta name="csrf-token" content="{{ csrf_token }}">   
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_CENTRER_Form_Formulair.css' %}">
+
+      
+    <title>Agence de Transport de Marchandises</title>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+
+
+<!--
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->  
+
+
+
+
+
+    <!-- <link rel="stylesheet" href="bootstrap-5.0.2/dist/css/bootstrap.min.css"> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">     
+
+
+
+
+<!--
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+
+
+
+🇲🇬 Voici le drapeau de Madagascar à différentes tailles :
+
+Taille	Classe utilisée	Résultat
+
+Très Grand	fa-5x	<i class="fi fi-mg fa-5x"></i>
+Grand	fa-2x	<i class="fi fi-mg fa-2x"></i>
+Moyen	fa-lg	<i class="fi fi-mg fa-lg"></i>
+Petit (12px)	style="font-size: 12px;"	<i class="fi fi-mg" style="font-size: 12px;"></i>
+Très Petit	fa-xs	<i class="fi fi-mg fa-xs"></i>
+-->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+
+
+
+
+
+<!--
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr
+https://gemini.google.com/app/bf46ec361c98726c?hl=fr    
+-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css" />    
+
+    <style>
+/* =====================================================
+    DÉFINITION DES VARIABLES ET STYLES GÉNÉRAUX
+===================================================== 
+*/
+:root {
+    --couleur-primaire: #3a7bd5; /* Bleu principal */
+/*    --couleur-secondaire: #e74c3c;     */   /* Rouge accentuation */     /* Couleur ORIGINAL */    /* Mario */
+
+    --couleur-secondaire: #10c69d; /* Couleur d'accent */
+
+    --couleur-texte: #2c3e50; /* Gris-bleu foncé */
+    --couleur-fond-clair: #f7f9fc;
+    --font-principale: 'Poppins', sans-serif;
+
+/*
+DEBUT ================> Style CSS de Tanjona ::::::::::::::::::::::::::::::::::::
+*/    
+  --brand: #5aa6ff;
+  --brand-2: #7c4dff;
+/*
+FIN   ================> Style CSS de Tanjona !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/ 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-principale);
+    color: var(--couleur-texte);
+    line-height: 1.6;
+    background-color: white;
+    margin: 0;
+    padding-top: 56px; /* Espace pour la barre de navigation fixe de Bootstrap */
+}
+
+/* Styles pour les titres */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--couleur-primaire);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-top: 2rem; /* Espace pour les ancres de navigation */
+}
+
+/* Soulignement stylisé pour les titres H2 */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--couleur-secondaire);
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+
+/* =====================================================
+    STYLES DE LA BARRE DE NAVIGATION (NAVBAR)
+===================================================== 
+*/
+.navbar {
+    background-color: white; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1030; /* Assure que la barre de navigation est au-dessus du contenu */
+}
+
+/* Amélioration de la couleur des liens de navigation */
+.navbar-nav .nav-link {
+    color: var(--couleur-texte) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--couleur-primaire) !important;
+}
+
+/* Conteneur pour les sous-menus (dropdown-submenu) */
+.dropdown-submenu {
+    position: relative;
+}
+
+/* Styles pour les sous-menus de niveau 2 (dans .dropdown-submenu) */
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    border-radius: 0 5px 5px 5px;
+}
+
+/* Cacher les sous-menus par défaut en mode desktop (hover) */
+@media (min-width: 992px) {
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Styles spécifiques pour le menu en mode mobile (au-dessous de 992px) */
+@media (max-width: 991.98px) {
+    .dropdown-menu {
+        border-radius: 0;
+        background-color: var(--couleur-fond-clair);
+    }
+    .dropdown-submenu .dropdown-menu {
+        position: static;
+        left: auto;
+        border: none;
+        padding-left: 20px;
+        box-shadow: none;
+    }
+    .dropdown-submenu > a::after {
+        /* Ajout d'une flèche pour indiquer l'existence d'un sous-menu en mode mobile */
+        display: inline-block;
+        margin-left: .5em;
+        vertical-align: middle;
+        content: "▶"; /* Flèche vers la droite */
+        transition: transform 0.3s;
+    }
+    /* Rotation de la flèche lorsque le sous-menu est ouvert */
+    .dropdown-submenu .dropdown-menu.show ~ a::after {
+        transform: rotate(90deg);
+        content: "▼"; /* Flèche vers le bas */
+    }
+}
+
+
+/* =====================================================
+    SECTION D'ACCUEIL (HERO)
+===================================================== 
+*/
+#accueil.hero {
+    /* Style du titre H2 avec effet text-stroke/background-clip (fragment original) */
+/*    font-size: 5vw;   */    /*  """""TAILLE DE LA POLICE"""""    d'   ORIGINE  */
+
+
+
+
+/*    
+DEBUT ====================================>
+DEBUT ====================================>
+
+PHRASE :    
+
+""""Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    
+*/
+    font-size: 4vw;    /*  """""TAILLE DE LA POLICE"""""    modifiée par Mario  */         /*    PHRASE :    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    */
+/*    
+FIN   ====================================>
+FIN   ====================================>
+
+PHRASE :    
+
+""""Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    
+*/
+
+
+
+
+/*
+    -webkit-text-stroke: 2px red;
+*/
+
+/*
+CODE D' ORIGINE :::
+
+    -webkit-text-stroke: 2px blue;     */       /* """""BORDURE de COULEUR BLEU"""""    à la    """""PHRASE"""""    suivante =========>      """""Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes."""""     */         /* Mario */  
+/*
+    color: transparent;
+*/
+
+
+
+
+/*   
+DEBUT ==========> COULEUR DU TEXTE ==========> """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""   ::::::::::::::::::::::::
+DEBUT ==========> COULEUR DU TEXTE ==========> """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""   ::::::::::::::::::::::::
+DEBUT ==========> COULEUR DU TEXTE ==========> """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""   ::::::::::::::::::::::::
+DEBUT ==========> COULEUR DU TEXTE ==========> """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""   ::::::::::::::::::::::::
+*/
+/*    color:#10c69d;                  */    /*   """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""   */
+/*   
+FIN   ==========> COULEUR DU TEXTE ==========> """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""   !!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========> COULEUR DU TEXTE ==========> """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""   !!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========> COULEUR DU TEXTE ==========> """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""   !!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========> COULEUR DU TEXTE ==========> """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""   !!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+
+
+/*
+    background-image: url(image/chicago.jpg);
+
+    background-clip: text;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+*/
+
+/*
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    ::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    ::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    ::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    ::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    ::::::::::::::::::::::::::::::::::::::::::
+*/
+/*
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    ::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    ::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    ::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    ::::::::::::::::::::::::::::::::::::::::::
+DEBUT ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    ::::::::::::::::::::::::::::::::::::::::::
+*/
+    text-shadow: 10px 2px 2px rgb(199, 188, 188);       /*    Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario    */       /*    Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.    */
+/*
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+/*
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ==========>  Pour    """"METTRE DE L'   OMBRE""""    sur le    """"TEXTE""""    suivant    ==========>    """"Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario""""    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+    
+    /* Amélioration du layout pour le centrage */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh; 
+    padding: 4rem 1rem;
+    background-color: var(--couleur-fond-clair); /* Fond de secours si image n'est pas utilisée pour le hero */
+}
+
+#accueil.hero h2 {
+    margin-top: 0;
+}
+
+/* Style du paragraphe de la section Hero */
+#accueil.hero p {
+/*    font-size: 1.2rem;        */   /*   Code ORIGINAL   */
+    margin-bottom: 2rem;
+}
+
+/* =====================================================
+    BOUTONS ET CTA (APPELS À L'ACTION)
+===================================================== 
+*/
+.w3-button.w3-blue {
+    border-radius: 50px;
+}
+
+.cta-button, .w3-button.w3-blue {
+    /* Styles généraux des boutons d'action */
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin-top: 1rem;
+/*    background-color: var(--couleur-secondaire);     */               /* Rouge accent */
+    background-color: var(--couleur-primaire);              /* COULEUR BLEU */         /* Mario */ 
+    color: white;
+    text-decoration: none;
+/*
+    border-radius: 50px;
+*/
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+/*    
+    text-transform: uppercase;
+*/
+    letter-spacing: 1px;
+    border: none;
+    font-size: 1rem;
+
+    text-align: center;
+
+
+
+
+/*
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+
+background-image: -webkit-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -moz-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -ms-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -o-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);							 
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D60F0F',endColorstr='#FFDD00', GradientType=1);		
+
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+*/    
+}
+
+.cta-button:hover, .w3-button.w3-blue:hover {
+/*    background-color: #c0392b;     */             /* Rouge légèrement plus foncé */      /* Code ORIGINAL */
+
+/*
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+*/
+/*
+background-image: -webkit-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -moz-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -ms-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -o-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);							 
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D60F0F',endColorstr='#FFDD00', GradientType=1);		
+*/
+background-image: -webkit-linear-gradient(left top, purple 0%, green 100%);
+background-image: -moz-linear-gradient(left top, purple 0%, green 100%);
+background-image: -ms-linear-gradient(left top, purple 0%, green 100%);
+background-image: -o-linear-gradient(left top, purple 0%, green 100%);
+background-image: linear-gradient(left top, purple 0%, green 100%);		
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='purple',endColorstr='green', GradientType=1);		
+/*
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+*/
+
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Styles spécifiques pour les petits boutons de compétences (tags) */
+.w3-button.w3-blue[style*="font-size:12px"] {
+    font-size: 12px !important;
+    padding: 0.4rem 0.8rem;
+    margin-right: 0.5rem;
+    text-transform: none;
+    background-color: var(--couleur-primaire) !important;
+}
+.w3-button.w3-blue[style*="font-size:12px"]:hover {
+    background-color: #2980b9 !important;
+}
+
+/* =====================================================
+    SECTION SITE WEB RESPONSIVE (GRILLE BOOTSTRAP)
+===================================================== 
+*/
+#responsive_mario {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#responsive_mario img {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+/*
+    margin-bottom: 1.5rem;             """""""MARGE EXTERNE du BAS""""""" ==============> En BAS DE l'    """""""IMAGE"""""""
+*/
+}
+
+/* =====================================================
+    SECTION PROJETS
+===================================================== 
+*/
+.section-projets {
+    background-color: var(--couleur-fond-clair);
+    padding: 4rem 1rem;
+}
+
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carte-projet {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.carte-projet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.carte-projet img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.carte-projet h3 {
+    color: var(--couleur-primaire);
+    padding: 1rem 1rem 0;
+    margin-top: 0;
+    font-size: 1.4rem;
+    text-align: left; /* Annule l'alignement central du h2 */
+}
+
+.carte-projet p {
+    padding: 0 1rem;
+    font-size: 0.95rem;
+}
+
+.lien-demo, .lien-code {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem 1rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.lien-demo {
+/*
+    background-color: var(--couleur-primaire);
+    color: white;
+*/
+
+background:linear-gradient(90deg,var(--brand),var(--brand-2));    
+color: white;
+}
+
+.lien-code {
+    background-color: #f1f1f1;
+    color: var(--couleur-texte);
+    border: 1px solid #ddd;
+}
+.lien-demo:hover, .lien-code:hover {
+    opacity: 0.8;
+}
+
+/* =====================================================
+    SECTION TÉMOIGNAGES
+===================================================== 
+*/
+.section-temoignages {
+    padding: 4rem 1rem;
+}
+
+.grille-temoignages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.carte-temoignage {
+    background-color: var(--couleur-fond-clair);
+    border-left: 5px solid var(--couleur-secondaire);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.citation {
+    font-style: italic;
+    margin-bottom: 1rem;
+
+    text-align: justify;    /* Ajouté par Halley Mario */
+    text-indent: 1cm;    /* """"RETRAIT POSITIF DE PREMIERE LIGNE"""" de """"Un Centimêtre"""" */
+}
+
+.auteur {
+/*    
+    text-align: right;        // """"ALIGNEMENT DROITE"""" des """"AUTEURS des TEMOIGNAGES"""" avec leurs """"PHOTOS RESPECTIVES""""
+*/
+    text-align: left;    
+
+    font-weight: 600;
+    color: var(--couleur-primaire);
+}
+
+.avatar{width:36px;height:36px;border-radius:50%;object-fit:cover}    
+
+
+/* =====================================================
+    SECTION À PROPOS
+===================================================== 
+*/
+.section-a-propos {
+    padding: 4rem 1rem;
+    background-color: var(--couleur-fond-clair);
+}
+
+.contenu-a-propos {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Par défaut en colonne pour mobile */
+    gap: 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+/* Mise en page pour Desktop (à partir de 768px) */
+@media (min-width: 768px) {
+    .contenu-a-propos {
+        flex-direction: row; /* Côté à côté sur desktop */
+        text-align: left;
+    }
+}
+
+.image-profil {
+    flex-shrink: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.image-profil img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--couleur-secondaire);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+DEBUT ::::::=========> :::::::::: forme circulaire et l'animation de rotation infinie à votre image :::::::::::::
+
+
+
+🎨 Le Code CSS (à placer dans votre fichier styles.css)
+
+C'est ce code qui applique la forme circulaire et l'animation de rotation infinie à votre image.
+
+
+
+
+🎨 Le Code CSS (à placer dans votre fichier styles.css)
+
+C'est ce code qui applique la forme circulaire et l'animation de rotation infinie à votre image.
+*/
+/* 1. DÉFINITION DE L'ANIMATION */
+@keyframes rotation-infinie {
+    from {
+        transform: rotate(0deg); 
+    }
+    to {
+        transform: rotate(360deg); 
+    }
+}
+
+/* 2. APPLICATION DES STYLES ET DE L'ANIMATION */
+.image-profil img {
+    /* Styles pour la forme et l'apparence */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--couleur-secondaire);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    /* Styles d'animation */
+    animation-name: rotation-infinie;
+    animation-duration: 10s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+/* Optionnel : Met l'animation en pause si l'utilisateur passe la souris dessus */
+.image-profil img:hover {
+    animation-play-state: paused;
+}
+/*
+🎨 Le Code CSS (à placer dans votre fichier styles.css)
+
+C'est ce code qui applique la forme circulaire et l'animation de rotation infinie à votre image.
+
+
+
+
+🎨 Le Code CSS (à placer dans votre fichier styles.css)
+
+C'est ce code qui applique la forme circulaire et l'animation de rotation infinie à votre image.
+
+
+
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+FIN   !!!!!!=========> !!!!!!!!!! forme circulaire et l'animation de rotation infinie à votre image !!!!!!!!!!!!!
+
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+https://gemini.google.com/app/f299cbc7bb67ebde?hl=fr
+
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+halleymariomen@gmail.com
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+.texte-a-propos {
+    flex-grow: 1;
+
+    text-align: justify;                  /*    """"JUSTIFICATION""""    du    """"PARAGRAPHE""""    */
+
+    text-indent: 1.5cm;        /*   """"RETRAIT POSITIF DE PREMIERE LIGNE""""    du    """"TEXTE""""    suivant    ============>       """"Je suis un développeur passionné par la **maîtrise du front-end** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.""""    */
+
+    line-height: 1cm;        /*   """"INTERLIGNE de Un Centimêtre""""    du    """"TEXTE""""    suivant    ============>       """"Je suis un développeur passionné par la **maîtrise du front-end** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.""""    */
+}
+
+.texte-a-propos h3 {
+    color: var(--couleur-texte);
+    margin-top: 1rem;
+
+    text-align: left;
+
+    text-decoration: underline;              /*   """""SOULIGNEMENT"""""   de la phrase :         """""Mes Compétences Clés"""""     */
+}
+
+.liste-competences {
+    list-style: none;
+    padding-left: 0;
+                              display: flex;
+                              flex-wrap: wrap;
+/*    gap: 15px;   */
+
+/* Syntaxe : gap: [Vertical] [Horizontal] */
+    gap: 0px 15px;
+
+    margin-top: 1rem;
+              /*                justify-content: center;    */      /* Centrage sur mobile */
+
+
+              
+        justify-content: flex-start; /* Aligner à gauche */
+}
+
+@media (min-width: 768px) {
+    .liste-competences {
+        justify-content: flex-start; /* Aligner à gauche sur desktop */
+    }
+/*
+    .liste-competences li {
+       padding-bottom: 10px;         """""MARGE INTERNE du BAS"""""     de    10 pixels 
+    }
+*/ 
+
+
+/*       margin-bottom: 20px;      */    /*         style="margin-bottom: 20px; "      */
+/*
+    .liste-competences li {
+       margin-bottom: 20px;                   style="margin-bottom: 20px; "      
+    }   
+*/
+}
+/*
+.liste-competences li {
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border-left: 4px solid var(--couleur-primaire);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.icone-skill {
+    color: var(--couleur-secondaire);
+    margin-right: 8px;
+}
+*/
+
+/*
+"""""""ALIGNEMENT VERTICALE sur SMARTPHONE"""""""      de :      """""""Mes Compétences Clés"""""""    :::::::::::::
+"""""""ALIGNEMENT VERTICALE sur SMARTPHONE"""""""      de :      """""""Mes Compétences Clés"""""""    :::::::::::::
+"""""""ALIGNEMENT VERTICALE sur SMARTPHONE"""""""      de :      """""""Mes Compétences Clés"""""""    :::::::::::::
+"""""""ALIGNEMENT VERTICALE sur SMARTPHONE"""""""      de :      """""""Mes Compétences Clés"""""""    :::::::::::::
+"""""""ALIGNEMENT VERTICALE sur SMARTPHONE"""""""      de :      """""""Mes Compétences Clés"""""""    :::::::::::::
+
+https://gemini.google.com/app/3c4df017cee9736d?hl=fr
+https://gemini.google.com/app/3c4df017cee9736d?hl=fr
+https://gemini.google.com/app/3c4df017cee9736d?hl=fr
+https://gemini.google.com/app/3c4df017cee9736d?hl=fr
+https://gemini.google.com/app/3c4df017cee9736d?hl=fr
+*/
+/*
+.liste-competences li {
+    display: flex;
+    align-items: center;       Centre l'icône verticalement par rapport au texte 
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border-left: 4px solid var(--couleur-primaire);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    font-size: 0.9rem;
+    
+           Empêche le texte de passer sous l'icône si le titre est long 
+    text-align: left; 
+}
+*/
+.liste-competences li {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    
+    /* On décompose le padding : 
+       8px (haut/bas) 
+       15px (droite) 
+       8px (bas) 
+       5px (gauche - réduit pour rapprocher l'icône de la barre)
+    */
+
+      margin-bottom: 20px;          /*         style="margin-bottom: 20px; "      */
+/*
+    .liste-competences li {
+       margin-bottom: 20px;                   style="margin-bottom: 20px; "      
+    } 
+*/
+/*       margin-bottom: 20px;      */    /*         style="margin-bottom: 20px; "      */
+    
+/*       margin-bottom: 20px;     */     /*         style="margin-bottom: 20px; "      */
+    
+/*       margin-bottom: 20px;      */    /*         style="margin-bottom: 20px; "      */
+
+/*    
+    padding: 8px 15px 8px 6px; 
+*/
+    padding: 8px 15px 8px 6px;     
+
+    border-radius: 5px;
+    border-left: 4px solid var(--couleur-primaire); /* Votre barre bleue */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.icone-skill {
+    color: var(--couleur-secondaire);
+
+    /* ÉTAPE CRUCIALE : On donne une largeur fixe identique à toutes les icônes */
+    width: 25px; 
+    display: inline-block;
+    text-align: center; /* Centre l'icône dans ses 25px */
+    margin-right: 12px; /* Espace constant entre l'icône et le début du texte */
+    flex-shrink: 0; /* Empêche l'icône de s'écraser si le texte manque de place */
+}
+
+/* =====================================================
+    SECTION CONTACT
+===================================================== 
+*/
+/*
+.section-contact {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: white;
+}
+
+.liens-sociaux {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bouton-social {
+    color: var(--couleur-texte);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bouton-social:hover {
+    color: var(--couleur-primaire);
+    transform: translateY(-5px);
+}
+
+.bouton-social i {
+    font-size: 2.5rem !important;
+    margin-bottom: 5px;
+} */
+
+/* =====================================================
+    SECTION CONTACT
+===================================================== 
+*/
+.section-contact {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: white;
+}
+
+.liens-sociaux {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    /* --- AJOUT POUR LE RESPONSIVE --- */
+    flex-wrap: wrap; /* Les icônes passent à la ligne sur mobile */
+}
+
+.bouton-social {
+    color: var(--couleur-texte);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* On définit une couleur par défaut si la classe spécifique est absente */
+    --brand-color: var(--couleur-primaire); 
+}
+
+/* --- COULEURS de l'EMAIL et des RESEAUX SOCIAUX --- */
+.bouton-social.linkedin  { --brand-color: #1327db; }
+.bouton-social.github    { --brand-color: #1327db; }
+.bouton-social.whatsapp  { --brand-color: #1327db; }
+.bouton-social.email     { --brand-color: #1327db; }
+.bouton-social.facebook  { --brand-color: #1327db; }
+.bouton-social.twitter   { --brand-color: #1327db; } /* Couleur de 'X', ou #1da1f2 pour le bleu Twitter */
+.bouton-social.instagram { --brand-color: #1327db; }
+
+.bouton-social:hover {
+    color: var(--brand-color); /* Utilise la couleur de la marque au survol */
+    transform: translateY(-5px);
+}
+
+.bouton-social i {
+    font-size: 2.5rem !important;
+    margin-bottom: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Optionnel : agrandir légèrement l'icône au survol */
+.bouton-social:hover i {
+    transform: scale(1.1);
+}
+
+/* --- MEDIA QUERY POUR MOBILE --- */
+@media (max-width: 480px) {
+    .liens-sociaux {
+        gap: 1.5rem; /* On réduit un peu l'espace sur petit écran */
+    }
+    .bouton-social i {
+        font-size: 2rem !important; /* Icônes un peu plus petites sur mobile */
+    }
+    .bouton-social span {
+        font-size: 0.8rem; /* Texte sous l'icône plus discret */
+    }
+}
+
+/* =====================================================
+    PIED DE PAGE (FOOTER)
+===================================================== 
+*/
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--couleur-texte);
+    color: white;
+    font-size: 0.8rem;
+}
+
+    </style>
+
+
+
+    <style>
+/*        
+.COULEUR_DEGRADE_du_BOUTON_CIRCUlAIRE {
+*/
+.COULEUR_DEGRADE_du_BOUTON {    
+/* 
+https://gemini.google.com/app/04dcf77f56400952?hl=fr
+https://gemini.google.com/app/04dcf77f56400952?hl=fr
+https://gemini.google.com/app/04dcf77f56400952?hl=fr
+https://gemini.google.com/app/04dcf77f56400952?hl=fr
+https://gemini.google.com/app/04dcf77f56400952?hl=fr 
+*/
+
+
+
+
+
+  /* Le dégradé est un cercle, centré (at center),
+     passant du Blanc (0%) au Bleu (#3a7bd5 à 100%) */
+
+/*
+Le """""GRIS""""" est AU """""CENTRE""""" DU """""BOUTON"""""      <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON btn cta-button" style="margin-top:7.2px;">Voir mes projets</a>
+
+Le """""BLEU""""" est AU """""BORDURE""""" DU """""BOUTON"""""      <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON btn cta-button" style="margin-top:7.2px;">Voir mes projets</a>
+*/  
+/*
+  background-image: radial-gradient(
+    circle at center, 
+    gray 0%, 
+    #3a7bd5 100%
+  );
+*/
+  background-image: radial-gradient(
+    circle at center, 
+    var(--brand) 0%, 
+    #3a7bd5 100%
+  );
+
+}
+
+
+
+
+/*
+.COULEUR_DEGRADE_du_BOUTON {
+
+
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+
+background-image: -webkit-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -moz-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -ms-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: -o-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+background-image: linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);							 
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D60F0F',endColorstr='#FFDD00', GradientType=1);		
+
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+*/
+
+
+
+
+/*
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
+
+EXEMPLE 1
+
+background-image: -webkit-linear-gradient(right top, gray 0%, #3a7bd5 100%);
+background-image: -moz-linear-gradient(right top, gray 0%, #3a7bd5 100%);
+background-image: -ms-linear-gradient(right top, gray 0%, #3a7bd5 100%);
+background-image: -o-linear-gradient(right top, gray 0%, #3a7bd5 100%);
+background-image: linear-gradient(right top, gray 0%, #3a7bd5 100%);							 
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='gray',endColorstr='#3a7bd5', GradientType=1);		
+
+EXEMPLE 1
+
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
+
+}
+*/
+    </style>
+
+
+
+
+
+    <style>
+.Le_COIN_ARRONDI_du_RECTANGLE
+{	
+       border-radius:12px 12px 12px 12px;                 /*       border-radius:12px;                 = (________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________ Navigateur)    (en CSS3)            */
+	   -moz-border-radius:12px 12px 12px 12px;            /*       -moz-border-radius:12px;            = Mozila Firefox        (en CSS3)            */
+	   -o-border-radius:12px 12px 12px 12px;              /*       -o-border-radius:12px;              = Opera                 (en CSS3)            */
+	   -webkit-border-radius:12px 12px 12px 12px;         /*       -webkit-border-radius:12px;         = Google Chrome , Safary   (en CSS3)         */
+       -ms-border-radius:12px 12px 12px 12px;	          /*       -ms-border-radius:12px;      = Internet Explorer (version 9 et plus)   (en CSS3) */	
+}	
+    </style>
+
+
+
+
+
+<style>
+/*
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+*/  
+/* Style pour le popup */
+/* Style pour le popup */
+.popup-overlay {
+  display: none; /* Toujours caché au départ */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* On prépare le centrage, il s'activera quand display passera de 'none' à 'flex' */
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+  overflow-y: auto; /* Permet de scroller si le formulaire est trop long */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; /* Un peu plus large sur mobile */
+  max-width: 500px;
+  position: relative;
+  border-radius: 8px; /* Un peu plus moderne */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Bouton fermer */
+.close-button {
+  position: absolute; /* Mieux pour le placer précisément dans le coin */
+  right: 15px;
+  top: 5px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #ff0000; /* Change de couleur au survol pour plus de clarté */
+}
+/*
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+</style>
+
+
+</head>
+<body style="position: relative;  " >
+
+
+
+
+
+    
+
+<style>
+/*
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+
+
+
+Vous :      Question : En utilisant du code css , je voudrais afficher 10 caractères suivi de tris points de suspension
+
+
+
+GEMINI :
+1. La méthode CSS (Recommandée pour le design)
+
+C'est la plus flexible car les "..." s'adaptent si tu changes la taille de la police plus tard.
+
+
+
+GEMINI :
+
+C'est une excellente question ! En CSS, on appelle cela le Text Truncation.
+
+Pour que cela fonctionne, il y a une petite nuance : le CSS ne compte pas le nombre de caractères (comme 10), mais il se base sur la largeur (width) de l'élément. Si tu veux exactement 10 caractères, il faut utiliser une unité de mesure spéciale : le ch.
+La solution CSS "Trunk"
+
+Voici le code à appliquer sur ton élément (par exemple, ta balise <a> ou un <span>) :
+CSS
+
+.nav-link {
+    display: inline-block;          Ou block 
+    max-width: 10ch;                Limite la largeur à environ 10 caractères 
+    overflow: hidden;               Cache ce qui dépasse 
+    white-space: nowrap;            Empêche le texte de revenir à la ligne 
+    text-overflow: ellipsis;        Ajoute les "..." automatiquement 
+    vertical-align: bottom;
+}
+
+Pourquoi utiliser ch ?
+
+L'unité $1ch$ correspond à la largeur du caractère "0" de la police utilisée. C'est ce qui se rapproche le plus d'un compteur de caractères en CSS pur.
+
+
+
+
+RESULTAT OBTENU :       Administrateu...
+
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+https://gemini.google.com/app/269fb2b822f83f72
+*/
+.truncate-text {
+display: inline-block;
+    max-width: 10ch;          /* Limite à environ 10 caractères */
+    overflow: hidden;         /* Cache le surplus */
+    white-space: nowrap;      /* Garde tout sur une seule ligne */
+    text-overflow: ellipsis;  /* Ajoute les "..." */
+    vertical-align: middle;   /* Aligne proprement avec les autres liens */
+}    
+</style>
+    
+
+
+
+<!--
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+-->
+<style>
+
+.infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML
+{
+	position:absolute;
+/*     background:#000;           */
+/*    padding:12px 7px;           */
+/*    -moz-border-radius:12px;    */
+	
+       border-radius:12px 12px 12px 12px;                 /*       border-radius:12px;                 = (________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________ Navigateur)    (en CSS3)            */
+	   -moz-border-radius:12px 12px 12px 12px;            /*       -moz-border-radius:12px;            = Mozila Firefox        (en CSS3)            */
+	   -o-border-radius:12px 12px 12px 12px;              /*       -o-border-radius:12px;              = Opera                 (en CSS3)            */
+	   -webkit-border-radius:12px 12px 12px 12px;         /*       -webkit-border-radius:12px;         = Google Chrome , Safary   (en CSS3)         */
+       -ms-border-radius:12px 12px 12px 12px;	          /*       -ms-border-radius:12px;      = Internet Explorer (version 9 et plus)   (en CSS3) */	
+	
+/*    -webkit-border-radius:12px;    */
+    color:#000000;    
+    text-align:center;	
+	
+font-family:Semibold; 
+font-size:24px; 
+border:5.75px dotted orange;
+     background-color:#F9F9F9;      
+	
+}
+
+</style>
+<!--
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+    
+
+
+
+
+
+
+    {% include "layouts/header.html" %}
+
+
+<!-- <div class="container-fluid"> -->
+    {% block "contenu" %}
+
+    {% endblock "contenu" %}
+<!-- </div>        <div class="container-fluid"> -->
+
+    {% include "layouts/footer.html" %}        
+
+<!-- <script src="bootstrap-5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script>
+    /*
+     * CORRECTION: Gestion du menu déroulant multi-niveaux (dropdown-submenu) 
+     * en mode mobile/tablette (moins de 992px) SANS RECHARGEMENT lors du redimensionnement.
+     * Utilisation de window.matchMedia pour une gestion dynamique et performante.
+     */
+    document.addEventListener("DOMContentLoaded", function () {
+        const mediaQuery = window.matchMedia('(max-width: 991.98px)');
+
+        function handleMediaQueryChange(e) {
+            // e.matches est vrai si la condition est remplie (mode mobile/tablette)
+            if (e.matches) {
+                // Mode mobile/tablette : on gère l'accordéon au clic
+                document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
+                    trigger.removeEventListener('click', handleMobileClick); 
+                    trigger.addEventListener('click', handleMobileClick);
+                });
+            } else {
+                // Mode bureau : on désactive la gestion manuelle du clic
+                document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
+                    trigger.removeEventListener('click', handleMobileClick);
+                    // Ferme les sous-menus ouverts s'il y en a pour revenir au comportement 'hover' de Bootstrap
+                    const submenu = trigger.nextElementSibling;
+                    if (submenu) {
+                        submenu.classList.remove('show');
+                    }
+                });
+            }
+        }
+
+        function handleMobileClick(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const submenu = this.nextElementSibling;
+            const parentMenu = this.closest('.dropdown-menu');
+            
+            // Ferme les autres sous-menus ouverts
+            parentMenu.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+                if (openMenu !== submenu) {
+                    openMenu.classList.remove('show');
+                }
+            });
+            
+            submenu.classList.toggle('show');
+        }
+
+        // Gère le comportement initial au chargement de la page
+        handleMediaQueryChange(mediaQuery);
+
+        // Ajoute un écouteur pour les changements de média (redimensionnement dynamique)
+        mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+        // Empêche la propagation du clic sur les éléments de sous-menu pour ne pas fermer le menu principal
+        document.querySelectorAll('.dropdown-submenu').forEach(function(submenuItem) {
+            submenuItem.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    }); 
+</script>
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+-->
+<script>
+
+
+/*
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+DEBUT ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         :::::::::::::::::::::::
+
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+*/
+// alert("INFOBULLE à CREER !")  
+
+  /*
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Creer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  */  
+  function FONCTION________Creer_une_INFOBULLE_51(x){
+                           $(document).ready(function(){
+  
+  //    alert($(x).attr("id"))
+  
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  // Voici le    NUMERO    qui est utilisé    avec ce    CODE DE L'   INFOBULLE   :::::   :::::   :::::   :::::   :::::   :::::   :::::
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  //alert($(x).attr("numero_TABLE_Appreciation"))                                    // AFFICHE le    MESSAGE d'alert     en    JAVASCRIPT    :     2
+  
+  //// /
+  /*
+  if($(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt")=="")
+            {		
+      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"  style="display:none;  "></span>');      
+      return false;   
+            }
+  */
+  if($("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).attr("alt")=="")
+            {		
+//      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"  style="display:none;  "></span>');      
+      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"  style="display:none;                font-size: 3vw;      "></span>');      
+      return false;         
+//      return false;   
+            }
+  
+  /*
+      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span>');
+      var bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML:last");
+      bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.append($(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt"));
+      $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt","");           
+  */
+//  $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span>');
+  $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"                  style="    font-size: 3vw;      "></span>');  
+      var bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML:last");
+      bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.append($("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation")  ).attr("alt"));
+      $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).attr("alt","");           
+  
+  /*
+  DEBUT ========================> CODE ENCORE A CORRIGER / AJUSTER :::::::::::::::::::::::::::::::::::::::::::
+  */
+  /* 
+        DEBUT DE LA PERSONNALISATION DE MARIO :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        DEBUT DE LA PERSONNALISATION DE MARIO :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        DEBUT DE LA PERSONNALISATION DE MARIO :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        DEBUT DE LA PERSONNALISATION DE MARIO :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        DEBUT DE LA PERSONNALISATION DE MARIO ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+  */
+  /*
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  DEBUT : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" ::: ?????????????????????????????????????????????????????????????
+  */
+  /*
+  
+   $(window).width()     =     "LARGEUR" de la "FENETRE DE L'ORDINATEUR" !!!
+   
+  */
+  var largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(window).width();
+  /*
+  
+   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left    =    "Position X (left ou GAUCHE)" du "CURSEUR DE LA SOURIS" par rapport à l'ECRAN DE L'ORDINATEUR !!!
+   
+   bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width()    =    "LARGEUR" de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!! 
+   
+   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).width()    =    "LARGEUR" de la balise HTML nommée de garde et <a href="#" alt="Un monde très merveilleux !!">tout</a> ________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________ bloc de !!! 
+   
+   2    =    "BORDURE Gauche" de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!  
+  
+   2    =    "BORDURE Droite" de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+   0    =    "MARGE INTERNE" Gauche de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+   0    =    "MARGE INTERNE" Droite de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+  */
+  
+  /*
+        var posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().top-bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.height()*2.25;	
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().left + (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() + 2 + 2 + 0 + 0);		
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 + ( 0 + 0 );                 /// <div id="mm1" style="width:150px;">	  
+  var Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51;
+  var Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-$("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).width();    
+  */
+  
+///////// ORIGINAL CODE de  MARIO   ///////        var posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().top-bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.height()*2.25;	
+/*
+// L INFOBULLE se trouve AU DESSUS du   BOUTON LIEN
+
+var posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 =     $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().top - 10; // Décalage minimal pour la position verticale
+*/
+/* Début : Détection du débordement en haut */
+var hauteur_bulle = bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.height();
+var position_lien_top = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().top;
+
+// Si la position calculée posTop_... est négative (l'infobulle déborde au-dessus de l'écran)...
+if (position_lien_top - (hauteur_bulle * 2.25) < 0) {
+    // ... alors, on repositionne l'infobulle EN DESSOUS de l'élément.
+    posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = 
+        position_lien_top + 
+        $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).height() + 10; // + 10px de marge
+
+    // (Note : Le 10px est une marge à ajuster)
+
+} else {
+    // ... sinon, on garde la position par défaut (au-dessus)
+    posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = 
+        position_lien_top - (hauteur_bulle * 2.25);
+}
+/* Fin : Détection du débordement en haut */
+
+
+
+
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().left + (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() + 2 + 2 + 0 + 0);		
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 + ( 0 + 0 );                 /// <div id="mm1" style="width:150px;">	  
+  var Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51;
+  var Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = largeur_fenetre_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-$("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).width();    
+  
+  /*
+  
+  La CONDITION SI	suivante
+  
+                       if(CONDITION)
+                       {
+                          instruction 1 
+                       }
+                       else
+                       {
+                          instruction 2
+                       }
+  
+  est la même que la CONDITION SI suivante
+  
+                       if( !(CONDITION) )
+                       {
+                          instruction 2
+                       }
+                       else
+                       {
+                          instruction 1 
+                       }
+  
+  */
+  /*
+  
+  La CONDITION SI	suivante
+  
+                                                  if( ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 >= 0 ) && ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 < Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 ) )
+                                                  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left;   	  
+                                                  }
+                                                  else
+                                                  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left - (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() - $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).width() + 2 + 2 + 0 + 0);		
+                                                  }
+  
+  est la même que la CONDITION SI suivante
+  
+                                                  if( !( ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 >= 0 ) && ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 < Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 ) ) )
+                                                  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left - (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() - $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).width() + 2 + 2 + 0 + 0);		
+                                                  }
+                                                  else
+                                                  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left;   	  
+                                                  }
+  
+  */
+  if( !( ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 >= 0 ) && ( Condition1_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 < Condition2_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 ) ) )
+  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().left - (bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width() - $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).width() + 2 + 2 + 0 + 0);		
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 - ( 0 + 0 );                 /// <div id="mm1" style="width:150px;">	  	  
+  /*
+  
+   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).offset().left    =    "Position X (left ou GAUCHE)" du "CURSEUR DE LA SOURIS" par rapport à l'ECRAN DE L'ORDINATEUR !!!
+   
+   bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.width()    =    "LARGEUR" de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!! 
+   
+   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).width()    =    "LARGEUR" de la balise HTML nommée de garde et <a href="#" alt="Un monde très merveilleux !!">tout</a> ________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________ bloc de !!! 
+   
+   2    =    "BORDURE Gauche" de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!  
+  
+   2    =    "BORDURE Droite" de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+   0    =    "MARGE INTERNE" Gauche de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+   0    =    "MARGE INTERNE" Droite de l'INFOBULLE c'est-à-dire de la balise HTML nommée <span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span> !!!   
+   
+  */
+  }
+  else
+  {
+        var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).offset().left;   	  
+  var posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 + ( 0 + 0 );                 /// <div id="mm1" style="width:150px;">	  	  
+  }		
+  /*
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  FIN : COMMENT "REGLER LE POSITIONNEMENT DE L'INFOBULLE" !!!!! ?????????????????????????????????????????????????????????????
+  */
+  
+  /* 
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        FIN DE LA PERSONNALISATION DE MARIO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+  */
+  
+  /*
+      bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.css({
+        left:posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51,
+  //			top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-20,
+        top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-0,
+        opacity:0.99
+      });
+  */
+  
+      bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.css({
+        left:posLeft_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51,
+  //			top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-20,
+        top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51-0,
+        opacity:0.99
+      });
+  /*		bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.animate({
+        top:posTop_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51,
+        opacity:0.99
+      });         */
+  /*
+  FIN   ===========================> TEXTE de L'INFOBULLE !!!
+  */
+  /*
+  FIN   ========================> CODE ENCORE A CORRIGER / AJUSTER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  */
+  
+  
+
+
+
+
+
+/*
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+  $(x).click(function() {
+  
+//     alert("Voiture n° " + $(x).attr("numero_TABLE_Appreciation") )     // Si on    """""CLIQUE""""" SUR L'"""""INFOBULLE""""" ,  alors on voit """""apparaître le MESSAGE""""" :        """""Bonjour 4"""""
+  
+  //  localStorage  =======> Pour STOCKER LES DONNEES dans le NAVIGATEUR MOZILLA FIREFOX si NAVIGATEUR EN COURS au lieu de STOCKER DANS LA BASE DE DONNEES ::::: 
+  //  localStorage  =======> Pour STOCKER LES DONNEES dans le NAVIGATEUR et non dans la BASE DE DONNEES
+   // Identifiant DE LA Voiture
+   // Identifiant DE LA Voiture
+   // Identifiant DE LA Voiture  
+   sessionStorage.removeItem('Identifiant_DE_LA_Voiture')      // Identifiant DE LA Voiture         
+  if(!sessionStorage.getItem('Identifiant_DE_LA_Voiture')){      // Identifiant DE LA Voiture                   // Identifiant DE LA Voiture
+    sessionStorage.setItem('Identifiant_DE_LA_Voiture', JSON.stringify(  $(x).attr("numero_TABLE_Appreciation")  ));   // Identifiant DE LA Voiture
+  }
+
+
+console.log("sessionStorage.getItem('Identifiant_DE_LA_Voiture') = " + sessionStorage.getItem('Identifiant_DE_LA_Voiture')  )                   // Identifiant_DE_LA_Voiture  =  8
+
+console.dir("sessionStorage.getItem('Identifiant_DE_LA_Voiture') = " + sessionStorage.getItem('Identifiant_DE_LA_Voiture')  )                   // Identifiant_DE_LA_Voiture  =  8
+
+
+/*
+  //
+  //// $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") ).css("background-color","blue")
+  
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  ///// $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") ).fadeOut()
+  
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  //// var BALISE_EXCLUSION = "form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation")                 // ##################### Le """""CODE ORIGINAL""""" 
+  var BALISE_EXCLUSION = "#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation")                 // ##################### Le """""CODE ORIGINAL""""" 
+  // $("form.ZONE_DE_TEXTE_de_MODIFICATION_de_la_TABLE_Testimonials:not("  +  BALISE_EXCLUSION  +  ")").fadeOut()                 // ##################### Le """""CODE ORIGINAL"""""
+  $(".ZONE_DE_TEXTE_de_MODIFICATION_de_la_TABLE_Testimonials:not("  +  BALISE_EXCLUSION  +  ")").fadeOut()                 // ##################### Le """""CODE ORIGINAL"""""
+  
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""AFFICHER le FORMULAIRE de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") ).fadeIn()                 // ##################### Le """""CODE ORIGINAL"""""
+  $("#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") ).fadeIn()                 // ##################### Le """""CODE ORIGINAL"""""
+  
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // """""COLORIER en VERT""""" le """""FOND""""" de la Balise """""TEXTAREA""""" :::::::
+  // $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","green")     // VERT foncé
+  //////// """""COULEUR""""" de la Balise """""TEXTAREA""""" en """""Vert clair""""" selon un """""CODE COULEUR""""" en NOTATION """""Code hexadécimal""""" :::::::
+  ///////////// $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","#90EE90")       // Vert clair
+  //////// """""COULEUR""""" de la Balise """""TEXTAREA""""" en """""Vert clair""""" selon un """""CODE COULEUR""""" en NOTATION """""Nom de couleur""""" :::::::
+  ///////////// $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","lightgreen")       // Vert clair
+  //////// """""COULEUR""""" de la Balise """""TEXTAREA""""" en """""Vert clair""""" selon un """""CODE COULEUR""""" en NOTATION """""Valeur RGB""""" :::::::
+  // $("form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","rgb(144, 238, 144)")       // Vert clair                 ##################### Le """""CODE ORIGINAL"""""
+  $("#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation") + " > div > textarea" ).css("background-color","rgb(144, 238, 144)")       // Vert clair                 ##################### Le """""CODE ORIGINAL"""""
+  //
+*/
+
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+  // """""TOUS LES LIENS qui sont CLIQUES par l'UTIISATEUR""""" nommés """""RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50""""" deviennent de couleur """""VIOLET""""" ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: ::::::: :::::::
+/*
+//  purple : Violet
+
+  $("a.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50.TEXTE_____DE_L_INFOBULLE_50.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51:hover").css({"color":"purple"})
+*/
+//  pink : rose
+
+/// Il y a    """""une LIGNE"""""    """""AU-DESSUS""""" DU TEXTE   :    """""Voir mes Projets""""" :::::::::: 
+////  $("a.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50.TEXTE_____DE_L_INFOBULLE_50.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51:hover").css({"text-decoration":"overline"})
+
+/// Il y a    """""une LIGNE"""""    """""EN-BAS""""" DU TEXTE   :    """""Voir mes Projets""""" :::::::::: 
+////  $("a.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50.TEXTE_____DE_L_INFOBULLE_50.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51:hover").css({"text-decoration":"underline"})
+
+/// Il y a    """""une LIGNE"""""    """""SUR""""" LE TEXTE   :    """""Voir mes Projets""""" :::::::::: 
+////  $("a.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50.TEXTE_____DE_L_INFOBULLE_50.RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51:hover").css({"text-decoration":"line-through"})
+  
+  })     // $(x).click(function() {
+/*
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ===========> CODE FACULTATIF ::::::::::: """""""ACTION qui SE DECLENCHE"""""""        quand        """""""ON CLIQUE""""""" SUR LE       """""""BOUTON LIEN""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+
+
+  
+
+
+  
+  
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  // """""CACHER TOUTES les FORMULAIRES""""" de MODIFICATION , c-à-d la BALISE     <form      id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post"""""" :::::::
+  ///// var BALISE_EXCLUSION = "form#Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_" +  $(x).attr("numero_TABLE_Appreciation")  
+  //////////////////// $("form.ZONE_DE_TEXTE_de_MODIFICATION_de_la_TABLE_Testimonials").fadeOut()
+  
+  
+  
+                           });		   //           $(document).ready(function(){
+  
+  }       //    function FONCTION________Creer_une_INFOBULLE_51(x) {
+  /*
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Creer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  */	   
+       
+       
+           
+           
+           
+           
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+  /*
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  Début :::::::::::::::::::::::::::::::::::::    FONCTION________Supprimer_une_INFOBULLE_51    :::::::::::::::::::::::::::::::::::::
+  */
+  function FONCTION________Supprimer_une_INFOBULLE_51(x) {
+    $(document).ready(function(){
+  
+  //    alert($(x).attr("id"))
+  
+  //   $(document).ready(function(){
+                                  //  //   alert("SUPPRESSION DE L'INFOBULLE !");
+  /*
+                                        //  //   alert("bonjour !");
+                                        //  //   alert(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x);
+                                        //  //   alert(     $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt")     );
+  */
+  //   $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x)          =          $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x);
+  
+  /*
+  DEBUT ===========================> TEXTE de L'INFOBULLE :::
+  */
+  var bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML:last");	
+  $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML").remove();			
+  $("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).attr("alt",bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.text());
+  /*		bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.animate
+  (
+  {
+  top:bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.offset().top+10,
+  opacity:0.99
+  },
+  500,
+  "linear",
+  function(){
+  bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.remove();
+  }
+  );			   */
+  /*        $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML").remove();              */
+  /*
+  FIN   ===========================> TEXTE de L'INFOBULLE !!!
+  */		   
+  
+  
+  
+  });		   //           $(document).ready(function(){
+  
+  }       //    function FONCTION________Supprimer_une_INFOBULLE_51(x) {
+  /*
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Fin   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    FONCTION________Supprimer_une_INFOBULLE_51    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  */	
+  //// /  
+  
+
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+// Lundi 10 Mars 2025 !!!!!!!!!!!!!!
+// FIN   ====================> INFOBULLE du BOUTON """"Modifier votre Appréciation 3"""" !!!!!
+/*
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+alert("INFOBULLE à CREER !")  
+
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+FIN   ============>RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         !!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+</script>
+<!--
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+-->
+<script>
+/*
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+DEBUT ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" :::::::::::::::::::::::::::::::::::::::::::::
+*/  
+    function showPopup() {
+        document.getElementById("myPopup").style.display = "flex";
+    }
+    function closePopup() {
+        document.getElementById("myPopup").style.display = "none";
+    }
+    window.onclick = function(event) {
+        var popup = document.getElementById("myPopup");
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+/*
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/	
+</script>
+<!--
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================================> ""AFFICHER"" la ""POPUP"" en ""pressant sur un BOUTON"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <script src="JQUERY_2024/jquery-3.7.1.min.js"></script> -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        // Le code JavaScript pour remplacer l'entrée d'historique actuelle.
+        // Cela change l'URL de la page en "/home" et associe un nouvel état.
+        const newState = { page: 'accueil' };
+        // history.replaceState(newState, "", "/home");
+        // history.replaceState(newState, "", "/aucun_historique");    
+        history.replaceState(newState, "", "/");                
+    </script>
+
+
+</body>
+</html>    
+
