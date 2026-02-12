@@ -1,0 +1,94 @@
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (main)
+$ git add *
+warning: in the working copy of 'EXEMPLE de Fichiers JSON/20260211_export_portfo
+lio.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'EXEMPLE de Fichiers JSON/20260211_export_users.
+json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app_acceuil/json_transfer.py', LF will be repla
+ced by CRLF the next time Git touches it
+warning: in the working copy of 'app_acceuil/models.py', LF will be replaced by
+CRLF the next time Git touches it
+warning: in the working copy of 'app_acceuil/urls.py', LF will be replaced by CR
+LF the next time Git touches it
+warning: in the working copy of 'app_acceuil/views.py', LF will be replaced by C
+RLF the next time Git touches it
+warning: in the working copy of 'app_historique/middleware.py', LF will be repla
+ced by CRLF the next time Git touches it
+warning: in the working copy of 'app_historique/urls.py', LF will be replaced by
+ CRLF the next time Git touches it
+warning: in the working copy of 'app_historique/views.py', LF will be replaced b
+y CRLF the next time Git touches it
+warning: in the working copy of 'templates/app_historique/fragment_historique.ht
+ml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/index.html', LF will be replaced by C
+RLF the next time Git touches it
+warning: in the working copy of 'templates/page_administration.html', LF will be
+ replaced by CRLF the next time Git touches it
+The following paths are ignored by one of your .gitignore files:
+venv
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config advice.addIgnoredFile false"
+warning: in the working copy of 'EXEMPLE de Fichiers JSON/20260212_export_portfo
+lio.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'EXEMPLE de Fichiers JSON/20260212_export_users.
+json', LF will be replaced by CRLF the next time Git touches it
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (main)
+$ git commit -m "Ajouter tout"
+[main 1b644c2] Ajouter tout
+ 8 files changed, 406 insertions(+)
+ create mode 100644 EXEMPLE de Fichiers JSON/20260212_export_portfolio.json
+ create mode 100644 EXEMPLE de Fichiers JSON/20260212_export_users.json
+ create mode 100644 "Portfolio-Cv-Mario-7 alleg\303\251.mp4"
+ create mode 100644 media/static/images/Mario_photo_03CHaxw.jpeg
+ create mode 100644 media/static/images/arnold_schwarzenegger_jeune4_GaLbL3K.jpg
+ create mode 100644 media/static/images/camion_fourgon_pECDsFc.JPG
+ create mode 100644 media/static/images/imageORDINATEUR_5Onfa7i.jpg
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (main)
+$ git push
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 21.25 MiB | 25.00 KiB/s, done.
+Total 10 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:Mariogit20/PORTFOLIO-cv-MARIO-7.git
+   f78fa81..1b644c2  main -> main
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (main)
+$ git checkout Dev
+Switched to branch 'Dev'
+Your branch is up to date with 'origin/Dev'.
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$ git merge main
+Updating f78fa81..1b644c2
+Fast-forward
+ .../20260212_export_portfolio.json                 | 198 ++++++++++++++++++++
+ .../20260212_export_users.json                     | 208 +++++++++++++++++++++
+ "Portfolio-Cv-Mario-7 alleg\303\251.mp4"           | Bin 0 -> 22891110 bytes
+ db.sqlite3                                         | Bin 294912 -> 311296 bytes
+ media/static/images/Mario_photo_03CHaxw.jpeg       | Bin 0 -> 594925 bytes
+ .../arnold_schwarzenegger_jeune4_GaLbL3K.jpg       | Bin 0 -> 32652 bytes
+ media/static/images/camion_fourgon_pECDsFc.JPG     | Bin 0 -> 28552 bytes
+ media/static/images/imageORDINATEUR_5Onfa7i.jpg    | Bin 0 -> 29571 bytes
+ 8 files changed, 406 insertions(+)
+ create mode 100644 EXEMPLE de Fichiers JSON/20260212_export_portfolio.json
+ create mode 100644 EXEMPLE de Fichiers JSON/20260212_export_users.json
+ create mode 100644 "Portfolio-Cv-Mario-7 alleg\303\251.mp4"
+ create mode 100644 media/static/images/Mario_photo_03CHaxw.jpeg
+ create mode 100644 media/static/images/arnold_schwarzenegger_jeune4_GaLbL3K.jpg
+ create mode 100644 media/static/images/camion_fourgon_pECDsFc.JPG
+ create mode 100644 media/static/images/imageORDINATEUR_5Onfa7i.jpg
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Mariogit20/PORTFOLIO-cv-MARIO-7.git
+   f78fa81..1b644c2  Dev -> Dev
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$
