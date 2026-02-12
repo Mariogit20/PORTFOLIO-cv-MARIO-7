@@ -132,4 +132,43 @@ To github.com:Mariogit20/PORTFOLIO-cv-MARIO-7.git
    4790509..77f6a24  Dev -> Dev
 
 AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$ git add .
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$ git commit -m "Ajouter quatre"
+[Dev e8a96de] Ajouter quatre
+ 1 file changed, 20 insertions(+)
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 477 bytes | 477.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:Mariogit20/PORTFOLIO-cv-MARIO-7.git
+   77f6a24..e8a96de  Dev -> Dev
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (main)
+$ git merge Dev
+Updating 1b644c2..e8a96de
+Fast-forward
+ SAUVEGARDE github 2.txt | 135 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 135 insertions(+)
+ create mode 100644 SAUVEGARDE github 2.txt
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (main)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Mariogit20/PORTFOLIO-cv-MARIO-7.git
+   1b644c2..e8a96de  main -> main
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (main)
 $
