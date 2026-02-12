@@ -112,4 +112,24 @@ To github.com:Mariogit20/PORTFOLIO-cv-MARIO-7.git
    1b644c2..4790509  Dev -> Dev
 
 AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$ git add .
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$ git commit -m "Ajouter trois"
+[Dev 77f6a24] Ajouter trois
+ 1 file changed, 21 insertions(+)
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 535 bytes | 535.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:Mariogit20/PORTFOLIO-cv-MARIO-7.git
+   4790509..77f6a24  Dev -> Dev
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github17/PORTFOLIO-cv-MARIO-7 (Dev)
 $
